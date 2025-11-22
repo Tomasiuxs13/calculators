@@ -6,21 +6,38 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:calculator": "tsx scripts/generate-calculator.ts",
+    "generate:batch": "tsx scripts/generate-batch.ts",
+    "add:calculators": "tsx scripts/add-generated-calculators.ts",
+    "review:calculators": "tsx scripts/review-calculators.ts",
+    "fix:calculators": "tsx scripts/auto-fix-calculators.ts",
+    "fix:jsx-parsing": "tsx scripts/fix-jsx-parsing.ts",
+    "fix:broken-jsx-tags": "tsx scripts/fix-broken-jsx-tags.ts"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.19",
+    "jspdf": "^3.0.4",
+    "lucide-react": "^0.554.0",
     "next": "16.0.3",
+    "openai": "^6.9.1",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "recharts": "^3.4.1",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/jspdf": "^1.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
+    "tsx": "^4.20.6",
     "typescript": "^5"
   }
 }

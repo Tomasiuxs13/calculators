@@ -1,0 +1,3034 @@
+[
+  {
+    "calculatorId": "bmi-calculator",
+    "title": "BMI Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "loan-calculator",
+    "title": "Loan Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "percentage-calculator",
+    "title": "Percentage Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "length-converter",
+    "title": "Length Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "weight-converter",
+    "title": "Weight Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "temperature-converter",
+    "title": "Temperature Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "area-converter",
+    "title": "Area Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "volume-converter",
+    "title": "Volume Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "speed-converter",
+    "title": "Speed Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "time-converter",
+    "title": "Time Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "energy-converter",
+    "title": "Energy Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pressure-converter",
+    "title": "Pressure Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "data-storage-converter",
+    "title": "Data Storage Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "auto-loan-calculator",
+    "title": "Auto Loan Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "bmr-calculator",
+    "title": "BMR Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "angle-converter",
+    "title": "Angle Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fuel-economy-converter",
+    "title": "Fuel Economy Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "power-converter",
+    "title": "Power Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "force-converter",
+    "title": "Force Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "torque-converter",
+    "title": "Torque Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "frequency-converter",
+    "title": "Frequency Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "electric-current-converter",
+    "title": "Electric Current Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "voltage-converter",
+    "title": "Voltage Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "resistance-converter",
+    "title": "Resistance Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "capacitance-converter",
+    "title": "Capacitance Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "personal-loan-calculator",
+    "title": "Personal Loan Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "student-loan-calculator",
+    "title": "Student Loan Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "credit-card-payoff-calculator",
+    "title": "Credit Card Payoff Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "compound-interest-calculator",
+    "title": "Compound Interest Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "savings-calculator",
+    "title": "Savings Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tdee-calculator",
+    "title": "TDEE Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "body-fat-calculator",
+    "title": "Body Fat Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "calorie-calculator",
+    "title": "Calorie Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "macro-calculator",
+    "title": "Macro Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fraction-calculator",
+    "title": "Fraction Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ratio-calculator",
+    "title": "Ratio Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "square-root-calculator",
+    "title": "Square Root Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "quadratic-calculator",
+    "title": "Quadratic Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "mean-calculator",
+    "title": "Mean Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "median-calculator",
+    "title": "Median Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "standard-deviation-calculator",
+    "title": "Standard Deviation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "age-calculator",
+    "title": "Age Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "date-calculator",
+    "title": "Date Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fuel-cost-calculator",
+    "title": "Fuel Cost Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "refinance-calculator",
+    "title": "Refinance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "home-equity-loan-calculator",
+    "title": "Home Equity Loan Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "debt-consolidation-calculator",
+    "title": "Debt Consolidation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "investment-return-calculator",
+    "title": "Investment Return Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "future-value-calculator",
+    "title": "Future Value Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "present-value-calculator",
+    "title": "Present Value Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "annuity-calculator",
+    "title": "Annuity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "401k-calculator",
+    "title": "401(k) Retirement Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ira-calculator",
+    "title": "IRA Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "income-tax-calculator",
+    "title": "Income Tax Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "sales-tax-calculator",
+    "title": "Sales Tax Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tip-calculator",
+    "title": "Tip Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "discount-calculator",
+    "title": "Discount Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "budget-calculator",
+    "title": "Budget Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "debt-to-income-calculator",
+    "title": "Debt to Income Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "salary-calculator",
+    "title": "Salary Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ideal-weight-calculator",
+    "title": "Ideal Weight Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "body-surface-area-calculator",
+    "title": "Body Surface Area Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "lean-body-mass-calculator",
+    "title": "Lean Body Mass Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "waist-to-hip-ratio-calculator",
+    "title": "Waist to Hip Ratio Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "running-pace-calculator",
+    "title": "Running Pace Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "steps-to-miles-calculator",
+    "title": "Steps to Miles Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "exercise-calorie-burn-calculator",
+    "title": "Exercise Calorie Burn Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "protein-calculator",
+    "title": "Protein Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "water-intake-calculator",
+    "title": "Water Intake Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "heart-rate-calculator",
+    "title": "Heart Rate Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pregnancy-due-date-calculator",
+    "title": "Pregnancy Due Date Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "percentage-increase-calculator",
+    "title": "Percentage Increase Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "proportion-calculator",
+    "title": "Proportion Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cube-root-calculator",
+    "title": "Cube Root Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "exponent-calculator",
+    "title": "Exponent Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "logarithm-calculator",
+    "title": "Logarithm Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "factorial-calculator",
+    "title": "Factorial Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "gcd-calculator",
+    "title": "GCD Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "lcm-calculator",
+    "title": "LCM Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "linear-equation-solver",
+    "title": "Linear Equation Solver",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "distance-calculator",
+    "title": "Distance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pythagorean-theorem-calculator",
+    "title": "Pythagorean Theorem Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "circle-calculator",
+    "title": "Circle Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "triangle-calculator",
+    "title": "Triangle Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "variance-calculator",
+    "title": "Variance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "range-calculator",
+    "title": "Range Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "percentile-calculator",
+    "title": "Percentile Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "z-score-calculator",
+    "title": "Z-Score Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "probability-calculator",
+    "title": "Probability Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "combination-calculator",
+    "title": "Combination Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "permutation-calculator",
+    "title": "Permutation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "time-zone-converter",
+    "title": "Time Zone Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "paint-calculator",
+    "title": "Paint Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tile-calculator",
+    "title": "Tile Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "force-calculator",
+    "title": "Force Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "acceleration-calculator",
+    "title": "Acceleration Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "kinetic-energy-calculator",
+    "title": "Kinetic Energy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "potential-energy-calculator",
+    "title": "Potential Energy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ohms-law-calculator",
+    "title": "Ohm’s Law Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "height-converter",
+    "title": "Height Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "currency-converter",
+    "title": "Currency Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 4 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "mode-calculator",
+    "title": "Mode Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "distance-converter",
+    "title": "Distance Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "mile-to-kilometer-converter",
+    "title": "Miles ↔ Kilometers Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "inch-to-centimeter-converter",
+    "title": "Inch to Centimeter Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "foot-to-meter-converter",
+    "title": "Foot to Meter Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "yard-to-meter-converter",
+    "title": "Yard ↔ Meter Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "nautical-mile-converter",
+    "title": "Nautical Mile Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pound-to-kilogram-converter",
+    "title": "Pound to Kilogram Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ounce-to-gram-converter",
+    "title": "Ounce to Gram Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "stone-to-kilogram-converter",
+    "title": "Stone to Kilogram Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tonne-to-kilogram-converter",
+    "title": "Tonne to Kilogram Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "liter-to-gallon-converter",
+    "title": "Liter to Gallon Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cubic-meter-converter",
+    "title": "Cubic Meter Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cup-to-milliliter-converter",
+    "title": "Cup to Milliliter Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fluid-ounce-converter",
+    "title": "Fluid Ounce Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "celsius-to-fahrenheit-converter",
+    "title": "Celsius ↔ Fahrenheit Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "square-foot-to-square-meter-converter",
+    "title": "Square Feet ↔ Square Meters Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "acre-to-hectare-converter",
+    "title": "Acre to Hectare Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "square-kilometer-to-square-mile-converter",
+    "title": "Square Kilometer to Square Mile Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "loan-comparison-calculator",
+    "title": "Loan Comparison Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "amortization-schedule-generator",
+    "title": "Amortization Schedule Generator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "stock-return-calculator",
+    "title": "Stock Return Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "dividend-calculator",
+    "title": "Dividend Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "capital-gains-tax-calculator",
+    "title": "Capital Gains Tax Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "property-tax-calculator",
+    "title": "Property Tax Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "vat-calculator",
+    "title": "VAT Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tax-refund-calculator",
+    "title": "Tax Refund Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tax-bracket-calculator",
+    "title": "Tax Bracket Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "expense-tracker-calculator",
+    "title": "Expense Tracker Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cost-of-living-calculator",
+    "title": "Cost of Living Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "retirement-calculator",
+    "title": "Retirement Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "social-security-calculator",
+    "title": "Social Security Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pension-calculator",
+    "title": "Pension Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "retirement-savings-goal-calculator",
+    "title": "Retirement Savings Goal Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "life-insurance-calculator",
+    "title": "Life Insurance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "health-insurance-calculator",
+    "title": "Health Insurance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "car-insurance-calculator",
+    "title": "Car Insurance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "exchange-rate-calculator",
+    "title": "Exchange Rate Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "body-type-calculator",
+    "title": "Body Type Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "vo2-max-calculator",
+    "title": "VO2 Max Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "training-zone-calculator",
+    "title": "Training Zone Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "one-rep-max-calculator",
+    "title": "One-Rep Max Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "carb-calculator",
+    "title": "Carb Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fat-calculator",
+    "title": "Fat Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fiber-calculator",
+    "title": "Fiber Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "meal-prep-calculator",
+    "title": "Meal Prep Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "portion-size-calculator",
+    "title": "Portion Size Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "blood-pressure-calculator",
+    "title": "Blood Pressure Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "sleep-calculator",
+    "title": "Sleep Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "vitamin-calculator",
+    "title": "Vitamin & Mineral Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "drug-dosage-calculator",
+    "title": "Drug Dosage Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ovulation-calculator",
+    "title": "Ovulation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pregnancy-week-calculator",
+    "title": "Pregnancy Week Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "baby-growth-calculator",
+    "title": "Baby Growth Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pregnancy-weight-gain-calculator",
+    "title": "Pregnancy Weight Gain Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "breastfeeding-calculator",
+    "title": "Breastfeeding Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "prime-number-calculator",
+    "title": "Prime Number Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "scientific-calculator",
+    "title": "Scientific Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "number-base-converter",
+    "title": "Number Base Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "system-of-equations-solver",
+    "title": "System of Equations Solver",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "polynomial-calculator",
+    "title": "Polynomial Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "matrix-calculator",
+    "title": "Matrix Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "determinant-calculator",
+    "title": "Determinant Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "inverse-matrix-calculator",
+    "title": "Inverse Matrix Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "slope-calculator",
+    "title": "Slope Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "midpoint-calculator",
+    "title": "Midpoint Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "area-calculator",
+    "title": "Area Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "volume-calculator",
+    "title": "Volume Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "perimeter-calculator",
+    "title": "Perimeter Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "circumference-calculator",
+    "title": "Circumference Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "rectangle-calculator",
+    "title": "Rectangle Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cylinder-calculator",
+    "title": "Cylinder Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "quartile-calculator",
+    "title": "Quartile Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "outlier-calculator",
+    "title": "Outlier Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "binomial-distribution-calculator",
+    "title": "Binomial Distribution Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "normal-distribution-calculator",
+    "title": "Normal Distribution Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "poisson-distribution-calculator",
+    "title": "Poisson Distribution Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "linear-regression-calculator",
+    "title": "Linear Regression Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "correlation-calculator",
+    "title": "Correlation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "r-squared-calculator",
+    "title": "R-squared Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "t-test-calculator",
+    "title": "T-Test Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "chi-square-calculator",
+    "title": "Chi-Square Test for Independence",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "anova-calculator",
+    "title": "ANOVA Calculator",
+    "fixed": false,
+    "fixes": [
+      "No issues to fix"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "sample-size-calculator",
+    "title": "Sample Size Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "confidence-interval-calculator",
+    "title": "Confidence Interval Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "day-of-week-calculator",
+    "title": "Day of Week Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "leap-year-calculator",
+    "title": "Leap Year Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "countdown-timer-calculator",
+    "title": "Countdown Timer",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "recipe-scaling-calculator",
+    "title": "Recipe Scaling Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cooking-time-calculator",
+    "title": "Cooking Time Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "oven-temperature-converter",
+    "title": "Oven Temperature Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ingredient-substitution-calculator",
+    "title": "Ingredient Substitution Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "unit-price-calculator",
+    "title": "Unit Price Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "percentage-off-calculator",
+    "title": "Percentage Off Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "split-bill-calculator",
+    "title": "Split Bill Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "mileage-calculator",
+    "title": "Mileage Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "travel-time-calculator",
+    "title": "Travel Time Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "concrete-calculator",
+    "title": "Concrete Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "carpet-calculator",
+    "title": "Carpet Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "fence-calculator",
+    "title": "Fence Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "lawn-area-calculator",
+    "title": "Lawn Area Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "overtime-calculator",
+    "title": "Overtime Pay Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "time-card-calculator",
+    "title": "Time Card Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "productivity-calculator",
+    "title": "Productivity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "age-difference-calculator",
+    "title": "Age Difference Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "relationship-duration-calculator",
+    "title": "Relationship Duration Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pet-age-calculator",
+    "title": "Pet Age Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pet-food-calculator",
+    "title": "Pet Food Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "velocity-calculator",
+    "title": "Velocity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "momentum-calculator",
+    "title": "Momentum Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "work-calculator",
+    "title": "Work Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "friction-calculator",
+    "title": "Friction Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "gravity-calculator",
+    "title": "Gravity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "projectile-motion-calculator",
+    "title": "Projectile Motion Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "centripetal-force-calculator",
+    "title": "Centripetal Force Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "angular-velocity-calculator",
+    "title": "Angular Velocity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "heat-transfer-calculator",
+    "title": "Heat Transfer Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ideal-gas-law-calculator",
+    "title": "Ideal Gas Law Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "density-calculator",
+    "title": "Density Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "electric-power-calculator",
+    "title": "Electric Power Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "series-parallel-resistor-calculator",
+    "title": "Series & Parallel Resistor Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "lens-calculator",
+    "title": "Lens Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "refraction-calculator",
+    "title": "Refraction Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "wavelength-calculator",
+    "title": "Wavelength Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "wave-speed-calculator",
+    "title": "Wave Speed Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "lumber-calculator",
+    "title": "Lumber Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "drywall-calculator",
+    "title": "Drywall Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "insulation-calculator",
+    "title": "Insulation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "flooring-calculator",
+    "title": "Flooring Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "roofing-calculator",
+    "title": "Roofing Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "foundation-calculator",
+    "title": "Foundation Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "beam-calculator",
+    "title": "Beam Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "column-calculator",
+    "title": "Column Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "rafter-calculator",
+    "title": "Rafter Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "stair-calculator",
+    "title": "Stair Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "deck-calculator",
+    "title": "Deck Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "electrical-load-calculator",
+    "title": "Electrical Load Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "wire-size-calculator",
+    "title": "Wire Size Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "voltage-drop-calculator",
+    "title": "Voltage Drop Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "circuit-breaker-calculator",
+    "title": "Circuit Breaker Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "pipe-size-calculator",
+    "title": "Pipe Size Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "water-flow-calculator",
+    "title": "Water Flow Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "punnett-square-calculator",
+    "title": "Punnett Square Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "Fixed 2 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "hardy-weinberg-calculator",
+    "title": "Hardy-Weinberg Equilibrium Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "genetic-distance-calculator",
+    "title": "Genetic Distance Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "dna-sequence-calculator",
+    "title": "DNA Sequence Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "allele-frequency-calculator",
+    "title": "Allele Frequency Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)",
+      "Fixed 1 code issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "population-growth-calculator",
+    "title": "Population Growth Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "growth-rate-calculator",
+    "title": "Growth Rate Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "carrying-capacity-calculator",
+    "title": "Carrying Capacity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "biodiversity-calculator",
+    "title": "Biodiversity Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cell-count-calculator",
+    "title": "Cell Count Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "dilution-calculator",
+    "title": "Dilution Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "ph-calculator",
+    "title": "pH Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "osmolarity-calculator",
+    "title": "Osmolarity Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "enzyme-kinetics-calculator",
+    "title": "Enzyme Kinetics Calculator",
+    "fixed": true,
+    "fixes": [
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "half-life-calculator",
+    "title": "Half-Life Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "respiration-rate-calculator",
+    "title": "Respiration Rate Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "mole-calculator",
+    "title": "Mole Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "molarity-calculator",
+    "title": "Molarity Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "molality-calculator",
+    "title": "Molality Calculator",
+    "fixed": true,
+    "fixes": [
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "stoichiometry-calculator",
+    "title": "Stoichiometry Calculator",
+    "fixed": false,
+    "fixes": [],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "percent-composition-calculator",
+    "title": "Percent Composition Calculator",
+    "fixed": true,
+    "fixes": [
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out.",
+      "Code fix failed: Failed to fix code: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "empirical-formula-calculator",
+    "title": "Empirical Formula Calculator",
+    "fixed": true,
+    "fixes": [
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "molecular-formula-calculator",
+    "title": "Molecular Formula Calculator",
+    "fixed": true,
+    "fixes": [
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "solution-concentration-calculator",
+    "title": "Solution Concentration Calculator",
+    "fixed": true,
+    "fixes": [
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": [
+      "SEO fix failed: Failed to fix content: Request timed out."
+    ]
+  },
+  {
+    "calculatorId": "dilution-calculator-chemistry",
+    "title": "Dilution Calculator (Chemistry)",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ph-calculator-chemistry",
+    "title": "pH & pOH Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "buffer-calculator",
+    "title": "Buffer pH Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "titration-calculator",
+    "title": "Titration Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 3 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "enthalpy-calculator",
+    "title": "Enthalpy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "entropy-calculator",
+    "title": "Entropy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "gibbs-free-energy-calculator",
+    "title": "Gibbs Free Energy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "reaction-rate-calculator",
+    "title": "Reaction Rate Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "equilibrium-constant-calculator",
+    "title": "Equilibrium Constant Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "bond-energy-calculator",
+    "title": "Bond Energy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "marathon-time-calculator",
+    "title": "Marathon Time Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "5k-time-calculator",
+    "title": "5K Time Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "10k-time-calculator",
+    "title": "10K Time Calculator",
+    "fixed": true,
+    "fixes": [
+      "Generated new SEO content file"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cycling-power-calculator",
+    "title": "Cycling Power Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cycling-speed-calculator",
+    "title": "Cycling Speed Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "bike-gear-calculator",
+    "title": "Bike Gear Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cycling-calorie-burn-calculator",
+    "title": "Cycling Calorie Burn Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "volume-calculator-strength",
+    "title": "Strength Training Volume Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "rest-period-calculator",
+    "title": "Rest Period Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "progressive-overload-calculator",
+    "title": "Progressive Overload Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "baseball-stats-calculator",
+    "title": "Baseball Stats Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "basketball-stats-calculator",
+    "title": "Basketball Stats Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "football-stats-calculator",
+    "title": "Football Stats Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "golf-handicap-calculator",
+    "title": "Golf Handicap Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tennis-serve-speed-calculator",
+    "title": "Tennis Serve Speed Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "swimming-pace-calculator",
+    "title": "Swimming Pace Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "food-cost-calculator",
+    "title": "Food Cost Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "nutrition-label-calculator",
+    "title": "Nutrition Label Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "recipe-converter",
+    "title": "Recipe Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "cooking-measurement-converter",
+    "title": "Cooking Measurement Converter",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "calorie-density-calculator",
+    "title": "Calorie Density Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "food-waste-calculator",
+    "title": "Food Waste Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "carbon-footprint-calculator",
+    "title": "Carbon Footprint Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "water-usage-calculator",
+    "title": "Water Usage Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "energy-consumption-calculator",
+    "title": "Energy Consumption Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "recycling-calculator",
+    "title": "Recycling Impact Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "compost-calculator",
+    "title": "Compost Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "solar-panel-calculator",
+    "title": "Solar Panel Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "Fixed 1 code issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "wind-energy-calculator",
+    "title": "Wind Energy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "tree-planting-calculator",
+    "title": "Tree Planting Carbon Offset Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "carbon-offset-calculator",
+    "title": "Carbon Offset Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "ecological-footprint-calculator",
+    "title": "Ecological Footprint Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "home-energy-calculator",
+    "title": "Home Energy Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "transportation-carbon-calculator",
+    "title": "Transportation Carbon Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "food-carbon-calculator",
+    "title": "Food Carbon Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "waste-reduction-calculator",
+    "title": "Waste Reduction Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 2 SEO issue(s)",
+      "[CONFIG] Fixed meta tags - manual update needed in calculators.ts"
+    ],
+    "errors": []
+  },
+  {
+    "calculatorId": "sustainability-score-calculator",
+    "title": "Sustainability Score Calculator",
+    "fixed": true,
+    "fixes": [
+      "Fixed 1 SEO issue(s)"
+    ],
+    "errors": []
+  }
+]

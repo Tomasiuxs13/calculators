@@ -1,0 +1,4173 @@
+import fs from 'fs/promises';
+import path from 'path';
+
+// This script generates a comprehensive list of calculator specs based on CONTENT_PLAN.md
+// It creates calculator specifications for batch generation
+
+// Function to extract existing calculator IDs from calculators.ts
+async function getExistingCalculatorIds(): Promise<Set<string>> {
+  try {
+    const calculatorsPath = path.join(process.cwd(), 'src/config/calculators.ts');
+    const content = await fs.readFile(calculatorsPath, 'utf-8');
+    const idMatches = content.matchAll(/id:\s*['"]([^'"]+)['"]/g);
+    const ids = new Set<string>();
+    for (const match of idMatches) {
+      ids.add(match[1]);
+    }
+    return ids;
+  } catch (error) {
+    console.warn('⚠️  Could not read existing calculators.ts, skipping duplicate check');
+    return new Set();
+  }
+}
+
+interface CalculatorSpec {
+  name: string;
+  slug: string;
+  category: string;
+  subcategory: string;
+  description: string;
+  type: string;
+  inputs: Array<{
+    name: string;
+    label: string;
+    type: string;
+    defaultValue?: string;
+    options?: Array<{ value: string; label: string }>;
+    optional?: boolean;
+  }>;
+  authorId: string;
+}
+
+const calculatorSpecs: CalculatorSpec[] = [
+  // ========== FINANCE CALCULATORS ==========
+  {
+    name: "RefinanceCalculator",
+    slug: "refinance-calculator",
+    category: "finance",
+    subcategory: "loans",
+    description: "Calculate potential savings from refinancing your mortgage or loan.",
+    type: "loan",
+    inputs: [
+      { name: "currentBalance", label: "Current Loan Balance", type: "number", defaultValue: "200000" },
+      { name: "currentRate", label: "Current Interest Rate (%)", type: "number", defaultValue: "4.5" },
+      { name: "newRate", label: "New Interest Rate (%)", type: "number", defaultValue: "3.5" },
+      { name: "remainingTerm", label: "Remaining Term (years)", type: "number", defaultValue: "25" },
+      { name: "newTerm", label: "New Term (years)", type: "number", defaultValue: "30" },
+      { name: "closingCosts", label: "Closing Costs", type: "number", defaultValue: "3000" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "HomeEquityLoanCalculator",
+    slug: "home-equity-loan-calculator",
+    category: "finance",
+    subcategory: "loans",
+    description: "Calculate monthly payments and interest for a home equity loan.",
+    type: "loan",
+    inputs: [
+      { name: "loanAmount", label: "Loan Amount", type: "number", defaultValue: "50000" },
+      { name: "rate", label: "Interest Rate (%)", type: "number", defaultValue: "6.0" },
+      { name: "term", label: "Loan Term (years)", type: "number", defaultValue: "15" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "DebtConsolidationCalculator",
+    slug: "debt-consolidation-calculator",
+    category: "finance",
+    subcategory: "loans",
+    description: "Calculate potential savings from consolidating multiple debts into one loan.",
+    type: "debt",
+    inputs: [
+      { name: "totalDebt", label: "Total Debt Amount", type: "number", defaultValue: "25000" },
+      { name: "currentRate", label: "Average Current Rate (%)", type: "number", defaultValue: "18.0" },
+      { name: "consolidationRate", label: "Consolidation Rate (%)", type: "number", defaultValue: "8.0" },
+      { name: "term", label: "New Term (years)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "InvestmentReturnCalculator",
+    slug: "investment-return-calculator",
+    category: "finance",
+    subcategory: "investments",
+    description: "Calculate return on investment (ROI) and annualized returns.",
+    type: "investment",
+    inputs: [
+      { name: "initialInvestment", label: "Initial Investment", type: "number", defaultValue: "10000" },
+      { name: "currentValue", label: "Current Value", type: "number", defaultValue: "15000" },
+      { name: "timePeriod", label: "Time Period (years)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "FutureValueCalculator",
+    slug: "future-value-calculator",
+    category: "finance",
+    subcategory: "investments",
+    description: "Calculate the future value of an investment with compound interest.",
+    type: "investment",
+    inputs: [
+      { name: "presentValue", label: "Present Value", type: "number", defaultValue: "10000" },
+      { name: "rate", label: "Annual Interest Rate (%)", type: "number", defaultValue: "7.0" },
+      { name: "years", label: "Number of Years", type: "number", defaultValue: "10" },
+      { name: "compounding", label: "Compounding Frequency", type: "select", defaultValue: "monthly", options: [
+        { value: "daily", label: "Daily" },
+        { value: "monthly", label: "Monthly" },
+        { value: "quarterly", label: "Quarterly" },
+        { value: "annually", label: "Annually" }
+      ]}
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "PresentValueCalculator",
+    slug: "present-value-calculator",
+    category: "finance",
+    subcategory: "investments",
+    description: "Calculate the present value of a future amount (discounting).",
+    type: "investment",
+    inputs: [
+      { name: "futureValue", label: "Future Value", type: "number", defaultValue: "20000" },
+      { name: "rate", label: "Discount Rate (%)", type: "number", defaultValue: "5.0" },
+      { name: "years", label: "Number of Years", type: "number", defaultValue: "10" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "AnnuityCalculator",
+    slug: "annuity-calculator",
+    category: "finance",
+    subcategory: "investments",
+    description: "Calculate annuity payments, present value, or future value of annuities.",
+    type: "investment",
+    inputs: [
+      { name: "payment", label: "Payment Amount", type: "number", defaultValue: "1000" },
+      { name: "rate", label: "Interest Rate (%)", type: "number", defaultValue: "5.0" },
+      { name: "years", label: "Number of Years", type: "number", defaultValue: "20" },
+      { name: "paymentType", label: "Payment Type", type: "select", defaultValue: "ordinary", options: [
+        { value: "ordinary", label: "Ordinary Annuity (end of period)" },
+        { value: "due", label: "Annuity Due (beginning of period)" }
+      ]}
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "Retirement401kCalculator",
+    slug: "401k-calculator",
+    category: "finance",
+    subcategory: "retirement",
+    description: "Calculate 401(k) retirement savings and employer match contributions.",
+    type: "retirement",
+    inputs: [
+      { name: "currentBalance", label: "Current 401(k) Balance", type: "number", defaultValue: "50000" },
+      { name: "annualSalary", label: "Annual Salary", type: "number", defaultValue: "60000" },
+      { name: "contributionPercent", label: "Your Contribution (%)", type: "number", defaultValue: "6" },
+      { name: "employerMatch", label: "Employer Match (%)", type: "number", defaultValue: "3" },
+      { name: "rate", label: "Expected Return (%)", type: "number", defaultValue: "7.0" },
+      { name: "years", label: "Years Until Retirement", type: "number", defaultValue: "30" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "IRACalculator",
+    slug: "ira-calculator",
+    category: "finance",
+    subcategory: "retirement",
+    description: "Calculate IRA contributions, growth, and retirement savings.",
+    type: "retirement",
+    inputs: [
+      { name: "currentBalance", label: "Current IRA Balance", type: "number", defaultValue: "25000" },
+      { name: "annualContribution", label: "Annual Contribution", type: "number", defaultValue: "6000" },
+      { name: "rate", label: "Expected Return (%)", type: "number", defaultValue: "7.0" },
+      { name: "years", label: "Years Until Retirement", type: "number", defaultValue: "25" },
+      { name: "accountType", label: "Account Type", type: "select", defaultValue: "traditional", options: [
+        { value: "traditional", label: "Traditional IRA" },
+        { value: "roth", label: "Roth IRA" }
+      ]}
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "IncomeTaxCalculator",
+    slug: "income-tax-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Estimate your federal income tax based on filing status and income.",
+    type: "tax",
+    inputs: [
+      { name: "income", label: "Annual Income", type: "number", defaultValue: "75000" },
+      { name: "filingStatus", label: "Filing Status", type: "select", defaultValue: "single", options: [
+        { value: "single", label: "Single" },
+        { value: "married-joint", label: "Married Filing Jointly" },
+        { value: "married-separate", label: "Married Filing Separately" },
+        { value: "head", label: "Head of Household" }
+      ]},
+      { name: "deductions", label: "Standard Deduction", type: "number", defaultValue: "13850" }
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "SalesTaxCalculator",
+    slug: "sales-tax-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Calculate sales tax on purchases based on tax rate and amount.",
+    type: "tax",
+    inputs: [
+      { name: "amount", label: "Purchase Amount", type: "number", defaultValue: "100" },
+      { name: "taxRate", label: "Sales Tax Rate (%)", type: "number", defaultValue: "8.5" }
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "TipCalculator",
+    slug: "tip-calculator",
+    category: "finance",
+    subcategory: "other",
+    description: "Calculate tip amount and total bill including tip.",
+    type: "other",
+    inputs: [
+      { name: "billAmount", label: "Bill Amount", type: "number", defaultValue: "50" },
+      { name: "tipPercent", label: "Tip Percentage (%)", type: "number", defaultValue: "18" },
+      { name: "people", label: "Number of People", type: "number", defaultValue: "2" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "DiscountCalculator",
+    slug: "discount-calculator",
+    category: "finance",
+    subcategory: "other",
+    description: "Calculate discount amount and final price after discount.",
+    type: "other",
+    inputs: [
+      { name: "originalPrice", label: "Original Price", type: "number", defaultValue: "100" },
+      { name: "discountPercent", label: "Discount (%)", type: "number", defaultValue: "20" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "BudgetCalculator",
+    slug: "budget-calculator",
+    category: "finance",
+    subcategory: "budgeting",
+    description: "Create and manage a monthly budget with income and expenses.",
+    type: "budget",
+    inputs: [
+      { name: "monthlyIncome", label: "Monthly Income", type: "number", defaultValue: "5000" },
+      { name: "housing", label: "Housing Expenses", type: "number", defaultValue: "1500" },
+      { name: "food", label: "Food Expenses", type: "number", defaultValue: "500" },
+      { name: "transportation", label: "Transportation", type: "number", defaultValue: "400" },
+      { name: "utilities", label: "Utilities", type: "number", defaultValue: "200" },
+      { name: "other", label: "Other Expenses", type: "number", defaultValue: "300" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "DebtToIncomeCalculator",
+    slug: "debt-to-income-calculator",
+    category: "finance",
+    subcategory: "budgeting",
+    description: "Calculate your debt-to-income ratio to assess financial health.",
+    type: "budget",
+    inputs: [
+      { name: "monthlyDebt", label: "Monthly Debt Payments", type: "number", defaultValue: "1500" },
+      { name: "monthlyIncome", label: "Monthly Gross Income", type: "number", defaultValue: "6000" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "SalaryCalculator",
+    slug: "salary-calculator",
+    category: "finance",
+    subcategory: "budgeting",
+    description: "Convert between hourly, weekly, monthly, and annual salary.",
+    type: "budget",
+    inputs: [
+      { name: "amount", label: "Amount", type: "number", defaultValue: "25" },
+      { name: "fromType", label: "From", type: "select", defaultValue: "hourly", options: [
+        { value: "hourly", label: "Hourly" },
+        { value: "weekly", label: "Weekly" },
+        { value: "monthly", label: "Monthly" },
+        { value: "annually", label: "Annually" }
+      ]}
+    ],
+    authorId: "mike-finance"
+  },
+  
+  // ========== HEALTH CALCULATORS ==========
+  {
+    name: "IdealWeightCalculator",
+    slug: "ideal-weight-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate your ideal body weight based on height, gender, and body frame.",
+    type: "health",
+    inputs: [
+      { name: "height", label: "Height (cm)", type: "number", defaultValue: "175" },
+      { name: "gender", label: "Gender", type: "select", defaultValue: "male", options: [
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" }
+      ]},
+      { name: "frame", label: "Body Frame", type: "select", defaultValue: "medium", options: [
+        { value: "small", label: "Small" },
+        { value: "medium", label: "Medium" },
+        { value: "large", label: "Large" }
+      ]}
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "BodySurfaceAreaCalculator",
+    slug: "body-surface-area-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate body surface area (BSA) using various formulas (Mosteller, Du Bois, etc.).",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "height", label: "Height (cm)", type: "number", defaultValue: "175" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "LeanBodyMassCalculator",
+    slug: "lean-body-mass-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate lean body mass (LBM) and fat-free mass.",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "bodyFat", label: "Body Fat Percentage (%)", type: "number", defaultValue: "20" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "WaistToHipRatioCalculator",
+    slug: "waist-to-hip-ratio-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate waist-to-hip ratio (WHR) to assess health risks.",
+    type: "health",
+    inputs: [
+      { name: "waist", label: "Waist Circumference (cm)", type: "number", defaultValue: "85" },
+      { name: "hip", label: "Hip Circumference (cm)", type: "number", defaultValue: "95" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "RunningPaceCalculator",
+    slug: "running-pace-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate running pace, speed, and time for various distances.",
+    type: "health",
+    inputs: [
+      { name: "distance", label: "Distance (km)", type: "number", defaultValue: "5" },
+      { name: "time", label: "Time (minutes)", type: "number", defaultValue: "25" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "StepsToMilesCalculator",
+    slug: "steps-to-miles-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Convert steps to miles or kilometers based on stride length.",
+    type: "health",
+    inputs: [
+      { name: "steps", label: "Number of Steps", type: "number", defaultValue: "10000" },
+      { name: "strideLength", label: "Stride Length (cm)", type: "number", defaultValue: "70" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "ExerciseCalorieBurnCalculator",
+    slug: "exercise-calorie-burn-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate calories burned during various exercises and activities.",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "activity", label: "Activity", type: "select", defaultValue: "running", options: [
+        { value: "running", label: "Running" },
+        { value: "walking", label: "Walking" },
+        { value: "cycling", label: "Cycling" },
+        { value: "swimming", label: "Swimming" }
+      ]},
+      { name: "duration", label: "Duration (minutes)", type: "number", defaultValue: "30" },
+      { name: "intensity", label: "Intensity", type: "select", defaultValue: "moderate", options: [
+        { value: "light", label: "Light" },
+        { value: "moderate", label: "Moderate" },
+        { value: "vigorous", label: "Vigorous" }
+      ]}
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "ProteinCalculator",
+    slug: "protein-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate daily protein needs based on weight, activity level, and goals.",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "activity", label: "Activity Level", type: "select", defaultValue: "moderate", options: [
+        { value: "sedentary", label: "Sedentary" },
+        { value: "light", label: "Light" },
+        { value: "moderate", label: "Moderate" },
+        { value: "active", label: "Active" },
+        { value: "very-active", label: "Very Active" }
+      ]},
+      { name: "goal", label: "Goal", type: "select", defaultValue: "maintain", options: [
+        { value: "lose", label: "Lose Weight" },
+        { value: "maintain", label: "Maintain Weight" },
+        { value: "gain", label: "Gain Muscle" }
+      ]}
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "WaterIntakeCalculator",
+    slug: "water-intake-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate daily water intake needs based on weight, activity, and climate.",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "activity", label: "Activity Level", type: "select", defaultValue: "moderate", options: [
+        { value: "sedentary", label: "Sedentary" },
+        { value: "light", label: "Light" },
+        { value: "moderate", label: "Moderate" },
+        { value: "active", label: "Active" }
+      ]},
+      { name: "climate", label: "Climate", type: "select", defaultValue: "temperate", options: [
+        { value: "temperate", label: "Temperate" },
+        { value: "hot", label: "Hot/Humid" },
+        { value: "cold", label: "Cold" }
+      ]}
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "HeartRateCalculator",
+    slug: "heart-rate-calculator",
+    category: "health",
+    subcategory: "medical",
+    description: "Calculate target heart rate zones, maximum heart rate, and resting heart rate.",
+    type: "health",
+    inputs: [
+      { name: "age", label: "Age", type: "number", defaultValue: "30" },
+      { name: "restingHR", label: "Resting Heart Rate (bpm)", type: "number", defaultValue: "70" },
+      { name: "zone", label: "Target Zone", type: "select", defaultValue: "moderate", options: [
+        { value: "fat-burn", label: "Fat Burn (50-60%)" },
+        { value: "cardio", label: "Cardio (60-70%)" },
+        { value: "peak", label: "Peak (80-90%)" }
+      ]}
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "PregnancyDueDateCalculator",
+    slug: "pregnancy-due-date-calculator",
+    category: "health",
+    subcategory: "pregnancy",
+    description: "Calculate pregnancy due date based on last menstrual period or conception date.",
+    type: "health",
+    inputs: [
+      { name: "lmpDate", label: "Last Menstrual Period Date", type: "date", defaultValue: "" },
+      { name: "cycleLength", label: "Average Cycle Length (days)", type: "number", defaultValue: "28" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  
+  // ========== MATH CALCULATORS ==========
+  {
+    name: "PercentageIncreaseCalculator",
+    slug: "percentage-increase-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate percentage increase or decrease between two values.",
+    type: "math",
+    inputs: [
+      { name: "original", label: "Original Value", type: "number", defaultValue: "100" },
+      { name: "new", label: "New Value", type: "number", defaultValue: "120" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "ProportionCalculator",
+    slug: "proportion-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Solve proportions and find missing values in proportional relationships.",
+    type: "math",
+    inputs: [
+      { name: "a", label: "Value A", type: "number", defaultValue: "3" },
+      { name: "b", label: "Value B", type: "number", defaultValue: "4" },
+      { name: "c", label: "Value C", type: "number", defaultValue: "6" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "CubeRootCalculator",
+    slug: "cube-root-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate the cube root of any number.",
+    type: "math",
+    inputs: [
+      { name: "number", label: "Number", type: "number", defaultValue: "27" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "ExponentCalculator",
+    slug: "exponent-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate numbers raised to a power (exponentiation).",
+    type: "math",
+    inputs: [
+      { name: "base", label: "Base", type: "number", defaultValue: "2" },
+      { name: "exponent", label: "Exponent", type: "number", defaultValue: "8" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "LogarithmCalculator",
+    slug: "logarithm-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate logarithms (natural log, base 10, or custom base).",
+    type: "math",
+    inputs: [
+      { name: "number", label: "Number", type: "number", defaultValue: "100" },
+      { name: "base", label: "Base", type: "select", defaultValue: "10", options: [
+        { value: "10", label: "Base 10 (log)" },
+        { value: "e", label: "Natural Log (ln)" },
+        { value: "2", label: "Base 2" }
+      ]}
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "FactorialCalculator",
+    slug: "factorial-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate factorial of a number (n!).",
+    type: "math",
+    inputs: [
+      { name: "number", label: "Number", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "GCDCalculator",
+    slug: "gcd-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate Greatest Common Divisor (GCD) of two or more numbers.",
+    type: "math",
+    inputs: [
+      { name: "a", label: "First Number", type: "number", defaultValue: "48" },
+      { name: "b", label: "Second Number", type: "number", defaultValue: "18" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "LCMCalculator",
+    slug: "lcm-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Calculate Least Common Multiple (LCM) of two or more numbers.",
+    type: "math",
+    inputs: [
+      { name: "a", label: "First Number", type: "number", defaultValue: "12" },
+      { name: "b", label: "Second Number", type: "number", defaultValue: "18" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "LinearEquationSolver",
+    slug: "linear-equation-solver",
+    category: "math",
+    subcategory: "algebra",
+    description: "Solve linear equations in one variable (ax + b = 0).",
+    type: "math",
+    inputs: [
+      { name: "a", label: "Coefficient a", type: "number", defaultValue: "2" },
+      { name: "b", label: "Coefficient b", type: "number", defaultValue: "-6" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "DistanceCalculator",
+    slug: "distance-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Calculate distance between two points in 2D or 3D space.",
+    type: "math",
+    inputs: [
+      { name: "x1", label: "Point 1 X", type: "number", defaultValue: "0" },
+      { name: "y1", label: "Point 1 Y", type: "number", defaultValue: "0" },
+      { name: "x2", label: "Point 2 X", type: "number", defaultValue: "3" },
+      { name: "y2", label: "Point 2 Y", type: "number", defaultValue: "4" }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "PythagoreanTheoremCalculator",
+    slug: "pythagorean-theorem-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate missing side of a right triangle using Pythagorean theorem.",
+    type: "math",
+    inputs: [
+      { name: "a", label: "Side A", type: "number", defaultValue: "3" },
+      { name: "b", label: "Side B", type: "number", defaultValue: "4" },
+      { name: "c", label: "Hypotenuse C (leave empty to calculate)", type: "number", defaultValue: "", optional: true }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "CircleCalculator",
+    slug: "circle-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate circle area, circumference, radius, and diameter.",
+    type: "math",
+    inputs: [
+      { name: "radius", label: "Radius", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "TriangleCalculator",
+    slug: "triangle-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate triangle area, perimeter, and angles given sides.",
+    type: "math",
+    inputs: [
+      { name: "a", label: "Side A", type: "number", defaultValue: "3" },
+      { name: "b", label: "Side B", type: "number", defaultValue: "4" },
+      { name: "c", label: "Side C", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-geometry"
+  },
+  
+  // ========== STATISTICS CALCULATORS ==========
+  {
+    name: "ModeCalculator",
+    slug: "mode-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Calculate the mode (most frequently occurring value) of a dataset.",
+    type: "statistics",
+    inputs: [
+      { name: "numbers", label: "Numbers (comma-separated)", type: "text", defaultValue: "1, 2, 2, 3, 4, 4, 4, 5" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "VarianceCalculator",
+    slug: "variance-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Calculate variance and standard deviation of a dataset.",
+    type: "statistics",
+    inputs: [
+      { name: "numbers", label: "Numbers (comma-separated)", type: "text", defaultValue: "10, 20, 30, 40, 50" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "RangeCalculator",
+    slug: "range-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Calculate the range (difference between max and min) of a dataset.",
+    type: "statistics",
+    inputs: [
+      { name: "numbers", label: "Numbers (comma-separated)", type: "text", defaultValue: "10, 20, 30, 40, 50" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "PercentileCalculator",
+    slug: "percentile-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Calculate percentiles and quartiles of a dataset.",
+    type: "statistics",
+    inputs: [
+      { name: "numbers", label: "Numbers (comma-separated)", type: "text", defaultValue: "10, 20, 30, 40, 50, 60, 70, 80, 90, 100" },
+      { name: "percentile", label: "Percentile (0-100)", type: "number", defaultValue: "75" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "ZScoreCalculator",
+    slug: "z-score-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Calculate z-score (standard score) for a data point.",
+    type: "statistics",
+    inputs: [
+      { name: "value", label: "Data Value", type: "number", defaultValue: "85" },
+      { name: "mean", label: "Mean", type: "number", defaultValue: "75" },
+      { name: "stdDev", label: "Standard Deviation", type: "number", defaultValue: "10" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "ProbabilityCalculator",
+    slug: "probability-calculator",
+    category: "statistics",
+    subcategory: "probability",
+    description: "Calculate probability of events and combinations.",
+    type: "statistics",
+    inputs: [
+      { name: "favorable", label: "Favorable Outcomes", type: "number", defaultValue: "3" },
+      { name: "total", label: "Total Outcomes", type: "number", defaultValue: "10" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "CombinationCalculator",
+    slug: "combination-calculator",
+    category: "statistics",
+    subcategory: "probability",
+    description: "Calculate combinations (nCr) - ways to choose r items from n items.",
+    type: "statistics",
+    inputs: [
+      { name: "n", label: "Total Items (n)", type: "number", defaultValue: "10" },
+      { name: "r", label: "Items to Choose (r)", type: "number", defaultValue: "3" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "PermutationCalculator",
+    slug: "permutation-calculator",
+    category: "statistics",
+    subcategory: "probability",
+    description: "Calculate permutations (nPr) - ordered arrangements.",
+    type: "statistics",
+    inputs: [
+      { name: "n", label: "Total Items (n)", type: "number", defaultValue: "10" },
+      { name: "r", label: "Items to Arrange (r)", type: "number", defaultValue: "3" }
+    ],
+    authorId: "prof-data"
+  },
+  
+  // ========== EVERYDAY LIFE CALCULATORS ==========
+  {
+    name: "TimeZoneConverter",
+    slug: "time-zone-converter",
+    category: "everyday-life",
+    subcategory: "date-time",
+    description: "Convert time between different time zones worldwide.",
+    type: "date",
+    inputs: [
+      { name: "time", label: "Time", type: "time", defaultValue: "12:00" },
+      { name: "fromZone", label: "From Time Zone", type: "select", defaultValue: "UTC", options: [
+        { value: "UTC", label: "UTC" },
+        { value: "EST", label: "Eastern (EST)" },
+        { value: "PST", label: "Pacific (PST)" },
+        { value: "GMT", label: "GMT" }
+      ]},
+      { name: "toZone", label: "To Time Zone", type: "select", defaultValue: "PST", options: [
+        { value: "UTC", label: "UTC" },
+        { value: "EST", label: "Eastern (EST)" },
+        { value: "PST", label: "Pacific (PST)" },
+        { value: "GMT", label: "GMT" }
+      ]}
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "PaintCalculator",
+    slug: "paint-calculator",
+    category: "everyday-life",
+    subcategory: "home-garden",
+    description: "Calculate how much paint you need for a room based on dimensions.",
+    type: "home",
+    inputs: [
+      { name: "length", label: "Room Length (m)", type: "number", defaultValue: "5" },
+      { name: "width", label: "Room Width (m)", type: "number", defaultValue: "4" },
+      { name: "height", label: "Room Height (m)", type: "number", defaultValue: "2.5" },
+      { name: "coats", label: "Number of Coats", type: "number", defaultValue: "2" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "TileCalculator",
+    slug: "tile-calculator",
+    category: "everyday-life",
+    subcategory: "home-garden",
+    description: "Calculate number of tiles needed for a floor or wall area.",
+    type: "home",
+    inputs: [
+      { name: "area", label: "Area (m²)", type: "number", defaultValue: "20" },
+      { name: "tileSize", label: "Tile Size (cm)", type: "number", defaultValue: "30" },
+      { name: "wastePercent", label: "Waste Percentage (%)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "lisa-daily"
+  },
+  
+  // ========== PHYSICS CALCULATORS ==========
+  {
+    name: "ForceCalculator",
+    slug: "force-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate force using F = ma (Newton's second law).",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "10" },
+      { name: "acceleration", label: "Acceleration (m/s²)", type: "number", defaultValue: "9.8" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "AccelerationCalculator",
+    slug: "acceleration-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate acceleration from velocity and time.",
+    type: "physics",
+    inputs: [
+      { name: "initialVelocity", label: "Initial Velocity (m/s)", type: "number", defaultValue: "0" },
+      { name: "finalVelocity", label: "Final Velocity (m/s)", type: "number", defaultValue: "20" },
+      { name: "time", label: "Time (s)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "KineticEnergyCalculator",
+    slug: "kinetic-energy-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate kinetic energy using KE = ½mv².",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "10" },
+      { name: "velocity", label: "Velocity (m/s)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "PotentialEnergyCalculator",
+    slug: "potential-energy-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate gravitational potential energy using PE = mgh.",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "10" },
+      { name: "height", label: "Height (m)", type: "number", defaultValue: "5" },
+      { name: "gravity", label: "Gravity (m/s²)", type: "number", defaultValue: "9.8" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "OhmsLawCalculator",
+    slug: "ohms-law-calculator",
+    category: "physics",
+    subcategory: "electricity",
+    description: "Calculate voltage, current, or resistance using Ohm's Law (V = IR).",
+    type: "physics",
+    inputs: [
+      { name: "voltage", label: "Voltage (V) - leave empty to calculate", type: "number", defaultValue: "", optional: true },
+      { name: "current", label: "Current (A) - leave empty to calculate", type: "number", defaultValue: "2", optional: true },
+      { name: "resistance", label: "Resistance (Ω) - leave empty to calculate", type: "number", defaultValue: "10", optional: true }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  
+  // ========== CONVERSION CALCULATORS (Additional) ==========
+  {
+    name: "HeightConverter",
+    slug: "height-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert height between feet/inches and centimeters/meters.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Height", type: "number", defaultValue: "175" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "cm", options: [
+        { value: "cm", label: "Centimeters (cm)" },
+        { value: "m", label: "Meters (m)" },
+        { value: "ft", label: "Feet (ft)" },
+        { value: "in", label: "Inches (in)" }
+      ]},
+      { name: "toUnit", label: "To", type: "select", defaultValue: "ft", options: [
+        { value: "cm", label: "Centimeters (cm)" },
+        { value: "m", label: "Meters (m)" },
+        { value: "ft", label: "Feet (ft)" },
+        { value: "in", label: "Inches (in)" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "CurrencyConverter",
+    slug: "currency-converter",
+    category: "finance",
+    subcategory: "currency",
+    description: "Convert between different currencies with real-time exchange rates.",
+    type: "converter",
+    inputs: [
+      { name: "amount", label: "Amount", type: "number", defaultValue: "100" },
+      { name: "fromCurrency", label: "From Currency", type: "select", defaultValue: "USD", options: [
+        { value: "USD", label: "US Dollar (USD)" },
+        { value: "EUR", label: "Euro (EUR)" },
+        { value: "GBP", label: "British Pound (GBP)" },
+        { value: "JPY", label: "Japanese Yen (JPY)" }
+      ]},
+      { name: "toCurrency", label: "To Currency", type: "select", defaultValue: "EUR", options: [
+        { value: "USD", label: "US Dollar (USD)" },
+        { value: "EUR", label: "Euro (EUR)" },
+        { value: "GBP", label: "British Pound (GBP)" },
+        { value: "JPY", label: "Japanese Yen (JPY)" }
+      ]}
+    ],
+    authorId: "mike-finance"
+  },
+  
+  // ========== ADDITIONAL CONVERSION CALCULATORS ==========
+  {
+    name: "DistanceConverter",
+    slug: "distance-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert distances including nautical miles, leagues, and other specialized units.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Distance", type: "number", defaultValue: "100" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "km", options: [
+        { value: "km", label: "Kilometers" },
+        { value: "mi", label: "Miles" },
+        { value: "nmi", label: "Nautical Miles" },
+        { value: "m", label: "Meters" }
+      ]},
+      { name: "toUnit", label: "To", type: "select", defaultValue: "mi", options: [
+        { value: "km", label: "Kilometers" },
+        { value: "mi", label: "Miles" },
+        { value: "nmi", label: "Nautical Miles" },
+        { value: "m", label: "Meters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "MileToKilometerConverter",
+    slug: "mile-to-kilometer-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert miles to kilometers and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Distance", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "mi", options: [
+        { value: "mi", label: "Miles" },
+        { value: "km", label: "Kilometers" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "InchToCentimeterConverter",
+    slug: "inch-to-centimeter-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert inches to centimeters and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Length", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "in", options: [
+        { value: "in", label: "Inches" },
+        { value: "cm", label: "Centimeters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "FootToMeterConverter",
+    slug: "foot-to-meter-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert feet to meters and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Length", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "ft", options: [
+        { value: "ft", label: "Feet" },
+        { value: "m", label: "Meters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "YardToMeterConverter",
+    slug: "yard-to-meter-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert yards to meters and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Length", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "yd", options: [
+        { value: "yd", label: "Yards" },
+        { value: "m", label: "Meters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "NauticalMileConverter",
+    slug: "nautical-mile-converter",
+    category: "conversion",
+    subcategory: "length",
+    description: "Convert nautical miles to other distance units.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Distance", type: "number", defaultValue: "10" },
+      { name: "toUnit", label: "To", type: "select", defaultValue: "km", options: [
+        { value: "km", label: "Kilometers" },
+        { value: "mi", label: "Miles" },
+        { value: "m", label: "Meters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "PoundToKilogramConverter",
+    slug: "pound-to-kilogram-converter",
+    category: "conversion",
+    subcategory: "weight",
+    description: "Convert pounds to kilograms and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Weight", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "lb", options: [
+        { value: "lb", label: "Pounds" },
+        { value: "kg", label: "Kilograms" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "OunceToGramConverter",
+    slug: "ounce-to-gram-converter",
+    category: "conversion",
+    subcategory: "weight",
+    description: "Convert ounces to grams and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Weight", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "oz", options: [
+        { value: "oz", label: "Ounces" },
+        { value: "g", label: "Grams" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "StoneToKilogramConverter",
+    slug: "stone-to-kilogram-converter",
+    category: "conversion",
+    subcategory: "weight",
+    description: "Convert stones to kilograms and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Weight", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "st", options: [
+        { value: "st", label: "Stones" },
+        { value: "kg", label: "Kilograms" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "TonneToKilogramConverter",
+    slug: "tonne-to-kilogram-converter",
+    category: "conversion",
+    subcategory: "weight",
+    description: "Convert tonnes to kilograms and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Weight", type: "number", defaultValue: "1" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "t", options: [
+        { value: "t", label: "Tonnes" },
+        { value: "kg", label: "Kilograms" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "LiterToGallonConverter",
+    slug: "liter-to-gallon-converter",
+    category: "conversion",
+    subcategory: "volume",
+    description: "Convert liters to gallons and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Volume", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "L", options: [
+        { value: "L", label: "Liters" },
+        { value: "gal", label: "Gallons (US)" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "CubicMeterConverter",
+    slug: "cubic-meter-converter",
+    category: "conversion",
+    subcategory: "volume",
+    description: "Convert cubic meters to other volume units.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Volume", type: "number", defaultValue: "1" },
+      { name: "toUnit", label: "To", type: "select", defaultValue: "L", options: [
+        { value: "L", label: "Liters" },
+        { value: "gal", label: "Gallons" },
+        { value: "ft3", label: "Cubic Feet" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "CupToMilliliterConverter",
+    slug: "cup-to-milliliter-converter",
+    category: "conversion",
+    subcategory: "volume",
+    description: "Convert cups to milliliters and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Volume", type: "number", defaultValue: "1" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "cup", options: [
+        { value: "cup", label: "Cups" },
+        { value: "mL", label: "Milliliters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "FluidOunceConverter",
+    slug: "fluid-ounce-converter",
+    category: "conversion",
+    subcategory: "volume",
+    description: "Convert fluid ounces to milliliters and other volume units.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Volume", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "floz", options: [
+        { value: "floz", label: "Fluid Ounces (US)" },
+        { value: "mL", label: "Milliliters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "CelsiusToFahrenheitConverter",
+    slug: "celsius-to-fahrenheit-converter",
+    category: "conversion",
+    subcategory: "temperature",
+    description: "Convert Celsius to Fahrenheit and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Temperature", type: "number", defaultValue: "25" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "C", options: [
+        { value: "C", label: "Celsius" },
+        { value: "F", label: "Fahrenheit" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "SquareFootToSquareMeterConverter",
+    slug: "square-foot-to-square-meter-converter",
+    category: "conversion",
+    subcategory: "area",
+    description: "Convert square feet to square meters and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Area", type: "number", defaultValue: "100" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "ft2", options: [
+        { value: "ft2", label: "Square Feet" },
+        { value: "m2", label: "Square Meters" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "AcreToHectareConverter",
+    slug: "acre-to-hectare-converter",
+    category: "conversion",
+    subcategory: "area",
+    description: "Convert acres to hectares and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Area", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "acre", options: [
+        { value: "acre", label: "Acres" },
+        { value: "ha", label: "Hectares" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  {
+    name: "SquareKilometerToSquareMileConverter",
+    slug: "square-kilometer-to-square-mile-converter",
+    category: "conversion",
+    subcategory: "area",
+    description: "Convert square kilometers to square miles and vice versa.",
+    type: "converter",
+    inputs: [
+      { name: "value", label: "Area", type: "number", defaultValue: "10" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "km2", options: [
+        { value: "km2", label: "Square Kilometers" },
+        { value: "mi2", label: "Square Miles" }
+      ]}
+    ],
+    authorId: "unit-master"
+  },
+  
+  // ========== ADDITIONAL FINANCE CALCULATORS ==========
+  {
+    name: "LoanComparisonCalculator",
+    slug: "loan-comparison-calculator",
+    category: "finance",
+    subcategory: "loans",
+    description: "Compare multiple loan options side by side.",
+    type: "loan",
+    inputs: [
+      { name: "loan1Amount", label: "Loan 1 Amount", type: "number", defaultValue: "200000" },
+      { name: "loan1Rate", label: "Loan 1 Rate (%)", type: "number", defaultValue: "4.5" },
+      { name: "loan1Term", label: "Loan 1 Term (years)", type: "number", defaultValue: "30" },
+      { name: "loan2Amount", label: "Loan 2 Amount", type: "number", defaultValue: "200000" },
+      { name: "loan2Rate", label: "Loan 2 Rate (%)", type: "number", defaultValue: "3.8" },
+      { name: "loan2Term", label: "Loan 2 Term (years)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "AmortizationScheduleGenerator",
+    slug: "amortization-schedule-generator",
+    category: "finance",
+    subcategory: "loans",
+    description: "Generate a complete amortization schedule for a loan.",
+    type: "loan",
+    inputs: [
+      { name: "principal", label: "Loan Amount", type: "number", defaultValue: "200000" },
+      { name: "rate", label: "Interest Rate (%)", type: "number", defaultValue: "4.5" },
+      { name: "term", label: "Loan Term (years)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "StockReturnCalculator",
+    slug: "stock-return-calculator",
+    category: "finance",
+    subcategory: "investments",
+    description: "Calculate stock returns including dividends and capital gains.",
+    type: "investment",
+    inputs: [
+      { name: "purchasePrice", label: "Purchase Price", type: "number", defaultValue: "100" },
+      { name: "currentPrice", label: "Current Price", type: "number", defaultValue: "120" },
+      { name: "shares", label: "Number of Shares", type: "number", defaultValue: "100" },
+      { name: "dividends", label: "Total Dividends Received", type: "number", defaultValue: "500" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "DividendCalculator",
+    slug: "dividend-calculator",
+    category: "finance",
+    subcategory: "investments",
+    description: "Calculate dividend yield and annual dividend income.",
+    type: "investment",
+    inputs: [
+      { name: "sharePrice", label: "Share Price", type: "number", defaultValue: "100" },
+      { name: "dividendPerShare", label: "Annual Dividend per Share", type: "number", defaultValue: "3" },
+      { name: "shares", label: "Number of Shares", type: "number", defaultValue: "100" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "CapitalGainsTaxCalculator",
+    slug: "capital-gains-tax-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Calculate capital gains tax on investments.",
+    type: "tax",
+    inputs: [
+      { name: "purchasePrice", label: "Purchase Price", type: "number", defaultValue: "10000" },
+      { name: "salePrice", label: "Sale Price", type: "number", defaultValue: "15000" },
+      { name: "holdingPeriod", label: "Holding Period (years)", type: "number", defaultValue: "2" },
+      { name: "taxRate", label: "Capital Gains Tax Rate (%)", type: "number", defaultValue: "15" }
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "PropertyTaxCalculator",
+    slug: "property-tax-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Calculate annual property tax based on assessed value and tax rate.",
+    type: "tax",
+    inputs: [
+      { name: "assessedValue", label: "Assessed Property Value", type: "number", defaultValue: "300000" },
+      { name: "taxRate", label: "Property Tax Rate (%)", type: "number", defaultValue: "1.2" }
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "VATCalculator",
+    slug: "vat-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Calculate Value Added Tax (VAT) on purchases.",
+    type: "tax",
+    inputs: [
+      { name: "amount", label: "Amount (excluding VAT)", type: "number", defaultValue: "100" },
+      { name: "vatRate", label: "VAT Rate (%)", type: "number", defaultValue: "20" }
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "TaxRefundCalculator",
+    slug: "tax-refund-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Estimate your tax refund based on withholdings and deductions.",
+    type: "tax",
+    inputs: [
+      { name: "income", label: "Annual Income", type: "number", defaultValue: "75000" },
+      { name: "withholdings", label: "Total Withholdings", type: "number", defaultValue: "12000" },
+      { name: "deductions", label: "Total Deductions", type: "number", defaultValue: "15000" },
+      { name: "filingStatus", label: "Filing Status", type: "select", defaultValue: "single", options: [
+        { value: "single", label: "Single" },
+        { value: "married-joint", label: "Married Filing Jointly" }
+      ]}
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "TaxBracketCalculator",
+    slug: "tax-bracket-calculator",
+    category: "finance",
+    subcategory: "taxes",
+    description: "Determine your tax bracket based on income and filing status.",
+    type: "tax",
+    inputs: [
+      { name: "income", label: "Annual Income", type: "number", defaultValue: "75000" },
+      { name: "filingStatus", label: "Filing Status", type: "select", defaultValue: "single", options: [
+        { value: "single", label: "Single" },
+        { value: "married-joint", label: "Married Filing Jointly" },
+        { value: "married-separate", label: "Married Filing Separately" },
+        { value: "head", label: "Head of Household" }
+      ]}
+    ],
+    authorId: "tax-expert-carol"
+  },
+  {
+    name: "ExpenseTrackerCalculator",
+    slug: "expense-tracker-calculator",
+    category: "finance",
+    subcategory: "budgeting",
+    description: "Track and categorize monthly expenses.",
+    type: "budget",
+    inputs: [
+      { name: "housing", label: "Housing", type: "number", defaultValue: "1500" },
+      { name: "food", label: "Food", type: "number", defaultValue: "500" },
+      { name: "transportation", label: "Transportation", type: "number", defaultValue: "400" },
+      { name: "utilities", label: "Utilities", type: "number", defaultValue: "200" },
+      { name: "entertainment", label: "Entertainment", type: "number", defaultValue: "300" },
+      { name: "other", label: "Other", type: "number", defaultValue: "200" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "CostOfLivingCalculator",
+    slug: "cost-of-living-calculator",
+    category: "finance",
+    subcategory: "budgeting",
+    description: "Compare cost of living between different cities.",
+    type: "budget",
+    inputs: [
+      { name: "currentCity", label: "Current City", type: "text", defaultValue: "New York" },
+      { name: "targetCity", label: "Target City", type: "text", defaultValue: "Los Angeles" },
+      { name: "currentSalary", label: "Current Salary", type: "number", defaultValue: "75000" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "RetirementCalculator",
+    slug: "retirement-calculator",
+    category: "finance",
+    subcategory: "retirement",
+    description: "Calculate how much you need to save for retirement.",
+    type: "retirement",
+    inputs: [
+      { name: "currentAge", label: "Current Age", type: "number", defaultValue: "35" },
+      { name: "retirementAge", label: "Retirement Age", type: "number", defaultValue: "65" },
+      { name: "currentSavings", label: "Current Retirement Savings", type: "number", defaultValue: "50000" },
+      { name: "monthlyContribution", label: "Monthly Contribution", type: "number", defaultValue: "500" },
+      { name: "expectedReturn", label: "Expected Annual Return (%)", type: "number", defaultValue: "7" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "SocialSecurityCalculator",
+    slug: "social-security-calculator",
+    category: "finance",
+    subcategory: "retirement",
+    description: "Estimate your Social Security benefits.",
+    type: "retirement",
+    inputs: [
+      { name: "currentAge", label: "Current Age", type: "number", defaultValue: "35" },
+      { name: "retirementAge", label: "Retirement Age", type: "number", defaultValue: "67" },
+      { name: "averageAnnualIncome", label: "Average Annual Income", type: "number", defaultValue: "75000" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "PensionCalculator",
+    slug: "pension-calculator",
+    category: "finance",
+    subcategory: "retirement",
+    description: "Calculate pension benefits based on years of service and salary.",
+    type: "retirement",
+    inputs: [
+      { name: "yearsOfService", label: "Years of Service", type: "number", defaultValue: "30" },
+      { name: "finalSalary", label: "Final Average Salary", type: "number", defaultValue: "80000" },
+      { name: "pensionMultiplier", label: "Pension Multiplier (%)", type: "number", defaultValue: "2" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "RetirementSavingsGoalCalculator",
+    slug: "retirement-savings-goal-calculator",
+    category: "finance",
+    subcategory: "retirement",
+    description: "Calculate how much you need to save monthly to reach your retirement goal.",
+    type: "retirement",
+    inputs: [
+      { name: "retirementGoal", label: "Retirement Savings Goal", type: "number", defaultValue: "1000000" },
+      { name: "currentSavings", label: "Current Savings", type: "number", defaultValue: "50000" },
+      { name: "yearsToRetirement", label: "Years Until Retirement", type: "number", defaultValue: "30" },
+      { name: "expectedReturn", label: "Expected Annual Return (%)", type: "number", defaultValue: "7" }
+    ],
+    authorId: "investment-pro"
+  },
+  {
+    name: "LifeInsuranceCalculator",
+    slug: "life-insurance-calculator",
+    category: "finance",
+    subcategory: "insurance",
+    description: "Calculate how much life insurance coverage you need.",
+    type: "insurance",
+    inputs: [
+      { name: "annualIncome", label: "Annual Income", type: "number", defaultValue: "75000" },
+      { name: "debts", label: "Total Debts", type: "number", defaultValue: "200000" },
+      { name: "savings", label: "Current Savings", type: "number", defaultValue: "50000" },
+      { name: "yearsOfCoverage", label: "Years of Coverage Needed", type: "number", defaultValue: "20" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "HealthInsuranceCalculator",
+    slug: "health-insurance-calculator",
+    category: "finance",
+    subcategory: "insurance",
+    description: "Compare health insurance plan costs and coverage.",
+    type: "insurance",
+    inputs: [
+      { name: "monthlyPremium", label: "Monthly Premium", type: "number", defaultValue: "500" },
+      { name: "deductible", label: "Annual Deductible", type: "number", defaultValue: "3000" },
+      { name: "outOfPocketMax", label: "Out-of-Pocket Maximum", type: "number", defaultValue: "6000" },
+      { name: "expectedMedicalCosts", label: "Expected Annual Medical Costs", type: "number", defaultValue: "2000" }
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "CarInsuranceCalculator",
+    slug: "car-insurance-calculator",
+    category: "finance",
+    subcategory: "insurance",
+    description: "Estimate car insurance costs based on vehicle and driver information.",
+    type: "insurance",
+    inputs: [
+      { name: "vehicleValue", label: "Vehicle Value", type: "number", defaultValue: "25000" },
+      { name: "driverAge", label: "Driver Age", type: "number", defaultValue: "30" },
+      { name: "drivingRecord", label: "Driving Record", type: "select", defaultValue: "clean", options: [
+        { value: "clean", label: "Clean" },
+        { value: "accidents", label: "Accidents" },
+        { value: "violations", label: "Traffic Violations" }
+      ]},
+      { name: "coverageLevel", label: "Coverage Level", type: "select", defaultValue: "full", options: [
+        { value: "liability", label: "Liability Only" },
+        { value: "full", label: "Full Coverage" }
+      ]}
+    ],
+    authorId: "mike-finance"
+  },
+  {
+    name: "ExchangeRateCalculator",
+    slug: "exchange-rate-calculator",
+    category: "finance",
+    subcategory: "currency",
+    description: "Calculate exchange rates and conversion fees.",
+    type: "converter",
+    inputs: [
+      { name: "amount", label: "Amount", type: "number", defaultValue: "1000" },
+      { name: "fromCurrency", label: "From Currency", type: "select", defaultValue: "USD", options: [
+        { value: "USD", label: "US Dollar" },
+        { value: "EUR", label: "Euro" },
+        { value: "GBP", label: "British Pound" }
+      ]},
+      { name: "toCurrency", label: "To Currency", type: "select", defaultValue: "EUR", options: [
+        { value: "USD", label: "US Dollar" },
+        { value: "EUR", label: "Euro" },
+        { value: "GBP", label: "British Pound" }
+      ]},
+      { name: "exchangeRate", label: "Exchange Rate", type: "number", defaultValue: "0.85" }
+    ],
+    authorId: "mike-finance"
+  },
+  
+  // ========== ADDITIONAL HEALTH CALCULATORS ==========
+  {
+    name: "BodyTypeCalculator",
+    slug: "body-type-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Determine your body type (Ectomorph, Mesomorph, Endomorph).",
+    type: "health",
+    inputs: [
+      { name: "wrist", label: "Wrist Circumference (cm)", type: "number", defaultValue: "17" },
+      { name: "height", label: "Height (cm)", type: "number", defaultValue: "175" },
+      { name: "gender", label: "Gender", type: "select", defaultValue: "male", options: [
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" }
+      ]}
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "VO2MaxCalculator",
+    slug: "vo2-max-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Estimate your VO2 max (maximum oxygen consumption).",
+    type: "health",
+    inputs: [
+      { name: "age", label: "Age", type: "number", defaultValue: "30" },
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "restingHR", label: "Resting Heart Rate (bpm)", type: "number", defaultValue: "70" },
+      { name: "maxHR", label: "Maximum Heart Rate (bpm)", type: "number", defaultValue: "190" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "TrainingZoneCalculator",
+    slug: "training-zone-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate your heart rate training zones for optimal workouts.",
+    type: "health",
+    inputs: [
+      { name: "age", label: "Age", type: "number", defaultValue: "30" },
+      { name: "restingHR", label: "Resting Heart Rate (bpm)", type: "number", defaultValue: "70" },
+      { name: "zone", label: "Training Zone", type: "select", defaultValue: "fat-burn", options: [
+        { value: "fat-burn", label: "Fat Burn (50-60%)" },
+        { value: "cardio", label: "Cardio (60-70%)" },
+        { value: "peak", label: "Peak (80-90%)" }
+      ]}
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "OneRepMaxCalculator",
+    slug: "one-rep-max-calculator",
+    category: "health",
+    subcategory: "fitness",
+    description: "Calculate your one-rep maximum (1RM) for strength training.",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight Lifted (kg)", type: "number", defaultValue: "80" },
+      { name: "reps", label: "Number of Reps", type: "number", defaultValue: "5" }
+    ],
+    authorId: "dr-fitness"
+  },
+  {
+    name: "CarbCalculator",
+    slug: "carb-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate daily carbohydrate needs based on goals and activity level.",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "activity", label: "Activity Level", type: "select", defaultValue: "moderate", options: [
+        { value: "sedentary", label: "Sedentary" },
+        { value: "light", label: "Light" },
+        { value: "moderate", label: "Moderate" },
+        { value: "active", label: "Active" }
+      ]},
+      { name: "goal", label: "Goal", type: "select", defaultValue: "maintain", options: [
+        { value: "lose", label: "Lose Weight" },
+        { value: "maintain", label: "Maintain Weight" },
+        { value: "gain", label: "Gain Weight" }
+      ]}
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "FatCalculator",
+    slug: "fat-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate daily fat intake needs.",
+    type: "health",
+    inputs: [
+      { name: "dailyCalories", label: "Daily Calorie Intake", type: "number", defaultValue: "2000" },
+      { name: "fatPercent", label: "Fat Percentage of Diet (%)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "FiberCalculator",
+    slug: "fiber-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate daily fiber needs based on age and gender.",
+    type: "health",
+    inputs: [
+      { name: "age", label: "Age", type: "number", defaultValue: "30" },
+      { name: "gender", label: "Gender", type: "select", defaultValue: "male", options: [
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" }
+      ]},
+      { name: "calories", label: "Daily Calorie Intake", type: "number", defaultValue: "2000" }
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "MealPrepCalculator",
+    slug: "meal-prep-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate ingredients needed for meal prep based on servings.",
+    type: "health",
+    inputs: [
+      { name: "servings", label: "Number of Servings", type: "number", defaultValue: "4" },
+      { name: "proteinPerServing", label: "Protein per Serving (g)", type: "number", defaultValue: "30" },
+      { name: "carbsPerServing", label: "Carbs per Serving (g)", type: "number", defaultValue: "40" },
+      { name: "fatPerServing", label: "Fat per Serving (g)", type: "number", defaultValue: "15" }
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "PortionSizeCalculator",
+    slug: "portion-size-calculator",
+    category: "health",
+    subcategory: "nutrition",
+    description: "Calculate appropriate portion sizes based on your goals.",
+    type: "health",
+    inputs: [
+      { name: "foodType", label: "Food Type", type: "select", defaultValue: "protein", options: [
+        { value: "protein", label: "Protein" },
+        { value: "carbs", label: "Carbohydrates" },
+        { value: "vegetables", label: "Vegetables" }
+      ]},
+      { name: "dailyCalories", label: "Daily Calorie Goal", type: "number", defaultValue: "2000" },
+      { name: "mealsPerDay", label: "Meals per Day", type: "number", defaultValue: "3" }
+    ],
+    authorId: "nutritionist-ben"
+  },
+  {
+    name: "BloodPressureCalculator",
+    slug: "blood-pressure-calculator",
+    category: "health",
+    subcategory: "medical",
+    description: "Assess blood pressure readings and categories.",
+    type: "health",
+    inputs: [
+      { name: "systolic", label: "Systolic Pressure (mmHg)", type: "number", defaultValue: "120" },
+      { name: "diastolic", label: "Diastolic Pressure (mmHg)", type: "number", defaultValue: "80" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "SleepCalculator",
+    slug: "sleep-calculator",
+    category: "health",
+    subcategory: "medical",
+    description: "Calculate optimal sleep times based on sleep cycles.",
+    type: "health",
+    inputs: [
+      { name: "wakeTime", label: "Wake Time", type: "time", defaultValue: "07:00" },
+      { name: "sleepCycles", label: "Number of Sleep Cycles (90 min each)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "VitaminCalculator",
+    slug: "vitamin-calculator",
+    category: "health",
+    subcategory: "medical",
+    description: "Calculate daily vitamin and mineral needs.",
+    type: "health",
+    inputs: [
+      { name: "age", label: "Age", type: "number", defaultValue: "30" },
+      { name: "gender", label: "Gender", type: "select", defaultValue: "male", options: [
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" }
+      ]},
+      { name: "vitamin", label: "Vitamin", type: "select", defaultValue: "vitamin-d", options: [
+        { value: "vitamin-d", label: "Vitamin D" },
+        { value: "vitamin-c", label: "Vitamin C" },
+        { value: "calcium", label: "Calcium" }
+      ]}
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "DrugDosageCalculator",
+    slug: "drug-dosage-calculator",
+    category: "health",
+    subcategory: "medical",
+    description: "Calculate medication dosage based on weight and concentration. (Medical disclaimer required)",
+    type: "health",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "dosePerKg", label: "Dose per kg (mg/kg)", type: "number", defaultValue: "10" },
+      { name: "concentration", label: "Medication Concentration (mg/mL)", type: "number", defaultValue: "100" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "OvulationCalculator",
+    slug: "ovulation-calculator",
+    category: "health",
+    subcategory: "pregnancy",
+    description: "Calculate ovulation dates and fertile window.",
+    type: "health",
+    inputs: [
+      { name: "lastPeriod", label: "First Day of Last Period", type: "date", defaultValue: "" },
+      { name: "cycleLength", label: "Average Cycle Length (days)", type: "number", defaultValue: "28" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "PregnancyWeekCalculator",
+    slug: "pregnancy-week-calculator",
+    category: "health",
+    subcategory: "pregnancy",
+    description: "Calculate current pregnancy week and trimester.",
+    type: "health",
+    inputs: [
+      { name: "lastPeriod", label: "First Day of Last Period", type: "date", defaultValue: "" },
+      { name: "currentDate", label: "Current Date", type: "date", defaultValue: "" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "BabyGrowthCalculator",
+    slug: "baby-growth-calculator",
+    category: "health",
+    subcategory: "pregnancy",
+    description: "Track baby's growth during pregnancy.",
+    type: "health",
+    inputs: [
+      { name: "weeksPregnant", label: "Weeks Pregnant", type: "number", defaultValue: "20" },
+      { name: "babyWeight", label: "Baby Weight (g)", type: "number", defaultValue: "300" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "PregnancyWeightGainCalculator",
+    slug: "pregnancy-weight-gain-calculator",
+    category: "health",
+    subcategory: "pregnancy",
+    description: "Calculate recommended weight gain during pregnancy.",
+    type: "health",
+    inputs: [
+      { name: "prePregnancyWeight", label: "Pre-Pregnancy Weight (kg)", type: "number", defaultValue: "65" },
+      { name: "currentWeight", label: "Current Weight (kg)", type: "number", defaultValue: "68" },
+      { name: "weeksPregnant", label: "Weeks Pregnant", type: "number", defaultValue: "20" },
+      { name: "bmi", label: "Pre-Pregnancy BMI", type: "number", defaultValue: "22" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  {
+    name: "BreastfeedingCalculator",
+    slug: "breastfeeding-calculator",
+    category: "health",
+    subcategory: "pregnancy",
+    description: "Calculate feeding schedule and milk intake for breastfeeding.",
+    type: "health",
+    inputs: [
+      { name: "babyAge", label: "Baby Age (weeks)", type: "number", defaultValue: "4" },
+      { name: "babyWeight", label: "Baby Weight (kg)", type: "number", defaultValue: "4" },
+      { name: "feedingsPerDay", label: "Feedings per Day", type: "number", defaultValue: "8" }
+    ],
+    authorId: "dr-sarah-smith"
+  },
+  
+  // ========== ADDITIONAL MATH CALCULATORS ==========
+  {
+    name: "PrimeNumberCalculator",
+    slug: "prime-number-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Check if a number is prime and find prime factors.",
+    type: "math",
+    inputs: [
+      { name: "number", label: "Number", type: "number", defaultValue: "17" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "ScientificCalculator",
+    slug: "scientific-calculator",
+    category: "math",
+    subcategory: "basic",
+    description: "Advanced scientific calculator with trigonometric and logarithmic functions.",
+    type: "math",
+    inputs: [
+      { name: "expression", label: "Mathematical Expression", type: "text", defaultValue: "sin(30) + log(100)" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "NumberBaseConverter",
+    slug: "number-base-converter",
+    category: "math",
+    subcategory: "basic",
+    description: "Convert numbers between binary, decimal, hexadecimal, and octal.",
+    type: "math",
+    inputs: [
+      { name: "number", label: "Number", type: "text", defaultValue: "255" },
+      { name: "fromBase", label: "From Base", type: "select", defaultValue: "10", options: [
+        { value: "2", label: "Binary (2)" },
+        { value: "8", label: "Octal (8)" },
+        { value: "10", label: "Decimal (10)" },
+        { value: "16", label: "Hexadecimal (16)" }
+      ]},
+      { name: "toBase", label: "To Base", type: "select", defaultValue: "16", options: [
+        { value: "2", label: "Binary (2)" },
+        { value: "8", label: "Octal (8)" },
+        { value: "10", label: "Decimal (10)" },
+        { value: "16", label: "Hexadecimal (16)" }
+      ]}
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "SystemOfEquationsSolver",
+    slug: "system-of-equations-solver",
+    category: "math",
+    subcategory: "algebra",
+    description: "Solve systems of linear equations.",
+    type: "math",
+    inputs: [
+      { name: "a1", label: "Equation 1: a", type: "number", defaultValue: "2" },
+      { name: "b1", label: "Equation 1: b", type: "number", defaultValue: "3" },
+      { name: "c1", label: "Equation 1: c", type: "number", defaultValue: "7" },
+      { name: "a2", label: "Equation 2: a", type: "number", defaultValue: "1" },
+      { name: "b2", label: "Equation 2: b", type: "number", defaultValue: "-1" },
+      { name: "c2", label: "Equation 2: c", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "PolynomialCalculator",
+    slug: "polynomial-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Solve polynomial equations and find roots.",
+    type: "math",
+    inputs: [
+      { name: "degree", label: "Polynomial Degree", type: "number", defaultValue: "2" },
+      { name: "coefficients", label: "Coefficients (comma-separated)", type: "text", defaultValue: "1, -5, 6" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "MatrixCalculator",
+    slug: "matrix-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Perform matrix operations (addition, multiplication, etc.).",
+    type: "math",
+    inputs: [
+      { name: "matrix1", label: "Matrix 1 (rows separated by ;, values by ,)", type: "text", defaultValue: "1,2;3,4" },
+      { name: "matrix2", label: "Matrix 2", type: "text", defaultValue: "5,6;7,8" },
+      { name: "operation", label: "Operation", type: "select", defaultValue: "add", options: [
+        { value: "add", label: "Addition" },
+        { value: "multiply", label: "Multiplication" }
+      ]}
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "DeterminantCalculator",
+    slug: "determinant-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Calculate the determinant of a matrix.",
+    type: "math",
+    inputs: [
+      { name: "matrix", label: "Matrix (rows separated by ;, values by ,)", type: "text", defaultValue: "1,2,3;4,5,6;7,8,9" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "InverseMatrixCalculator",
+    slug: "inverse-matrix-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Calculate the inverse of a matrix.",
+    type: "math",
+    inputs: [
+      { name: "matrix", label: "Matrix (rows separated by ;, values by ,)", type: "text", defaultValue: "1,2;3,4" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "SlopeCalculator",
+    slug: "slope-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Calculate the slope of a line from two points.",
+    type: "math",
+    inputs: [
+      { name: "x1", label: "Point 1 X", type: "number", defaultValue: "1" },
+      { name: "y1", label: "Point 1 Y", type: "number", defaultValue: "2" },
+      { name: "x2", label: "Point 2 X", type: "number", defaultValue: "3" },
+      { name: "y2", label: "Point 2 Y", type: "number", defaultValue: "4" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "MidpointCalculator",
+    slug: "midpoint-calculator",
+    category: "math",
+    subcategory: "algebra",
+    description: "Calculate the midpoint between two points.",
+    type: "math",
+    inputs: [
+      { name: "x1", label: "Point 1 X", type: "number", defaultValue: "1" },
+      { name: "y1", label: "Point 1 Y", type: "number", defaultValue: "2" },
+      { name: "x2", label: "Point 2 X", type: "number", defaultValue: "5" },
+      { name: "y2", label: "Point 2 Y", type: "number", defaultValue: "6" }
+    ],
+    authorId: "prof-math"
+  },
+  {
+    name: "AreaCalculator",
+    slug: "area-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate area of various shapes (circle, rectangle, triangle, etc.).",
+    type: "math",
+    inputs: [
+      { name: "shape", label: "Shape", type: "select", defaultValue: "circle", options: [
+        { value: "circle", label: "Circle" },
+        { value: "rectangle", label: "Rectangle" },
+        { value: "triangle", label: "Triangle" }
+      ]},
+      { name: "radius", label: "Radius (for circle)", type: "number", defaultValue: "5", optional: true },
+      { name: "length", label: "Length (for rectangle)", type: "number", defaultValue: "10", optional: true },
+      { name: "width", label: "Width (for rectangle)", type: "number", defaultValue: "5", optional: true },
+      { name: "base", label: "Base (for triangle)", type: "number", defaultValue: "10", optional: true },
+      { name: "height", label: "Height (for triangle)", type: "number", defaultValue: "8", optional: true }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "VolumeCalculator",
+    slug: "volume-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate volume of 3D shapes (sphere, cylinder, cone, etc.).",
+    type: "math",
+    inputs: [
+      { name: "shape", label: "Shape", type: "select", defaultValue: "sphere", options: [
+        { value: "sphere", label: "Sphere" },
+        { value: "cylinder", label: "Cylinder" },
+        { value: "cone", label: "Cone" }
+      ]},
+      { name: "radius", label: "Radius", type: "number", defaultValue: "5" },
+      { name: "height", label: "Height (for cylinder/cone)", type: "number", defaultValue: "10", optional: true }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "PerimeterCalculator",
+    slug: "perimeter-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate perimeter of various shapes.",
+    type: "math",
+    inputs: [
+      { name: "shape", label: "Shape", type: "select", defaultValue: "rectangle", options: [
+        { value: "rectangle", label: "Rectangle" },
+        { value: "square", label: "Square" },
+        { value: "triangle", label: "Triangle" }
+      ]},
+      { name: "length", label: "Length", type: "number", defaultValue: "10" },
+      { name: "width", label: "Width", type: "number", defaultValue: "5", optional: true },
+      { name: "side2", label: "Side 2 (for triangle)", type: "number", defaultValue: "6", optional: true },
+      { name: "side3", label: "Side 3 (for triangle)", type: "number", defaultValue: "7", optional: true }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "CircumferenceCalculator",
+    slug: "circumference-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate the circumference of a circle.",
+    type: "math",
+    inputs: [
+      { name: "radius", label: "Radius", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "RectangleCalculator",
+    slug: "rectangle-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate area, perimeter, and diagonal of a rectangle.",
+    type: "math",
+    inputs: [
+      { name: "length", label: "Length", type: "number", defaultValue: "10" },
+      { name: "width", label: "Width", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-geometry"
+  },
+  {
+    name: "CylinderCalculator",
+    slug: "cylinder-calculator",
+    category: "math",
+    subcategory: "geometry",
+    description: "Calculate volume, surface area, and lateral area of a cylinder.",
+    type: "math",
+    inputs: [
+      { name: "radius", label: "Radius", type: "number", defaultValue: "5" },
+      { name: "height", label: "Height", type: "number", defaultValue: "10" }
+    ],
+    authorId: "prof-geometry"
+  },
+  
+  // ========== ADDITIONAL STATISTICS CALCULATORS ==========
+  {
+    name: "QuartileCalculator",
+    slug: "quartile-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Calculate quartiles (Q1, Q2, Q3) of a dataset.",
+    type: "statistics",
+    inputs: [
+      { name: "numbers", label: "Numbers (comma-separated)", type: "text", defaultValue: "10, 20, 30, 40, 50, 60, 70, 80, 90, 100" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "OutlierCalculator",
+    slug: "outlier-calculator",
+    category: "statistics",
+    subcategory: "descriptive",
+    description: "Identify outliers in a dataset using IQR method.",
+    type: "statistics",
+    inputs: [
+      { name: "numbers", label: "Numbers (comma-separated)", type: "text", defaultValue: "10, 20, 30, 40, 50, 60, 70, 80, 90, 200" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "BinomialDistributionCalculator",
+    slug: "binomial-distribution-calculator",
+    category: "statistics",
+    subcategory: "probability",
+    description: "Calculate binomial distribution probabilities.",
+    type: "statistics",
+    inputs: [
+      { name: "n", label: "Number of Trials (n)", type: "number", defaultValue: "10" },
+      { name: "p", label: "Probability of Success (p)", type: "number", defaultValue: "0.5" },
+      { name: "k", label: "Number of Successes (k)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "NormalDistributionCalculator",
+    slug: "normal-distribution-calculator",
+    category: "statistics",
+    subcategory: "probability",
+    description: "Calculate probabilities for normal distribution.",
+    type: "statistics",
+    inputs: [
+      { name: "mean", label: "Mean (μ)", type: "number", defaultValue: "0" },
+      { name: "stdDev", label: "Standard Deviation (σ)", type: "number", defaultValue: "1" },
+      { name: "value", label: "Value (x)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "PoissonDistributionCalculator",
+    slug: "poisson-distribution-calculator",
+    category: "statistics",
+    subcategory: "probability",
+    description: "Calculate Poisson distribution probabilities.",
+    type: "statistics",
+    inputs: [
+      { name: "lambda", label: "Lambda (λ) - Average Rate", type: "number", defaultValue: "3" },
+      { name: "k", label: "Number of Events (k)", type: "number", defaultValue: "2" }
+    ],
+    authorId: "prof-data"
+  },
+  {
+    name: "LinearRegressionCalculator",
+    slug: "linear-regression-calculator",
+    category: "statistics",
+    subcategory: "regression",
+    description: "Calculate linear regression line and correlation coefficient.",
+    type: "statistics",
+    inputs: [
+      { name: "xValues", label: "X Values (comma-separated)", type: "text", defaultValue: "1, 2, 3, 4, 5" },
+      { name: "yValues", label: "Y Values (comma-separated)", type: "text", defaultValue: "2, 4, 5, 4, 5" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "CorrelationCalculator",
+    slug: "correlation-calculator",
+    category: "statistics",
+    subcategory: "regression",
+    description: "Calculate correlation coefficient between two variables.",
+    type: "statistics",
+    inputs: [
+      { name: "xValues", label: "X Values (comma-separated)", type: "text", defaultValue: "1, 2, 3, 4, 5" },
+      { name: "yValues", label: "Y Values (comma-separated)", type: "text", defaultValue: "2, 4, 6, 8, 10" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "RSquaredCalculator",
+    slug: "r-squared-calculator",
+    category: "statistics",
+    subcategory: "regression",
+    description: "Calculate R-squared (coefficient of determination).",
+    type: "statistics",
+    inputs: [
+      { name: "xValues", label: "X Values (comma-separated)", type: "text", defaultValue: "1, 2, 3, 4, 5" },
+      { name: "yValues", label: "Y Values (comma-separated)", type: "text", defaultValue: "2, 4, 6, 8, 10" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "TTestCalculator",
+    slug: "t-test-calculator",
+    category: "statistics",
+    subcategory: "testing",
+    description: "Perform t-test for comparing means.",
+    type: "statistics",
+    inputs: [
+      { name: "sample1", label: "Sample 1 (comma-separated)", type: "text", defaultValue: "10, 12, 14, 16, 18" },
+      { name: "sample2", label: "Sample 2 (comma-separated)", type: "text", defaultValue: "15, 17, 19, 21, 23" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "ChiSquareCalculator",
+    slug: "chi-square-calculator",
+    category: "statistics",
+    subcategory: "testing",
+    description: "Perform chi-square test for independence.",
+    type: "statistics",
+    inputs: [
+      { name: "observed", label: "Observed Frequencies (matrix)", type: "text", defaultValue: "10,20;15,25" },
+      { name: "expected", label: "Expected Frequencies (matrix)", type: "text", defaultValue: "12,18;13,22" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "ANOVACalculator",
+    slug: "anova-calculator",
+    category: "statistics",
+    subcategory: "testing",
+    description: "Perform Analysis of Variance (ANOVA) test.",
+    type: "statistics",
+    inputs: [
+      { name: "group1", label: "Group 1 (comma-separated)", type: "text", defaultValue: "10, 12, 14" },
+      { name: "group2", label: "Group 2 (comma-separated)", type: "text", defaultValue: "15, 17, 19" },
+      { name: "group3", label: "Group 3 (comma-separated)", type: "text", defaultValue: "20, 22, 24" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "SampleSizeCalculator",
+    slug: "sample-size-calculator",
+    category: "statistics",
+    subcategory: "testing",
+    description: "Calculate required sample size for statistical tests.",
+    type: "statistics",
+    inputs: [
+      { name: "confidenceLevel", label: "Confidence Level (%)", type: "number", defaultValue: "95" },
+      { name: "marginOfError", label: "Margin of Error (%)", type: "number", defaultValue: "5" },
+      { name: "populationSize", label: "Population Size", type: "number", defaultValue: "10000" }
+    ],
+    authorId: "analyst-alex"
+  },
+  {
+    name: "ConfidenceIntervalCalculator",
+    slug: "confidence-interval-calculator",
+    category: "statistics",
+    subcategory: "testing",
+    description: "Calculate confidence interval for a population mean.",
+    type: "statistics",
+    inputs: [
+      { name: "sampleMean", label: "Sample Mean", type: "number", defaultValue: "50" },
+      { name: "stdDev", label: "Standard Deviation", type: "number", defaultValue: "10" },
+      { name: "sampleSize", label: "Sample Size", type: "number", defaultValue: "100" },
+      { name: "confidenceLevel", label: "Confidence Level (%)", type: "number", defaultValue: "95" }
+    ],
+    authorId: "analyst-alex"
+  },
+  
+  // ========== ADDITIONAL EVERYDAY LIFE CALCULATORS ==========
+  {
+    name: "DayOfWeekCalculator",
+    slug: "day-of-week-calculator",
+    category: "everyday-life",
+    subcategory: "date-time",
+    description: "Find what day of the week a specific date falls on.",
+    type: "date",
+    inputs: [
+      { name: "date", label: "Date", type: "date", defaultValue: "" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "LeapYearCalculator",
+    slug: "leap-year-calculator",
+    category: "everyday-life",
+    subcategory: "date-time",
+    description: "Check if a year is a leap year.",
+    type: "date",
+    inputs: [
+      { name: "year", label: "Year", type: "number", defaultValue: "2024" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "CountdownTimerCalculator",
+    slug: "countdown-timer-calculator",
+    category: "everyday-life",
+    subcategory: "date-time",
+    description: "Calculate time remaining until a target date.",
+    type: "date",
+    inputs: [
+      { name: "targetDate", label: "Target Date", type: "date", defaultValue: "" },
+      { name: "currentDate", label: "Current Date", type: "date", defaultValue: "" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "RecipeScalingCalculator",
+    slug: "recipe-scaling-calculator",
+    category: "everyday-life",
+    subcategory: "cooking",
+    description: "Scale recipe ingredients up or down based on serving size.",
+    type: "cooking",
+    inputs: [
+      { name: "originalServings", label: "Original Servings", type: "number", defaultValue: "4" },
+      { name: "newServings", label: "New Servings", type: "number", defaultValue: "8" },
+      { name: "ingredientAmount", label: "Ingredient Amount", type: "number", defaultValue: "2" },
+      { name: "unit", label: "Unit", type: "select", defaultValue: "cups", options: [
+        { value: "cups", label: "Cups" },
+        { value: "tbsp", label: "Tablespoons" },
+        { value: "tsp", label: "Teaspoons" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "CookingTimeCalculator",
+    slug: "cooking-time-calculator",
+    category: "everyday-life",
+    subcategory: "cooking",
+    description: "Calculate cooking times based on food type and weight.",
+    type: "cooking",
+    inputs: [
+      { name: "foodType", label: "Food Type", type: "select", defaultValue: "chicken", options: [
+        { value: "chicken", label: "Chicken" },
+        { value: "beef", label: "Beef" },
+        { value: "pork", label: "Pork" }
+      ]},
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "1" },
+      { name: "cookingMethod", label: "Cooking Method", type: "select", defaultValue: "roast", options: [
+        { value: "roast", label: "Roast" },
+        { value: "grill", label: "Grill" },
+        { value: "bake", label: "Bake" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "OvenTemperatureConverter",
+    slug: "oven-temperature-converter",
+    category: "everyday-life",
+    subcategory: "cooking",
+    description: "Convert oven temperatures between Celsius, Fahrenheit, and gas marks.",
+    type: "cooking",
+    inputs: [
+      { name: "temperature", label: "Temperature", type: "number", defaultValue: "180" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "C", options: [
+        { value: "C", label: "Celsius" },
+        { value: "F", label: "Fahrenheit" },
+        { value: "gas", label: "Gas Mark" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "IngredientSubstitutionCalculator",
+    slug: "ingredient-substitution-calculator",
+    category: "everyday-life",
+    subcategory: "cooking",
+    description: "Find ingredient substitutions and conversion ratios.",
+    type: "cooking",
+    inputs: [
+      { name: "ingredient", label: "Ingredient", type: "select", defaultValue: "butter", options: [
+        { value: "butter", label: "Butter" },
+        { value: "eggs", label: "Eggs" },
+        { value: "flour", label: "Flour" }
+      ]},
+      { name: "amount", label: "Amount", type: "number", defaultValue: "1" },
+      { name: "unit", label: "Unit", type: "select", defaultValue: "cup", options: [
+        { value: "cup", label: "Cup" },
+        { value: "tbsp", label: "Tablespoon" },
+        { value: "tsp", label: "Teaspoon" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "UnitPriceCalculator",
+    slug: "unit-price-calculator",
+    category: "everyday-life",
+    subcategory: "shopping",
+    description: "Calculate unit price to compare product value.",
+    type: "shopping",
+    inputs: [
+      { name: "price", label: "Price", type: "number", defaultValue: "5.99" },
+      { name: "quantity", label: "Quantity", type: "number", defaultValue: "2" },
+      { name: "unit", label: "Unit", type: "select", defaultValue: "kg", options: [
+        { value: "kg", label: "Kilogram" },
+        { value: "lb", label: "Pound" },
+        { value: "oz", label: "Ounce" }
+      ]}
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "PercentageOffCalculator",
+    slug: "percentage-off-calculator",
+    category: "everyday-life",
+    subcategory: "shopping",
+    description: "Calculate final price after percentage discount.",
+    type: "shopping",
+    inputs: [
+      { name: "originalPrice", label: "Original Price", type: "number", defaultValue: "100" },
+      { name: "discountPercent", label: "Discount (%)", type: "number", defaultValue: "20" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "SplitBillCalculator",
+    slug: "split-bill-calculator",
+    category: "everyday-life",
+    subcategory: "shopping",
+    description: "Split a bill evenly among multiple people.",
+    type: "shopping",
+    inputs: [
+      { name: "totalBill", label: "Total Bill", type: "number", defaultValue: "100" },
+      { name: "numberOfPeople", label: "Number of People", type: "number", defaultValue: "4" },
+      { name: "tipPercent", label: "Tip (%)", type: "number", defaultValue: "18" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "MileageCalculator",
+    slug: "mileage-calculator",
+    category: "everyday-life",
+    subcategory: "travel",
+    description: "Calculate fuel mileage and cost per mile.",
+    type: "travel",
+    inputs: [
+      { name: "distance", label: "Distance (miles)", type: "number", defaultValue: "100" },
+      { name: "fuelUsed", label: "Fuel Used (gallons)", type: "number", defaultValue: "5" },
+      { name: "fuelPrice", label: "Fuel Price per Gallon", type: "number", defaultValue: "3.50" }
+    ],
+    authorId: "tom-practical"
+  },
+  {
+    name: "TravelTimeCalculator",
+    slug: "travel-time-calculator",
+    category: "everyday-life",
+    subcategory: "travel",
+    description: "Calculate travel time based on distance and speed.",
+    type: "travel",
+    inputs: [
+      { name: "distance", label: "Distance (km)", type: "number", defaultValue: "100" },
+      { name: "averageSpeed", label: "Average Speed (km/h)", type: "number", defaultValue: "80" }
+    ],
+    authorId: "tom-practical"
+  },
+  {
+    name: "ConcreteCalculator",
+    slug: "concrete-calculator",
+    category: "everyday-life",
+    subcategory: "home-garden",
+    description: "Calculate amount of concrete needed for a project.",
+    type: "home",
+    inputs: [
+      { name: "length", label: "Length (m)", type: "number", defaultValue: "5" },
+      { name: "width", label: "Width (m)", type: "number", defaultValue: "3" },
+      { name: "depth", label: "Depth (m)", type: "number", defaultValue: "0.1" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "CarpetCalculator",
+    slug: "carpet-calculator",
+    category: "everyday-life",
+    subcategory: "home-garden",
+    description: "Calculate carpet needed for a room including waste.",
+    type: "home",
+    inputs: [
+      { name: "length", label: "Room Length (m)", type: "number", defaultValue: "5" },
+      { name: "width", label: "Room Width (m)", type: "number", defaultValue: "4" },
+      { name: "wastePercent", label: "Waste Percentage (%)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "FenceCalculator",
+    slug: "fence-calculator",
+    category: "everyday-life",
+    subcategory: "home-garden",
+    description: "Calculate materials needed for fencing.",
+    type: "home",
+    inputs: [
+      { name: "perimeter", label: "Perimeter (m)", type: "number", defaultValue: "100" },
+      { name: "panelWidth", label: "Panel Width (m)", type: "number", defaultValue: "2" },
+      { name: "postsPerPanel", label: "Posts per Panel", type: "number", defaultValue: "2" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "LawnAreaCalculator",
+    slug: "lawn-area-calculator",
+    category: "everyday-life",
+    subcategory: "home-garden",
+    description: "Calculate lawn area for seeding or sodding.",
+    type: "home",
+    inputs: [
+      { name: "length", label: "Length (m)", type: "number", defaultValue: "20" },
+      { name: "width", label: "Width (m)", type: "number", defaultValue: "15" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "OvertimeCalculator",
+    slug: "overtime-calculator",
+    category: "everyday-life",
+    subcategory: "time-management",
+    description: "Calculate overtime pay based on hours worked.",
+    type: "time",
+    inputs: [
+      { name: "regularHours", label: "Regular Hours", type: "number", defaultValue: "40" },
+      { name: "overtimeHours", label: "Overtime Hours", type: "number", defaultValue: "5" },
+      { name: "hourlyRate", label: "Hourly Rate", type: "number", defaultValue: "25" },
+      { name: "overtimeMultiplier", label: "Overtime Multiplier", type: "number", defaultValue: "1.5" }
+    ],
+    authorId: "tom-practical"
+  },
+  {
+    name: "TimeCardCalculator",
+    slug: "time-card-calculator",
+    category: "everyday-life",
+    subcategory: "time-management",
+    description: "Calculate total hours worked from time card entries.",
+    type: "time",
+    inputs: [
+      { name: "clockIn", label: "Clock In Time", type: "time", defaultValue: "09:00" },
+      { name: "clockOut", label: "Clock Out Time", type: "time", defaultValue: "17:00" },
+      { name: "lunchBreak", label: "Lunch Break (minutes)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "tom-practical"
+  },
+  {
+    name: "ProductivityCalculator",
+    slug: "productivity-calculator",
+    category: "everyday-life",
+    subcategory: "time-management",
+    description: "Calculate productivity metrics and efficiency.",
+    type: "time",
+    inputs: [
+      { name: "tasksCompleted", label: "Tasks Completed", type: "number", defaultValue: "10" },
+      { name: "timeSpent", label: "Time Spent (hours)", type: "number", defaultValue: "8" },
+      { name: "targetTasks", label: "Target Tasks", type: "number", defaultValue: "12" }
+    ],
+    authorId: "tom-practical"
+  },
+  {
+    name: "AgeDifferenceCalculator",
+    slug: "age-difference-calculator",
+    category: "everyday-life",
+    subcategory: "relationships",
+    description: "Calculate age difference between two people.",
+    type: "date",
+    inputs: [
+      { name: "birthDate1", label: "Person 1 Birth Date", type: "date", defaultValue: "" },
+      { name: "birthDate2", label: "Person 2 Birth Date", type: "date", defaultValue: "" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "RelationshipDurationCalculator",
+    slug: "relationship-duration-calculator",
+    category: "everyday-life",
+    subcategory: "relationships",
+    description: "Calculate how long a relationship has lasted.",
+    type: "date",
+    inputs: [
+      { name: "startDate", label: "Relationship Start Date", type: "date", defaultValue: "" },
+      { name: "currentDate", label: "Current Date", type: "date", defaultValue: "" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "PetAgeCalculator",
+    slug: "pet-age-calculator",
+    category: "everyday-life",
+    subcategory: "pets",
+    description: "Convert pet age to human years.",
+    type: "pets",
+    inputs: [
+      { name: "petType", label: "Pet Type", type: "select", defaultValue: "dog", options: [
+        { value: "dog", label: "Dog" },
+        { value: "cat", label: "Cat" }
+      ]},
+      { name: "petAge", label: "Pet Age (years)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "lisa-daily"
+  },
+  {
+    name: "PetFoodCalculator",
+    slug: "pet-food-calculator",
+    category: "everyday-life",
+    subcategory: "pets",
+    description: "Calculate daily food requirements for pets.",
+    type: "pets",
+    inputs: [
+      { name: "petType", label: "Pet Type", type: "select", defaultValue: "dog", options: [
+        { value: "dog", label: "Dog" },
+        { value: "cat", label: "Cat" }
+      ]},
+      { name: "weight", label: "Pet Weight (kg)", type: "number", defaultValue: "10" },
+      { name: "activity", label: "Activity Level", type: "select", defaultValue: "moderate", options: [
+        { value: "low", label: "Low" },
+        { value: "moderate", label: "Moderate" },
+        { value: "high", label: "High" }
+      ]}
+    ],
+    authorId: "lisa-daily"
+  },
+  
+  // ========== ADDITIONAL PHYSICS CALCULATORS ==========
+  {
+    name: "VelocityCalculator",
+    slug: "velocity-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate velocity from distance and time.",
+    type: "physics",
+    inputs: [
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "100" },
+      { name: "time", label: "Time (s)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "MomentumCalculator",
+    slug: "momentum-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate momentum using p = mv.",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "10" },
+      { name: "velocity", label: "Velocity (m/s)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "WorkCalculator",
+    slug: "work-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate work done using W = Fd.",
+    type: "physics",
+    inputs: [
+      { name: "force", label: "Force (N)", type: "number", defaultValue: "50" },
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "10" },
+      { name: "angle", label: "Angle (degrees)", type: "number", defaultValue: "0" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "FrictionCalculator",
+    slug: "friction-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate frictional force.",
+    type: "physics",
+    inputs: [
+      { name: "normalForce", label: "Normal Force (N)", type: "number", defaultValue: "100" },
+      { name: "coefficient", label: "Coefficient of Friction", type: "number", defaultValue: "0.3" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "GravityCalculator",
+    slug: "gravity-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate gravitational force using F = G(m1*m2)/r².",
+    type: "physics",
+    inputs: [
+      { name: "mass1", label: "Mass 1 (kg)", type: "number", defaultValue: "1000" },
+      { name: "mass2", label: "Mass 2 (kg)", type: "number", defaultValue: "1000" },
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "ProjectileMotionCalculator",
+    slug: "projectile-motion-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate projectile motion parameters (range, height, time).",
+    type: "physics",
+    inputs: [
+      { name: "initialVelocity", label: "Initial Velocity (m/s)", type: "number", defaultValue: "20" },
+      { name: "angle", label: "Launch Angle (degrees)", type: "number", defaultValue: "45" },
+      { name: "height", label: "Initial Height (m)", type: "number", defaultValue: "0" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "CentripetalForceCalculator",
+    slug: "centripetal-force-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate centripetal force using F = mv²/r.",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "10" },
+      { name: "velocity", label: "Velocity (m/s)", type: "number", defaultValue: "5" },
+      { name: "radius", label: "Radius (m)", type: "number", defaultValue: "2" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "AngularVelocityCalculator",
+    slug: "angular-velocity-calculator",
+    category: "physics",
+    subcategory: "mechanics",
+    description: "Calculate angular velocity from rotational motion.",
+    type: "physics",
+    inputs: [
+      { name: "angularDisplacement", label: "Angular Displacement (rad)", type: "number", defaultValue: "6.28" },
+      { name: "time", label: "Time (s)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-isaac-newton"
+  },
+  {
+    name: "HeatTransferCalculator",
+    slug: "heat-transfer-calculator",
+    category: "physics",
+    subcategory: "thermodynamics",
+    description: "Calculate heat transfer using Q = mcΔT.",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "1" },
+      { name: "specificHeat", label: "Specific Heat (J/kg·K)", type: "number", defaultValue: "4186" },
+      { name: "tempChange", label: "Temperature Change (K)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "IdealGasLawCalculator",
+    slug: "ideal-gas-law-calculator",
+    category: "physics",
+    subcategory: "thermodynamics",
+    description: "Calculate gas properties using PV = nRT.",
+    type: "physics",
+    inputs: [
+      { name: "pressure", label: "Pressure (Pa)", type: "number", defaultValue: "101325", optional: true },
+      { name: "volume", label: "Volume (m³)", type: "number", defaultValue: "1", optional: true },
+      { name: "moles", label: "Number of Moles", type: "number", defaultValue: "1", optional: true },
+      { name: "temperature", label: "Temperature (K)", type: "number", defaultValue: "273" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "DensityCalculator",
+    slug: "density-calculator",
+    category: "physics",
+    subcategory: "thermodynamics",
+    description: "Calculate density using ρ = m/V.",
+    type: "physics",
+    inputs: [
+      { name: "mass", label: "Mass (kg)", type: "number", defaultValue: "1000" },
+      { name: "volume", label: "Volume (m³)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "ElectricPowerCalculator",
+    slug: "electric-power-calculator",
+    category: "physics",
+    subcategory: "electricity",
+    description: "Calculate electric power using P = IV or P = I²R.",
+    type: "physics",
+    inputs: [
+      { name: "voltage", label: "Voltage (V)", type: "number", defaultValue: "12", optional: true },
+      { name: "current", label: "Current (A)", type: "number", defaultValue: "2", optional: true },
+      { name: "resistance", label: "Resistance (Ω)", type: "number", defaultValue: "6", optional: true }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "SeriesParallelResistorCalculator",
+    slug: "series-parallel-resistor-calculator",
+    category: "physics",
+    subcategory: "electricity",
+    description: "Calculate equivalent resistance for series and parallel resistor circuits.",
+    type: "physics",
+    inputs: [
+      { name: "resistors", label: "Resistor Values (Ω, comma-separated)", type: "text", defaultValue: "10, 20, 30" },
+      { name: "circuitType", label: "Circuit Type", type: "select", defaultValue: "series", options: [
+        { value: "series", label: "Series" },
+        { value: "parallel", label: "Parallel" }
+      ]}
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "LensCalculator",
+    slug: "lens-calculator",
+    category: "physics",
+    subcategory: "optics",
+    description: "Calculate focal length and image properties for lenses.",
+    type: "physics",
+    inputs: [
+      { name: "objectDistance", label: "Object Distance (m)", type: "number", defaultValue: "0.5" },
+      { name: "focalLength", label: "Focal Length (m)", type: "number", defaultValue: "0.2" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "RefractionCalculator",
+    slug: "refraction-calculator",
+    category: "physics",
+    subcategory: "optics",
+    description: "Calculate refraction angle using Snell's law.",
+    type: "physics",
+    inputs: [
+      { name: "n1", label: "Index of Refraction 1", type: "number", defaultValue: "1.0" },
+      { name: "n2", label: "Index of Refraction 2", type: "number", defaultValue: "1.5" },
+      { name: "incidentAngle", label: "Incident Angle (degrees)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "WavelengthCalculator",
+    slug: "wavelength-calculator",
+    category: "physics",
+    subcategory: "waves",
+    description: "Calculate wavelength from frequency and wave speed.",
+    type: "physics",
+    inputs: [
+      { name: "frequency", label: "Frequency (Hz)", type: "number", defaultValue: "1000" },
+      { name: "waveSpeed", label: "Wave Speed (m/s)", type: "number", defaultValue: "343" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  {
+    name: "WaveSpeedCalculator",
+    slug: "wave-speed-calculator",
+    category: "physics",
+    subcategory: "waves",
+    description: "Calculate wave speed from wavelength and frequency.",
+    type: "physics",
+    inputs: [
+      { name: "wavelength", label: "Wavelength (m)", type: "number", defaultValue: "0.343" },
+      { name: "frequency", label: "Frequency (Hz)", type: "number", defaultValue: "1000" }
+    ],
+    authorId: "dr-albert-einstein"
+  },
+  
+  // ========== CONSTRUCTION CALCULATORS ==========
+  {
+    name: "LumberCalculator",
+    slug: "lumber-calculator",
+    category: "construction",
+    subcategory: "materials",
+    description: "Calculate lumber needed for construction projects.",
+    type: "construction",
+    inputs: [
+      { name: "length", label: "Length (m)", type: "number", defaultValue: "5" },
+      { name: "width", label: "Width (m)", type: "number", defaultValue: "3" },
+      { name: "boardSize", label: "Board Size (inches)", type: "select", defaultValue: "2x4", options: [
+        { value: "2x4", label: "2x4" },
+        { value: "2x6", label: "2x6" },
+        { value: "4x4", label: "4x4" }
+      ]}
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "DrywallCalculator",
+    slug: "drywall-calculator",
+    category: "construction",
+    subcategory: "materials",
+    description: "Calculate drywall sheets needed for a room.",
+    type: "construction",
+    inputs: [
+      { name: "length", label: "Room Length (m)", type: "number", defaultValue: "5" },
+      { name: "width", label: "Room Width (m)", type: "number", defaultValue: "4" },
+      { name: "height", label: "Room Height (m)", type: "number", defaultValue: "2.5" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "InsulationCalculator",
+    slug: "insulation-calculator",
+    category: "construction",
+    subcategory: "materials",
+    description: "Calculate insulation needed for walls and attics.",
+    type: "construction",
+    inputs: [
+      { name: "area", label: "Area (m²)", type: "number", defaultValue: "100" },
+      { name: "thickness", label: "Insulation Thickness (cm)", type: "number", defaultValue: "15" },
+      { name: "rValue", label: "R-Value per inch", type: "number", defaultValue: "3.5" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "FlooringCalculator",
+    slug: "flooring-calculator",
+    category: "construction",
+    subcategory: "materials",
+    description: "Calculate flooring materials needed including waste.",
+    type: "construction",
+    inputs: [
+      { name: "length", label: "Room Length (m)", type: "number", defaultValue: "5" },
+      { name: "width", label: "Room Width (m)", type: "number", defaultValue: "4" },
+      { name: "wastePercent", label: "Waste Percentage (%)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "RoofingCalculator",
+    slug: "roofing-calculator",
+    category: "construction",
+    subcategory: "materials",
+    description: "Calculate roofing materials needed for a roof.",
+    type: "construction",
+    inputs: [
+      { name: "length", label: "Roof Length (m)", type: "number", defaultValue: "10" },
+      { name: "width", label: "Roof Width (m)", type: "number", defaultValue: "8" },
+      { name: "pitch", label: "Roof Pitch (degrees)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "FoundationCalculator",
+    slug: "foundation-calculator",
+    category: "construction",
+    subcategory: "structural",
+    description: "Calculate concrete needed for foundation.",
+    type: "construction",
+    inputs: [
+      { name: "length", label: "Foundation Length (m)", type: "number", defaultValue: "10" },
+      { name: "width", label: "Foundation Width (m)", type: "number", defaultValue: "8" },
+      { name: "depth", label: "Foundation Depth (m)", type: "number", defaultValue: "0.5" }
+    ],
+    authorId: "sarah-architect"
+  },
+  {
+    name: "BeamCalculator",
+    slug: "beam-calculator",
+    category: "construction",
+    subcategory: "structural",
+    description: "Calculate beam load capacity and dimensions.",
+    type: "construction",
+    inputs: [
+      { name: "span", label: "Beam Span (m)", type: "number", defaultValue: "5" },
+      { name: "load", label: "Load (kN)", type: "number", defaultValue: "10" },
+      { name: "material", label: "Material", type: "select", defaultValue: "steel", options: [
+        { value: "steel", label: "Steel" },
+        { value: "wood", label: "Wood" },
+        { value: "concrete", label: "Concrete" }
+      ]}
+    ],
+    authorId: "sarah-architect"
+  },
+  {
+    name: "ColumnCalculator",
+    slug: "column-calculator",
+    category: "construction",
+    subcategory: "structural",
+    description: "Calculate column load capacity.",
+    type: "construction",
+    inputs: [
+      { name: "height", label: "Column Height (m)", type: "number", defaultValue: "3" },
+      { name: "width", label: "Column Width (m)", type: "number", defaultValue: "0.3" },
+      { name: "depth", label: "Column Depth (m)", type: "number", defaultValue: "0.3" },
+      { name: "material", label: "Material", type: "select", defaultValue: "concrete", options: [
+        { value: "concrete", label: "Concrete" },
+        { value: "steel", label: "Steel" }
+      ]}
+    ],
+    authorId: "sarah-architect"
+  },
+  {
+    name: "RafterCalculator",
+    slug: "rafter-calculator",
+    category: "construction",
+    subcategory: "structural",
+    description: "Calculate rafter length and spacing.",
+    type: "construction",
+    inputs: [
+      { name: "span", label: "Roof Span (m)", type: "number", defaultValue: "8" },
+      { name: "pitch", label: "Roof Pitch (degrees)", type: "number", defaultValue: "30" },
+      { name: "spacing", label: "Rafter Spacing (cm)", type: "number", defaultValue: "60" }
+    ],
+    authorId: "sarah-architect"
+  },
+  {
+    name: "StairCalculator",
+    slug: "stair-calculator",
+    category: "construction",
+    subcategory: "structural",
+    description: "Calculate stair dimensions and number of steps.",
+    type: "construction",
+    inputs: [
+      { name: "totalRise", label: "Total Rise (m)", type: "number", defaultValue: "3" },
+      { name: "run", label: "Run per Step (cm)", type: "number", defaultValue: "30" },
+      { name: "rise", label: "Rise per Step (cm)", type: "number", defaultValue: "18" }
+    ],
+    authorId: "sarah-architect"
+  },
+  {
+    name: "DeckCalculator",
+    slug: "deck-calculator",
+    category: "construction",
+    subcategory: "structural",
+    description: "Calculate materials needed for deck construction.",
+    type: "construction",
+    inputs: [
+      { name: "length", label: "Deck Length (m)", type: "number", defaultValue: "6" },
+      { name: "width", label: "Deck Width (m)", type: "number", defaultValue: "4" },
+      { name: "joistSpacing", label: "Joist Spacing (cm)", type: "number", defaultValue: "40" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "ElectricalLoadCalculator",
+    slug: "electrical-load-calculator",
+    category: "construction",
+    subcategory: "electrical",
+    description: "Calculate electrical load for a building.",
+    type: "construction",
+    inputs: [
+      { name: "appliances", label: "Number of Appliances", type: "number", defaultValue: "10" },
+      { name: "averageWattage", label: "Average Wattage per Appliance", type: "number", defaultValue: "1500" },
+      { name: "voltage", label: "Voltage (V)", type: "number", defaultValue: "240" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "WireSizeCalculator",
+    slug: "wire-size-calculator",
+    category: "construction",
+    subcategory: "electrical",
+    description: "Calculate appropriate wire gauge for electrical circuits.",
+    type: "construction",
+    inputs: [
+      { name: "current", label: "Current (A)", type: "number", defaultValue: "20" },
+      { name: "voltage", label: "Voltage (V)", type: "number", defaultValue: "240" },
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "VoltageDropCalculator",
+    slug: "voltage-drop-calculator",
+    category: "construction",
+    subcategory: "electrical",
+    description: "Calculate voltage drop in electrical circuits.",
+    type: "construction",
+    inputs: [
+      { name: "current", label: "Current (A)", type: "number", defaultValue: "20" },
+      { name: "resistance", label: "Resistance (Ω)", type: "number", defaultValue: "0.1" },
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "CircuitBreakerCalculator",
+    slug: "circuit-breaker-calculator",
+    category: "construction",
+    subcategory: "electrical",
+    description: "Calculate appropriate circuit breaker size.",
+    type: "construction",
+    inputs: [
+      { name: "totalLoad", label: "Total Load (W)", type: "number", defaultValue: "5000" },
+      { name: "voltage", label: "Voltage (V)", type: "number", defaultValue: "240" },
+      { name: "safetyFactor", label: "Safety Factor (%)", type: "number", defaultValue: "125" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "PipeSizeCalculator",
+    slug: "pipe-size-calculator",
+    category: "construction",
+    subcategory: "plumbing",
+    description: "Calculate pipe size needed for water flow.",
+    type: "construction",
+    inputs: [
+      { name: "flowRate", label: "Flow Rate (L/min)", type: "number", defaultValue: "20" },
+      { name: "velocity", label: "Water Velocity (m/s)", type: "number", defaultValue: "2" }
+    ],
+    authorId: "mike-builder"
+  },
+  {
+    name: "WaterFlowCalculator",
+    slug: "water-flow-calculator",
+    category: "construction",
+    subcategory: "plumbing",
+    description: "Calculate water flow rate through pipes.",
+    type: "construction",
+    inputs: [
+      { name: "pipeDiameter", label: "Pipe Diameter (cm)", type: "number", defaultValue: "5" },
+      { name: "velocity", label: "Water Velocity (m/s)", type: "number", defaultValue: "2" }
+    ],
+    authorId: "mike-builder"
+  },
+  
+  // ========== BIOLOGY CALCULATORS ==========
+  {
+    name: "PunnettSquareCalculator",
+    slug: "punnett-square-calculator",
+    category: "biology",
+    subcategory: "genetics",
+    description: "Generate Punnett squares for genetic crosses.",
+    type: "biology",
+    inputs: [
+      { name: "parent1Genotype", label: "Parent 1 Genotype", type: "text", defaultValue: "Aa" },
+      { name: "parent2Genotype", label: "Parent 2 Genotype", type: "text", defaultValue: "Aa" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "HardyWeinbergCalculator",
+    slug: "hardy-weinberg-calculator",
+    category: "biology",
+    subcategory: "genetics",
+    description: "Calculate allele and genotype frequencies using Hardy-Weinberg equilibrium.",
+    type: "biology",
+    inputs: [
+      { name: "p", label: "Frequency of Allele A (p)", type: "number", defaultValue: "0.5" },
+      { name: "q", label: "Frequency of Allele a (q)", type: "number", defaultValue: "0.5" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "GeneticDistanceCalculator",
+    slug: "genetic-distance-calculator",
+    category: "biology",
+    subcategory: "genetics",
+    description: "Calculate genetic distance between populations.",
+    type: "biology",
+    inputs: [
+      { name: "alleleFreq1", label: "Allele Frequency Population 1", type: "number", defaultValue: "0.5" },
+      { name: "alleleFreq2", label: "Allele Frequency Population 2", type: "number", defaultValue: "0.3" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "DNASequenceCalculator",
+    slug: "dna-sequence-calculator",
+    category: "biology",
+    subcategory: "genetics",
+    description: "Analyze DNA sequences and calculate complementary strands.",
+    type: "biology",
+    inputs: [
+      { name: "sequence", label: "DNA Sequence", type: "text", defaultValue: "ATCG" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "AlleleFrequencyCalculator",
+    slug: "allele-frequency-calculator",
+    category: "biology",
+    subcategory: "genetics",
+    description: "Calculate allele frequencies in a population.",
+    type: "biology",
+    inputs: [
+      { name: "homozygousAA", label: "Homozygous AA Count", type: "number", defaultValue: "25" },
+      { name: "heterozygousAa", label: "Heterozygous Aa Count", type: "number", defaultValue: "50" },
+      { name: "homozygousaa", label: "Homozygous aa Count", type: "number", defaultValue: "25" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "PopulationGrowthCalculator",
+    slug: "population-growth-calculator",
+    category: "biology",
+    subcategory: "ecology",
+    description: "Calculate population growth using exponential or logistic models.",
+    type: "biology",
+    inputs: [
+      { name: "initialPopulation", label: "Initial Population", type: "number", defaultValue: "1000" },
+      { name: "growthRate", label: "Growth Rate", type: "number", defaultValue: "0.05" },
+      { name: "time", label: "Time Period", type: "number", defaultValue: "10" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "GrowthRateCalculator",
+    slug: "growth-rate-calculator",
+    category: "biology",
+    subcategory: "ecology",
+    description: "Calculate population growth rate.",
+    type: "biology",
+    inputs: [
+      { name: "initialPopulation", label: "Initial Population", type: "number", defaultValue: "1000" },
+      { name: "finalPopulation", label: "Final Population", type: "number", defaultValue: "1500" },
+      { name: "time", label: "Time Period", type: "number", defaultValue: "10" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "CarryingCapacityCalculator",
+    slug: "carrying-capacity-calculator",
+    category: "biology",
+    subcategory: "ecology",
+    description: "Calculate carrying capacity for a population.",
+    type: "biology",
+    inputs: [
+      { name: "currentPopulation", label: "Current Population", type: "number", defaultValue: "1000" },
+      { name: "growthRate", label: "Growth Rate", type: "number", defaultValue: "0.05" },
+      { name: "resources", label: "Available Resources", type: "number", defaultValue: "5000" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "BiodiversityCalculator",
+    slug: "biodiversity-calculator",
+    category: "biology",
+    subcategory: "ecology",
+    description: "Calculate biodiversity indices (Shannon, Simpson).",
+    type: "biology",
+    inputs: [
+      { name: "speciesCounts", label: "Species Counts (comma-separated)", type: "text", defaultValue: "10, 20, 15, 5" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "CellCountCalculator",
+    slug: "cell-count-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate cell concentration from dilution series.",
+    type: "biology",
+    inputs: [
+      { name: "cellsCounted", label: "Cells Counted", type: "number", defaultValue: "50" },
+      { name: "dilutionFactor", label: "Dilution Factor", type: "number", defaultValue: "1000" },
+      { name: "volume", label: "Volume Counted (mL)", type: "number", defaultValue: "0.1" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "DilutionCalculator",
+    slug: "dilution-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate dilution ratios and concentrations.",
+    type: "biology",
+    inputs: [
+      { name: "initialConcentration", label: "Initial Concentration", type: "number", defaultValue: "1000" },
+      { name: "finalConcentration", label: "Final Concentration", type: "number", defaultValue: "100" },
+      { name: "volume", label: "Final Volume (mL)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "PHCalculator",
+    slug: "ph-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate pH from hydrogen ion concentration.",
+    type: "biology",
+    inputs: [
+      { name: "hConcentration", label: "H+ Concentration (M)", type: "number", defaultValue: "0.0001" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "OsmolarityCalculator",
+    slug: "osmolarity-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate osmolarity of solutions.",
+    type: "biology",
+    inputs: [
+      { name: "molarity", label: "Molarity (M)", type: "number", defaultValue: "0.1" },
+      { name: "particles", label: "Number of Particles per Molecule", type: "number", defaultValue: "2" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "EnzymeKineticsCalculator",
+    slug: "enzyme-kinetics-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate enzyme kinetics parameters (Km, Vmax).",
+    type: "biology",
+    inputs: [
+      { name: "substrateConcentration", label: "Substrate Concentration (M)", type: "number", defaultValue: "0.1" },
+      { name: "reactionRate", label: "Reaction Rate", type: "number", defaultValue: "0.5" },
+      { name: "vmax", label: "Vmax", type: "number", defaultValue: "1" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "HalfLifeCalculator",
+    slug: "half-life-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate half-life for biological processes.",
+    type: "biology",
+    inputs: [
+      { name: "initialAmount", label: "Initial Amount", type: "number", defaultValue: "100" },
+      { name: "finalAmount", label: "Final Amount", type: "number", defaultValue: "50" },
+      { name: "time", label: "Time Period", type: "number", defaultValue: "10" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  {
+    name: "RespirationRateCalculator",
+    slug: "respiration-rate-calculator",
+    category: "biology",
+    subcategory: "microbiology",
+    description: "Calculate cellular respiration rates.",
+    type: "biology",
+    inputs: [
+      { name: "oxygenConsumed", label: "Oxygen Consumed (mL)", type: "number", defaultValue: "10" },
+      { name: "time", label: "Time (minutes)", type: "number", defaultValue: "5" },
+      { name: "weight", label: "Sample Weight (g)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "dr-jane-watson"
+  },
+  
+  // ========== CHEMISTRY CALCULATORS ==========
+  {
+    name: "MoleCalculator",
+    slug: "mole-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate number of moles from mass and molar mass.",
+    type: "chemistry",
+    inputs: [
+      { name: "mass", label: "Mass (g)", type: "number", defaultValue: "18" },
+      { name: "molarMass", label: "Molar Mass (g/mol)", type: "number", defaultValue: "18" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "MolarityCalculator",
+    slug: "molarity-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate molarity (concentration) of solutions.",
+    type: "chemistry",
+    inputs: [
+      { name: "moles", label: "Moles of Solute", type: "number", defaultValue: "0.5" },
+      { name: "volume", label: "Volume of Solution (L)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "MolalityCalculator",
+    slug: "molality-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate molality (moles per kg solvent).",
+    type: "chemistry",
+    inputs: [
+      { name: "moles", label: "Moles of Solute", type: "number", defaultValue: "0.5" },
+      { name: "solventMass", label: "Solvent Mass (kg)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "StoichiometryCalculator",
+    slug: "stoichiometry-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate reactant and product amounts in chemical reactions.",
+    type: "chemistry",
+    inputs: [
+      { name: "reaction", label: "Chemical Reaction", type: "text", defaultValue: "2H2 + O2 -> 2H2O" },
+      { name: "reactantAmount", label: "Reactant Amount (g)", type: "number", defaultValue: "4" },
+      { name: "reactant", label: "Reactant", type: "select", defaultValue: "H2", options: [
+        { value: "H2", label: "H2" },
+        { value: "O2", label: "O2" }
+      ]}
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "PercentCompositionCalculator",
+    slug: "percent-composition-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate percent composition by mass of elements in compounds.",
+    type: "chemistry",
+    inputs: [
+      { name: "compound", label: "Chemical Formula", type: "text", defaultValue: "H2O" },
+      { name: "element", label: "Element", type: "text", defaultValue: "H" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "EmpiricalFormulaCalculator",
+    slug: "empirical-formula-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate empirical formula from percent composition.",
+    type: "chemistry",
+    inputs: [
+      { name: "elements", label: "Elements (comma-separated)", type: "text", defaultValue: "C, H, O" },
+      { name: "percentages", label: "Percentages (comma-separated)", type: "text", defaultValue: "40, 6.7, 53.3" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "MolecularFormulaCalculator",
+    slug: "molecular-formula-calculator",
+    category: "chemistry",
+    subcategory: "stoichiometry",
+    description: "Calculate molecular formula from empirical formula and molecular mass.",
+    type: "chemistry",
+    inputs: [
+      { name: "empiricalFormula", label: "Empirical Formula", type: "text", defaultValue: "CH2O" },
+      { name: "molecularMass", label: "Molecular Mass (g/mol)", type: "number", defaultValue: "180" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "SolutionConcentrationCalculator",
+    slug: "solution-concentration-calculator",
+    category: "chemistry",
+    subcategory: "solutions",
+    description: "Calculate solution concentration in various units.",
+    type: "chemistry",
+    inputs: [
+      { name: "soluteMass", label: "Solute Mass (g)", type: "number", defaultValue: "10" },
+      { name: "solutionVolume", label: "Solution Volume (L)", type: "number", defaultValue: "1" },
+      { name: "molarMass", label: "Molar Mass (g/mol)", type: "number", defaultValue: "58.5" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "DilutionCalculatorChemistry",
+    slug: "dilution-calculator-chemistry",
+    category: "chemistry",
+    subcategory: "solutions",
+    description: "Calculate dilution volumes for solutions.",
+    type: "chemistry",
+    inputs: [
+      { name: "initialConcentration", label: "Initial Concentration (M)", type: "number", defaultValue: "1" },
+      { name: "finalConcentration", label: "Final Concentration (M)", type: "number", defaultValue: "0.1" },
+      { name: "finalVolume", label: "Final Volume (L)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "PHCalculatorChemistry",
+    slug: "ph-calculator-chemistry",
+    category: "chemistry",
+    subcategory: "solutions",
+    description: "Calculate pH and pOH of solutions.",
+    type: "chemistry",
+    inputs: [
+      { name: "hConcentration", label: "H+ Concentration (M)", type: "number", defaultValue: "0.0001" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "BufferCalculator",
+    slug: "buffer-calculator",
+    category: "chemistry",
+    subcategory: "solutions",
+    description: "Calculate buffer pH using Henderson-Hasselbalch equation.",
+    type: "chemistry",
+    inputs: [
+      { name: "pKa", label: "pKa", type: "number", defaultValue: "4.75" },
+      { name: "conjugateBase", label: "[A-] Concentration (M)", type: "number", defaultValue: "0.1" },
+      { name: "weakAcid", label: "[HA] Concentration (M)", type: "number", defaultValue: "0.1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "TitrationCalculator",
+    slug: "titration-calculator",
+    category: "chemistry",
+    subcategory: "solutions",
+    description: "Calculate titration volumes and equivalence points.",
+    type: "chemistry",
+    inputs: [
+      { name: "acidConcentration", label: "Acid Concentration (M)", type: "number", defaultValue: "0.1" },
+      { name: "acidVolume", label: "Acid Volume (mL)", type: "number", defaultValue: "25" },
+      { name: "baseConcentration", label: "Base Concentration (M)", type: "number", defaultValue: "0.1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "EnthalpyCalculator",
+    slug: "enthalpy-calculator",
+    category: "chemistry",
+    subcategory: "thermodynamics",
+    description: "Calculate enthalpy change in chemical reactions.",
+    type: "chemistry",
+    inputs: [
+      { name: "heat", label: "Heat (J)", type: "number", defaultValue: "1000" },
+      { name: "moles", label: "Moles", type: "number", defaultValue: "1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "EntropyCalculator",
+    slug: "entropy-calculator",
+    category: "chemistry",
+    subcategory: "thermodynamics",
+    description: "Calculate entropy change.",
+    type: "chemistry",
+    inputs: [
+      { name: "heat", label: "Heat (J)", type: "number", defaultValue: "1000" },
+      { name: "temperature", label: "Temperature (K)", type: "number", defaultValue: "298" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "GibbsFreeEnergyCalculator",
+    slug: "gibbs-free-energy-calculator",
+    category: "chemistry",
+    subcategory: "thermodynamics",
+    description: "Calculate Gibbs free energy using ΔG = ΔH - TΔS.",
+    type: "chemistry",
+    inputs: [
+      { name: "enthalpy", label: "Enthalpy Change (kJ/mol)", type: "number", defaultValue: "-100" },
+      { name: "entropy", label: "Entropy Change (J/mol·K)", type: "number", defaultValue: "50" },
+      { name: "temperature", label: "Temperature (K)", type: "number", defaultValue: "298" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "ReactionRateCalculator",
+    slug: "reaction-rate-calculator",
+    category: "chemistry",
+    subcategory: "thermodynamics",
+    description: "Calculate reaction rates and rate constants.",
+    type: "chemistry",
+    inputs: [
+      { name: "concentrationChange", label: "Concentration Change (M)", type: "number", defaultValue: "0.1" },
+      { name: "timeChange", label: "Time Change (s)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "EquilibriumConstantCalculator",
+    slug: "equilibrium-constant-calculator",
+    category: "chemistry",
+    subcategory: "thermodynamics",
+    description: "Calculate equilibrium constant (K) for reactions.",
+    type: "chemistry",
+    inputs: [
+      { name: "products", label: "Product Concentrations (comma-separated)", type: "text", defaultValue: "0.1, 0.1" },
+      { name: "reactants", label: "Reactant Concentrations (comma-separated)", type: "text", defaultValue: "0.05, 0.05" },
+      { name: "coefficients", label: "Coefficients (comma-separated)", type: "text", defaultValue: "1, 1, 1, 1" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  {
+    name: "BondEnergyCalculator",
+    slug: "bond-energy-calculator",
+    category: "chemistry",
+    subcategory: "organic",
+    description: "Calculate bond energy and enthalpy of formation.",
+    type: "chemistry",
+    inputs: [
+      { name: "bondsBroken", label: "Bonds Broken (kJ/mol, comma-separated)", type: "text", defaultValue: "436, 498" },
+      { name: "bondsFormed", label: "Bonds Formed (kJ/mol, comma-separated)", type: "text", defaultValue: "463, 463" }
+    ],
+    authorId: "prof-marie-curie"
+  },
+  
+  // ========== SPORTS CALCULATORS ==========
+  {
+    name: "MarathonTimeCalculator",
+    slug: "marathon-time-calculator",
+    category: "sports",
+    subcategory: "running",
+    description: "Calculate estimated marathon time from shorter race times.",
+    type: "sports",
+    inputs: [
+      { name: "distance", label: "Race Distance (km)", type: "number", defaultValue: "10" },
+      { name: "time", label: "Race Time (minutes)", type: "number", defaultValue: "40" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "FiveKTimeCalculator",
+    slug: "5k-time-calculator",
+    category: "sports",
+    subcategory: "running",
+    description: "Calculate 5K race time predictions.",
+    type: "sports",
+    inputs: [
+      { name: "currentPace", label: "Current Pace (min/km)", type: "number", defaultValue: "5" },
+      { name: "distance", label: "Training Distance (km)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "TenKTimeCalculator",
+    slug: "10k-time-calculator",
+    category: "sports",
+    subcategory: "running",
+    description: "Calculate 10K race time predictions.",
+    type: "sports",
+    inputs: [
+      { name: "currentPace", label: "Current Pace (min/km)", type: "number", defaultValue: "5" },
+      { name: "distance", label: "Training Distance (km)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "CyclingPowerCalculator",
+    slug: "cycling-power-calculator",
+    category: "sports",
+    subcategory: "cycling",
+    description: "Calculate cycling power output.",
+    type: "sports",
+    inputs: [
+      { name: "force", label: "Force (N)", type: "number", defaultValue: "200" },
+      { name: "velocity", label: "Velocity (m/s)", type: "number", defaultValue: "10" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "CyclingSpeedCalculator",
+    slug: "cycling-speed-calculator",
+    category: "sports",
+    subcategory: "cycling",
+    description: "Calculate cycling speed from cadence and gear ratio.",
+    type: "sports",
+    inputs: [
+      { name: "cadence", label: "Cadence (rpm)", type: "number", defaultValue: "90" },
+      { name: "wheelCircumference", label: "Wheel Circumference (m)", type: "number", defaultValue: "2.1" },
+      { name: "gearRatio", label: "Gear Ratio", type: "number", defaultValue: "3" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "BikeGearCalculator",
+    slug: "bike-gear-calculator",
+    category: "sports",
+    subcategory: "cycling",
+    description: "Calculate bike gear ratios and gear inches.",
+    type: "sports",
+    inputs: [
+      { name: "chainring", label: "Chainring Teeth", type: "number", defaultValue: "50" },
+      { name: "cog", label: "Cog Teeth", type: "number", defaultValue: "17" },
+      { name: "wheelDiameter", label: "Wheel Diameter (inches)", type: "number", defaultValue: "27" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "CyclingCalorieBurnCalculator",
+    slug: "cycling-calorie-burn-calculator",
+    category: "sports",
+    subcategory: "cycling",
+    description: "Calculate calories burned during cycling.",
+    type: "sports",
+    inputs: [
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "70" },
+      { name: "duration", label: "Duration (minutes)", type: "number", defaultValue: "60" },
+      { name: "speed", label: "Average Speed (km/h)", type: "number", defaultValue: "20" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "VolumeCalculatorStrength",
+    slug: "volume-calculator-strength",
+    category: "sports",
+    subcategory: "strength",
+    description: "Calculate training volume for strength training.",
+    type: "sports",
+    inputs: [
+      { name: "sets", label: "Number of Sets", type: "number", defaultValue: "3" },
+      { name: "reps", label: "Reps per Set", type: "number", defaultValue: "10" },
+      { name: "weight", label: "Weight (kg)", type: "number", defaultValue: "80" }
+    ],
+    authorId: "trainer-maria"
+  },
+  {
+    name: "RestPeriodCalculator",
+    slug: "rest-period-calculator",
+    category: "sports",
+    subcategory: "strength",
+    description: "Calculate optimal rest periods between sets.",
+    type: "sports",
+    inputs: [
+      { name: "exerciseType", label: "Exercise Type", type: "select", defaultValue: "strength", options: [
+        { value: "strength", label: "Strength (1-5 reps)" },
+        { value: "hypertrophy", label: "Hypertrophy (6-12 reps)" },
+        { value: "endurance", label: "Endurance (13+ reps)" }
+      ]},
+      { name: "intensity", label: "Intensity (% of 1RM)", type: "number", defaultValue: "85" }
+    ],
+    authorId: "trainer-maria"
+  },
+  {
+    name: "ProgressiveOverloadCalculator",
+    slug: "progressive-overload-calculator",
+    category: "sports",
+    subcategory: "strength",
+    description: "Calculate progressive overload increments.",
+    type: "sports",
+    inputs: [
+      { name: "currentWeight", label: "Current Weight (kg)", type: "number", defaultValue: "80" },
+      { name: "incrementPercent", label: "Increment Percentage (%)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "trainer-maria"
+  },
+  {
+    name: "BaseballStatsCalculator",
+    slug: "baseball-stats-calculator",
+    category: "sports",
+    subcategory: "team-sports",
+    description: "Calculate baseball statistics (batting average, ERA, etc.).",
+    type: "sports",
+    inputs: [
+      { name: "hits", label: "Hits", type: "number", defaultValue: "150" },
+      { name: "atBats", label: "At Bats", type: "number", defaultValue: "500" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "BasketballStatsCalculator",
+    slug: "basketball-stats-calculator",
+    category: "sports",
+    subcategory: "team-sports",
+    description: "Calculate basketball statistics (field goal percentage, etc.).",
+    type: "sports",
+    inputs: [
+      { name: "fieldGoalsMade", label: "Field Goals Made", type: "number", defaultValue: "300" },
+      { name: "fieldGoalsAttempted", label: "Field Goals Attempted", type: "number", defaultValue: "600" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "FootballStatsCalculator",
+    slug: "football-stats-calculator",
+    category: "sports",
+    subcategory: "team-sports",
+    description: "Calculate football statistics (completion percentage, etc.).",
+    type: "sports",
+    inputs: [
+      { name: "completions", label: "Completions", type: "number", defaultValue: "250" },
+      { name: "attempts", label: "Pass Attempts", type: "number", defaultValue: "400" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "GolfHandicapCalculator",
+    slug: "golf-handicap-calculator",
+    category: "sports",
+    subcategory: "team-sports",
+    description: "Calculate golf handicap index.",
+    type: "sports",
+    inputs: [
+      { name: "scores", label: "Recent Scores (comma-separated)", type: "text", defaultValue: "85, 88, 82, 90, 86" },
+      { name: "courseRating", label: "Course Rating", type: "number", defaultValue: "72" },
+      { name: "slopeRating", label: "Slope Rating", type: "number", defaultValue: "113" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "TennisServeSpeedCalculator",
+    slug: "tennis-serve-speed-calculator",
+    category: "sports",
+    subcategory: "team-sports",
+    description: "Calculate tennis serve speed from distance and time.",
+    type: "sports",
+    inputs: [
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "18" },
+      { name: "time", label: "Time (s)", type: "number", defaultValue: "0.5" }
+    ],
+    authorId: "coach-johnson"
+  },
+  {
+    name: "SwimmingPaceCalculator",
+    slug: "swimming-pace-calculator",
+    category: "sports",
+    subcategory: "other",
+    description: "Calculate swimming pace and splits.",
+    type: "sports",
+    inputs: [
+      { name: "distance", label: "Distance (m)", type: "number", defaultValue: "100" },
+      { name: "time", label: "Time (seconds)", type: "number", defaultValue: "60" }
+    ],
+    authorId: "trainer-maria"
+  },
+  
+  // ========== FOOD CALCULATORS ==========
+  {
+    name: "FoodCostCalculator",
+    slug: "food-cost-calculator",
+    category: "food",
+    subcategory: "nutrition",
+    description: "Calculate food cost per serving and profit margins.",
+    type: "food",
+    inputs: [
+      { name: "ingredientCost", label: "Total Ingredient Cost", type: "number", defaultValue: "20" },
+      { name: "servings", label: "Number of Servings", type: "number", defaultValue: "4" },
+      { name: "sellingPrice", label: "Selling Price per Serving", type: "number", defaultValue: "8" }
+    ],
+    authorId: "nutritionist-amy"
+  },
+  {
+    name: "NutritionLabelCalculator",
+    slug: "nutrition-label-calculator",
+    category: "food",
+    subcategory: "nutrition",
+    description: "Calculate nutrition facts per serving.",
+    type: "food",
+    inputs: [
+      { name: "calories", label: "Total Calories", type: "number", defaultValue: "800" },
+      { name: "protein", label: "Total Protein (g)", type: "number", defaultValue: "40" },
+      { name: "carbs", label: "Total Carbs (g)", type: "number", defaultValue: "100" },
+      { name: "fat", label: "Total Fat (g)", type: "number", defaultValue: "20" },
+      { name: "servings", label: "Number of Servings", type: "number", defaultValue: "4" }
+    ],
+    authorId: "nutritionist-amy"
+  },
+  {
+    name: "RecipeConverter",
+    slug: "recipe-converter",
+    category: "food",
+    subcategory: "recipe",
+    description: "Convert recipe measurements and serving sizes.",
+    type: "food",
+    inputs: [
+      { name: "originalServings", label: "Original Servings", type: "number", defaultValue: "4" },
+      { name: "newServings", label: "New Servings", type: "number", defaultValue: "8" },
+      { name: "ingredientAmount", label: "Ingredient Amount", type: "number", defaultValue: "2" },
+      { name: "unit", label: "Unit", type: "select", defaultValue: "cups", options: [
+        { value: "cups", label: "Cups" },
+        { value: "tbsp", label: "Tablespoons" },
+        { value: "tsp", label: "Teaspoons" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "RecipeUnitConverter",
+    slug: "recipe-unit-converter",
+    category: "food",
+    subcategory: "conversions",
+    description: "Convert between cooking measurement units.",
+    type: "food",
+    inputs: [
+      { name: "amount", label: "Amount", type: "number", defaultValue: "1" },
+      { name: "fromUnit", label: "From Unit", type: "select", defaultValue: "cup", options: [
+        { value: "cup", label: "Cup" },
+        { value: "tbsp", label: "Tablespoon" },
+        { value: "tsp", label: "Teaspoon" },
+        { value: "floz", label: "Fluid Ounce" }
+      ]},
+      { name: "toUnit", label: "To Unit", type: "select", defaultValue: "mL", options: [
+        { value: "mL", label: "Milliliter" },
+        { value: "L", label: "Liter" },
+        { value: "cup", label: "Cup" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "CookingMeasurementConverter",
+    slug: "cooking-measurement-converter",
+    category: "food",
+    subcategory: "conversions",
+    description: "Convert between various cooking measurements.",
+    type: "food",
+    inputs: [
+      { name: "amount", label: "Amount", type: "number", defaultValue: "1" },
+      { name: "fromUnit", label: "From", type: "select", defaultValue: "cup", options: [
+        { value: "cup", label: "Cup" },
+        { value: "tbsp", label: "Tablespoon" },
+        { value: "tsp", label: "Teaspoon" }
+      ]},
+      { name: "toUnit", label: "To", type: "select", defaultValue: "tbsp", options: [
+        { value: "cup", label: "Cup" },
+        { value: "tbsp", label: "Tablespoon" },
+        { value: "tsp", label: "Teaspoon" }
+      ]}
+    ],
+    authorId: "chef-gordon"
+  },
+  {
+    name: "CalorieDensityCalculator",
+    slug: "calorie-density-calculator",
+    category: "food",
+    subcategory: "other",
+    description: "Calculate calorie density of foods.",
+    type: "food",
+    inputs: [
+      { name: "calories", label: "Calories", type: "number", defaultValue: "200" },
+      { name: "weight", label: "Weight (g)", type: "number", defaultValue: "100" }
+    ],
+    authorId: "nutritionist-amy"
+  },
+  {
+    name: "FoodWasteCalculator",
+    slug: "food-waste-calculator",
+    category: "food",
+    subcategory: "other",
+    description: "Calculate food waste and cost savings from reduction.",
+    type: "food",
+    inputs: [
+      { name: "foodPurchased", label: "Food Purchased (kg)", type: "number", defaultValue: "100" },
+      { name: "foodWasted", label: "Food Wasted (kg)", type: "number", defaultValue: "20" },
+      { name: "costPerKg", label: "Cost per kg", type: "number", defaultValue: "5" }
+    ],
+    authorId: "nutritionist-amy"
+  },
+  
+  // ========== ECOLOGY CALCULATORS ==========
+  {
+    name: "CarbonFootprintCalculator",
+    slug: "carbon-footprint-calculator",
+    category: "ecology",
+    subcategory: "carbon",
+    description: "Calculate personal or household carbon footprint.",
+    type: "ecology",
+    inputs: [
+      { name: "electricity", label: "Monthly Electricity (kWh)", type: "number", defaultValue: "500" },
+      { name: "gas", label: "Monthly Gas (therms)", type: "number", defaultValue: "50" },
+      { name: "milesDriven", label: "Monthly Miles Driven", type: "number", defaultValue: "1000" },
+      { name: "mpg", label: "Vehicle MPG", type: "number", defaultValue: "25" }
+    ],
+    authorId: "dr-green"
+  },
+  {
+    name: "WaterUsageCalculator",
+    slug: "water-usage-calculator",
+    category: "ecology",
+    subcategory: "water",
+    description: "Calculate daily and annual water usage.",
+    type: "ecology",
+    inputs: [
+      { name: "showers", label: "Showers per Week", type: "number", defaultValue: "7" },
+      { name: "showerLength", label: "Shower Length (minutes)", type: "number", defaultValue: "10" },
+      { name: "laundryLoads", label: "Laundry Loads per Week", type: "number", defaultValue: "3" },
+      { name: "dishwasherRuns", label: "Dishwasher Runs per Week", type: "number", defaultValue: "5" }
+    ],
+    authorId: "dr-green"
+  },
+  {
+    name: "EnergyConsumptionCalculator",
+    slug: "energy-consumption-calculator",
+    category: "ecology",
+    subcategory: "energy",
+    description: "Calculate household energy consumption and costs.",
+    type: "ecology",
+    inputs: [
+      { name: "appliances", label: "Number of Appliances", type: "number", defaultValue: "10" },
+      { name: "averageWattage", label: "Average Wattage", type: "number", defaultValue: "1500" },
+      { name: "hoursPerDay", label: "Hours per Day", type: "number", defaultValue: "4" },
+      { name: "electricityRate", label: "Electricity Rate ($/kWh)", type: "number", defaultValue: "0.12" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "RecyclingCalculator",
+    slug: "recycling-calculator",
+    category: "ecology",
+    subcategory: "waste",
+    description: "Calculate recycling impact and waste reduction.",
+    type: "ecology",
+    inputs: [
+      { name: "wastePerWeek", label: "Waste per Week (kg)", type: "number", defaultValue: "10" },
+      { name: "recyclingRate", label: "Recycling Rate (%)", type: "number", defaultValue: "50" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "CompostCalculator",
+    slug: "compost-calculator",
+    category: "ecology",
+    subcategory: "waste",
+    description: "Calculate compost production and benefits.",
+    type: "ecology",
+    inputs: [
+      { name: "foodWaste", label: "Food Waste per Week (kg)", type: "number", defaultValue: "5" },
+      { name: "yardWaste", label: "Yard Waste per Week (kg)", type: "number", defaultValue: "3" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "SolarPanelCalculator",
+    slug: "solar-panel-calculator",
+    category: "ecology",
+    subcategory: "energy",
+    description: "Calculate solar panel requirements and savings.",
+    type: "ecology",
+    inputs: [
+      { name: "monthlyElectricity", label: "Monthly Electricity (kWh)", type: "number", defaultValue: "500" },
+      { name: "roofArea", label: "Available Roof Area (m²)", type: "number", defaultValue: "50" },
+      { name: "sunlightHours", label: "Average Sunlight Hours per Day", type: "number", defaultValue: "5" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "WindEnergyCalculator",
+    slug: "wind-energy-calculator",
+    category: "ecology",
+    subcategory: "energy",
+    description: "Calculate wind energy potential and generation.",
+    type: "ecology",
+    inputs: [
+      { name: "windSpeed", label: "Average Wind Speed (m/s)", type: "number", defaultValue: "8" },
+      { name: "turbineDiameter", label: "Turbine Diameter (m)", type: "number", defaultValue: "50" },
+      { name: "efficiency", label: "Turbine Efficiency (%)", type: "number", defaultValue: "40" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "TreePlantingCalculator",
+    slug: "tree-planting-calculator",
+    category: "ecology",
+    subcategory: "carbon",
+    description: "Calculate carbon offset from tree planting.",
+    type: "ecology",
+    inputs: [
+      { name: "treesPlanted", label: "Number of Trees Planted", type: "number", defaultValue: "10" },
+      { name: "treeAge", label: "Tree Age (years)", type: "number", defaultValue: "10" },
+      { name: "treeType", label: "Tree Type", type: "select", defaultValue: "oak", options: [
+        { value: "oak", label: "Oak" },
+        { value: "pine", label: "Pine" },
+        { value: "maple", label: "Maple" }
+      ]}
+    ],
+    authorId: "dr-green"
+  },
+  {
+    name: "CarbonOffsetCalculator",
+    slug: "carbon-offset-calculator",
+    category: "ecology",
+    subcategory: "carbon",
+    description: "Calculate carbon offset needed for activities.",
+    type: "ecology",
+    inputs: [
+      { name: "activity", label: "Activity", type: "select", defaultValue: "flight", options: [
+        { value: "flight", label: "Flight" },
+        { value: "driving", label: "Driving" },
+        { value: "electricity", label: "Electricity" }
+      ]},
+      { name: "distance", label: "Distance (km)", type: "number", defaultValue: "1000", optional: true },
+      { name: "emissions", label: "Emissions (kg CO2)", type: "number", defaultValue: "200" }
+    ],
+    authorId: "dr-green"
+  },
+  {
+    name: "EcologicalFootprintCalculator",
+    slug: "ecological-footprint-calculator",
+    category: "ecology",
+    subcategory: "sustainability",
+    description: "Calculate personal ecological footprint.",
+    type: "ecology",
+    inputs: [
+      { name: "foodType", label: "Diet Type", type: "select", defaultValue: "mixed", options: [
+        { value: "vegetarian", label: "Vegetarian" },
+        { value: "vegan", label: "Vegan" },
+        { value: "mixed", label: "Mixed" }
+      ]},
+      { name: "housingType", label: "Housing Type", type: "select", defaultValue: "apartment", options: [
+        { value: "apartment", label: "Apartment" },
+        { value: "house", label: "House" }
+      ]},
+      { name: "transportation", label: "Monthly Transportation (km)", type: "number", defaultValue: "1000" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "HomeEnergyCalculator",
+    slug: "home-energy-calculator",
+    category: "ecology",
+    subcategory: "energy",
+    description: "Calculate home energy usage and efficiency.",
+    type: "ecology",
+    inputs: [
+      { name: "squareFootage", label: "Home Square Footage", type: "number", defaultValue: "2000" },
+      { name: "heatingType", label: "Heating Type", type: "select", defaultValue: "gas", options: [
+        { value: "gas", label: "Natural Gas" },
+        { value: "electric", label: "Electric" },
+        { value: "oil", label: "Oil" }
+      ]},
+      { name: "insulation", label: "Insulation Quality", type: "select", defaultValue: "good", options: [
+        { value: "poor", label: "Poor" },
+        { value: "average", label: "Average" },
+        { value: "good", label: "Good" }
+      ]}
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "TransportationCarbonCalculator",
+    slug: "transportation-carbon-calculator",
+    category: "ecology",
+    subcategory: "carbon",
+    description: "Calculate carbon emissions from transportation.",
+    type: "ecology",
+    inputs: [
+      { name: "milesDriven", label: "Miles Driven per Year", type: "number", defaultValue: "12000" },
+      { name: "mpg", label: "Vehicle MPG", type: "number", defaultValue: "25" },
+      { name: "fuelType", label: "Fuel Type", type: "select", defaultValue: "gasoline", options: [
+        { value: "gasoline", label: "Gasoline" },
+        { value: "diesel", label: "Diesel" },
+        { value: "electric", label: "Electric" }
+      ]}
+    ],
+    authorId: "dr-green"
+  },
+  {
+    name: "FoodCarbonCalculator",
+    slug: "food-carbon-calculator",
+    category: "ecology",
+    subcategory: "carbon",
+    description: "Calculate carbon footprint of food choices.",
+    type: "ecology",
+    inputs: [
+      { name: "foodType", label: "Food Type", type: "select", defaultValue: "beef", options: [
+        { value: "beef", label: "Beef" },
+        { value: "chicken", label: "Chicken" },
+        { value: "vegetables", label: "Vegetables" }
+      ]},
+      { name: "amount", label: "Amount (kg)", type: "number", defaultValue: "1" }
+    ],
+    authorId: "dr-green"
+  },
+  {
+    name: "WasteReductionCalculator",
+    slug: "waste-reduction-calculator",
+    category: "ecology",
+    subcategory: "waste",
+    description: "Calculate waste reduction impact and savings.",
+    type: "ecology",
+    inputs: [
+      { name: "currentWaste", label: "Current Waste per Week (kg)", type: "number", defaultValue: "10" },
+      { name: "reductionPercent", label: "Reduction Percentage (%)", type: "number", defaultValue: "30" }
+    ],
+    authorId: "eco-expert-sam"
+  },
+  {
+    name: "SustainabilityScoreCalculator",
+    slug: "sustainability-score-calculator",
+    category: "ecology",
+    subcategory: "sustainability",
+    description: "Calculate overall sustainability score based on various factors.",
+    type: "ecology",
+    inputs: [
+      { name: "energyScore", label: "Energy Efficiency Score (1-10)", type: "number", defaultValue: "7" },
+      { name: "waterScore", label: "Water Conservation Score (1-10)", type: "number", defaultValue: "6" },
+      { name: "wasteScore", label: "Waste Reduction Score (1-10)", type: "number", defaultValue: "8" },
+      { name: "transportationScore", label: "Transportation Score (1-10)", type: "number", defaultValue: "5" }
+    ],
+    authorId: "eco-expert-sam"
+  }
+];
+
+async function main() {
+  // Get existing calculator IDs to filter out duplicates
+  const existingIds = await getExistingCalculatorIds();
+  console.log(`📋 Found ${existingIds.size} existing calculators`);
+  
+  // Filter out calculators that already exist
+  const newCalculatorSpecs = calculatorSpecs.filter(spec => {
+    const exists = existingIds.has(spec.slug);
+    if (exists) {
+      console.log(`⏭️  Skipping existing calculator: ${spec.slug}`);
+    }
+    return !exists;
+  });
+  
+  const skippedCount = calculatorSpecs.length - newCalculatorSpecs.length;
+  console.log(`\n✅ Generated ${newCalculatorSpecs.length} NEW calculator specifications`);
+  if (skippedCount > 0) {
+    console.log(`⏭️  Skipped ${skippedCount} existing calculators`);
+  }
+  
+  const outputPath = path.join(process.cwd(), 'scripts/calculators-to-generate.json');
+  await fs.writeFile(outputPath, JSON.stringify(newCalculatorSpecs, null, 2));
+  console.log(`📝 Saved to: ${outputPath}`);
+  console.log(`\n📊 Breakdown by category:`);
+  
+  const categoryCounts: Record<string, number> = {};
+  newCalculatorSpecs.forEach(spec => {
+    categoryCounts[spec.category] = (categoryCounts[spec.category] || 0) + 1;
+  });
+  
+  Object.entries(categoryCounts).sort().forEach(([category, count]) => {
+    console.log(`   ${category}: ${count} calculators`);
+  });
+}
+
+main().catch(console.error);
+

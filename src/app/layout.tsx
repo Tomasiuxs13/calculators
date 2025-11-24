@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,8 +20,8 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 export const metadata: Metadata = {
   metadataBase: baseUrl,
   title: {
-    default: "Omni-Style Calculators - Free Online Tools",
-    template: "%s | Omni-Style Calculators",
+    default: "Calculators - Free Online Tools",
+    template: "%s | Calculators",
   },
   description: "Free online calculators for every need. Finance, health, math, and more.",
   icons: {
@@ -38,17 +39,20 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    siteName: 'Omni-Style Calculators',
-    title: 'Omni-Style Calculators - Free Online Tools',
+    siteName: 'Calculators',
+    title: 'Calculators - Free Online Tools',
     description: 'Free online calculators for every need. Finance, health, math, and more.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Omni-Style Calculators - Free Online Tools',
+    title: 'Calculators - Free Online Tools',
     description: 'Free online calculators for every need. Finance, health, math, and more.',
   },
   alternates: {
     canonical: './',
+  },
+  verification: {
+    google: 'nl6XWoxNFUf-ZcEniUm0bkuyP8SJY5NnM_yz8vqRSg4',
   },
 };
 
@@ -69,6 +73,18 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 text-gray-900`}
         suppressHydrationWarning
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XJKMJJF63L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XJKMJJF63L');
+          `}
+        </Script>
         {children}
       </body>
     </html>

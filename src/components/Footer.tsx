@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <p className="text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Omni-Style Calculators. All rights reserved.
+            &copy; {new Date().getFullYear()} Calculators. All rights reserved.
           </p>
         </div>
         <div className="flex gap-6 text-sm font-medium text-gray-600">

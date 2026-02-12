@@ -9,6 +9,11 @@ export interface Author {
   role: string;
 }
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export type Category = 
   | 'health' 
   | 'finance' 
@@ -159,4 +164,7 @@ export interface CalculatorConfig {
     description: string;
     keywords?: string[];
   };
+  faq?: FAQItem[];
+  relatedSlugs?: string[];
+  lastModified?: string;
 }

@@ -114,8 +114,11 @@ REQUIREMENTS:
 7. Use TypeScript with proper types
 8. Use Tailwind CSS classes
 9. Import from '@/components/ui/Input', '@/components/ui/Label', '@/components/ui/Select'
-10. For converters: convert to base unit first, then to target unit
-11. Content component should be SEO-optimized with proper headings, examples, and FAQs
+10. For converters: use the shared convert() utility from '@/utils/conversions' instead of inline conversion logic
+11. Use parseNumericInput from '@/utils/validation' for safe number parsing
+12. Content component should use reusable components from '@/components/content': ContentArticle, ContentSection, ContentFormula, ContentExample, ContentUseCases, ContentTermsList (NOT raw Tailwind JSX)
+13. DO NOT include FAQ section in content component — FAQ data goes in the config and is rendered automatically by the page template
+14. Include 3-5 FAQ items in the config as structured data (question/answer pairs)
 
 CALCULATOR SPECIFICATION:
 - Name: ${spec.name}
@@ -138,7 +141,7 @@ Generate the complete code for:
 Return as JSON with these exact keys:
 {
   "calculator": "full TypeScript React component code",
-  "content": "full TypeScript React content component code",
+  "content": "full TypeScript React content component code using ContentArticle, ContentSection, etc.",
   "config": {
     "id": "${spec.slug}",
     "title": "...",
@@ -148,10 +151,16 @@ Return as JSON with these exact keys:
     "subcategory": "${spec.subcategory}",
     "authorId": "${spec.authorId}",
     "meta": {
-      "title": "...",
-      "description": "...",
-      "keywords": ["..."]
-    }
+      "title": "... (max 60 chars, include primary keyword)",
+      "description": "... (120-160 chars, include primary keyword)",
+      "keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
+    },
+    "faq": [
+      { "question": "...", "answer": "..." },
+      { "question": "...", "answer": "..." },
+      { "question": "...", "answer": "..." }
+    ],
+    "lastModified": "${new Date().toISOString().split('T')[0]}"
   }
 }`;
 

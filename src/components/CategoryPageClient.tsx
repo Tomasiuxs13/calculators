@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { getCalculatorsByCategory, getCalculatorsBySubcategory } from '@/config/calculators';
 import { subcategories, Category } from '@/types';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card';
 import { ArrowRight, Calculator, Heart, DollarSign, GraduationCap, MoreHorizontal, Beaker, Wrench, Gauge, Leaf, Coffee, Atom, Trophy, BarChart3 } from 'lucide-react';
 
@@ -58,16 +59,10 @@ export default function CategoryPageClient({ category }: CategoryPageClientProps
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        {/* Breadcrumbs */}
-        <nav className="mb-8 flex items-center text-sm text-gray-500">
-          <Link href="/" className="hover:text-gray-900 transition-colors">
-            Home
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-gray-900 font-medium capitalize">
-            {categoryNames[category]}
-          </span>
-        </nav>
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: categoryNames[category] },
+        ]} />
 
         {/* Header */}
         <div className="text-center mb-12">

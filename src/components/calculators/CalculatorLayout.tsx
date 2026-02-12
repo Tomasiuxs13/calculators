@@ -91,11 +91,11 @@ export default function CalculatorLayout({
         {/* Results Section - Right Side */}
         <div className="lg:col-span-1">
           {results !== null ? (
-            <div className="bg-blue-50 rounded-lg border border-blue-200 p-6 sticky top-8">
+            <div className="bg-blue-50 rounded-lg border border-blue-200 p-6 sticky top-8" role="region" aria-label="Calculation results">
               {results}
             </div>
           ) : (
-            <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 text-center">
+            <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 text-center" role="region" aria-label="Calculation results">
               <p className="text-sm text-gray-500">Enter values to see results</p>
             </div>
           )}
@@ -104,7 +104,7 @@ export default function CalculatorLayout({
 
       {/* Charts Section */}
       {showCharts && charts && (
-        <div className="mt-6 pt-6 border-t border-gray-200 flex flex-col gap-6">
+        <div className="mt-6 pt-6 border-t border-gray-200 flex flex-col gap-6" role="region" aria-label="Charts and visualizations">
           {charts}
         </div>
       )}

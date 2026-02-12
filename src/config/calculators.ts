@@ -694,6 +694,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online length converter. Convert between mm, cm, m, km, inches, feet, yards, and miles instantly.',
       keywords: ['length converter', 'distance converter', 'unit converter', 'mm to inches', 'meters to feet'],
     },
+    faq: [
+      { question: 'How do I convert meters to feet?', answer: 'Multiply the number of meters by 3.28084 to get the equivalent in feet. For example, 5 meters × 3.28084 = 16.404 feet.' },
+      { question: 'What is the difference between metric and imperial units?', answer: 'The metric system uses base-10 conversions (millimeters, centimeters, meters, kilometers), while the imperial system uses various conversion factors (inches, feet, yards, miles).' },
+      { question: 'How many centimeters are in a meter?', answer: 'There are 100 centimeters in 1 meter, which is a base-10 conversion in the metric system.' },
+      { question: 'How do I convert kilometers to miles?', answer: 'Multiply kilometers by 0.621371 to get miles. For example, 10 km × 0.621371 = 6.21371 miles.' },
+      { question: 'What is the most accurate way to convert length units?', answer: 'Use our online converter for the most accurate results, as it uses precise conversion factors. For manual calculations, always utilize the exact conversion factors rather than approximations.' },
+    ],
   },
   {
     id: 'weight-converter',
@@ -710,6 +717,14 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online weight converter. Convert between grams, kg, ounces, pounds, tons, and stones instantly.',
       keywords: ['weight converter', 'mass converter', 'kg to lbs', 'pounds to kg', 'unit converter'],
     },
+    faq: [
+      { question: 'How do I convert kilograms to pounds?', answer: 'Multiply the number of kilograms by 2.20462 to get pounds. For example, 10 kg × 2.20462 = 22.0462 pounds.' },
+      { question: 'How many grams are in a kilogram?', answer: 'There are 1,000 grams in 1 kilogram. This is a base-10 conversion in the metric system.' },
+      { question: 'What is the difference between weight and mass?', answer: 'Mass is the amount of matter in an object (measured in kg), while weight is the force of gravity on that mass (measured in newtons). In everyday use, we often use "weight" to mean mass.' },
+      { question: 'How do I convert ounces to grams?', answer: 'Multiply ounces by 28.3495 to get grams. For example, 16 oz × 28.3495 = 453.592 grams (which equals 1 pound).' },
+      { question: 'What is a stone in weight?', answer: 'stone is a British unit of weight equal to 14 pounds or approximately 6.35 kilograms. It\'s commonly used in the UK and Ireland for body weight.' },
+      { question: 'Why is it important to convert weight correctly?', answer: 'ccurate weight conversion is crucial for cooking, shipping, health tracking, and scientific research to ensure safety and compliance with requirements.' },
+    ],
   },
   {
     id: 'temperature-converter',
@@ -726,6 +741,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online temperature converter. Convert between Celsius, Fahrenheit, and Kelvin instantly.',
       keywords: ['temperature converter', 'celsius to fahrenheit', 'fahrenheit to celsius', 'kelvin converter'],
     },
+    faq: [
+      { question: 'How do I convert Celsius to Fahrenheit?', answer: 'Multiply Celsius by 9/5 and add 32. For example, 25°C × 9/5 + 32 = 77°F.' },
+      { question: 'What is absolute zero in different scales?', answer: 'bsolute zero is 0 K, -273.15°C, or -459.67°F. It\'s the theoretical lowest possible temperature where all molecular motion stops.' },
+      { question: 'At what temperature do Celsius and Fahrenheit equal each other?', answer: 'Celsius and Fahrenheit are equal at -40 degrees (-40°C = -40°F). This is the only point where both scales have the same numerical value.' },
+      { question: 'Why is Kelvin used in science?', answer: 'Kelvin is an absolute scale starting at absolute zero, making it ideal for scientific calculations involving temperature ratios and thermodynamic equations.' },
+      { question: 'What is room temperature in different scales?', answer: 'Room temperature is approximately 20-25°C (68-77°F or 293-298 K), though this can vary depending on location and personal preference.' },
+    ],
   },
   {
     id: 'area-converter',
@@ -742,6 +764,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online area converter. Convert between square meters, square feet, acres, hectares, and square miles.',
       keywords: ['area converter', 'square feet to square meters', 'acres to hectares', 'unit converter'],
     },
+    faq: [
+      { question: 'How do I convert square meters to square feet?', answer: 'Multiply square meters by 10.7639 to get square feet. For example, 50 m² × 10.7639 = 538.195 ft².' },
+      { question: 'How many acres are in a hectare?', answer: 'There are approximately 2.47105 acres in 1 hectare. This is a common conversion in agriculture and land management.' },
+      { question: 'What is the difference between an acre and a hectare?', answer: 'n acre is an imperial unit equal to 4,046.86 square meters, while a hectare is a metric unit equal to 10,000 square meters. A hectare is about 2.47 times larger than an acre.' },
+      { question: 'How do I convert square feet to square yards?', answer: 'Divide square feet by 9 to get square yards. For example, 90 ft² ÷ 9 = 10 yd².' },
+      { question: 'What is a square mile in other units?', answer: '1 square mile equals 2.58999 square kilometers, 640 acres, or 27,878,400 square feet. It\'s used for measuring large areas like cities and counties.' },
+    ],
   },
   {
     id: 'volume-converter',
@@ -758,6 +787,14 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online volume converter. Convert between liters, gallons, cubic meters, cups, and fluid ounces.',
       keywords: ['volume converter', 'liters to gallons', 'gallons to liters', 'unit converter'],
     },
+    faq: [
+      { question: 'How do I convert liters to gallons?', answer: 'Multiply liters by 0.264172 to get US gallons. For example, 10 L × 0.264172 = 2.64172 gallons.' },
+      { question: 'How many milliliters are in a liter?', answer: 'There are 1,000 milliliters in 1 liter. This is a base-10 conversion in the metric system.' },
+      { question: 'What is the difference between fluid ounces and regular ounces?', answer: 'Fluid ounces measure volume (for liquids), while regular ounces measure weight. 1 fluid ounce of water weighs approximately 1.043 ounces, but this varies by substance.' },
+      { question: 'How do I convert cups to milliliters?', answer: 'Multiply cups by 236.588 to get milliliters. For example, 2 cups × 236.588 = 473.176 ml.' },
+      { question: 'What is a cubic meter in liters?', answer: '1 cubic meter equals 1,000 liters. This is commonly used in construction, shipping, and industrial applications for large volume measurements.' },
+      { question: 'Can you convert volume measurements for international cooking?', answer: 'Yes, our volume converter can help you convert between metric and imperial units, making it easy to follow any recipe from different parts of the world.' },
+    ],
   },
   {
     id: 'speed-converter',
@@ -774,6 +811,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online speed converter. Convert between km/h, mph, m/s, knots, and ft/s instantly.',
       keywords: ['speed converter', 'km/h to mph', 'mph to km/h', 'knots converter'],
     },
+    faq: [
+      { question: 'How do I convert km/h to mph?', answer: 'Multiply km/h by 0.621371 to get mph. For example, 100 km/h × 0.621371 = 62.1371 mph.' },
+      { question: 'What is a knot in km/h?', answer: '1 knot equals 1.852 km/h. Knots are commonly used in aviation and maritime navigation.' },
+      { question: 'What other units are used in speed measurement?', answer: 'Other than the commonly known units like km/h and mph, speed can also be expressed in feet per second (ft/s) and knots used mainly in marine and aviation contexts.' },
+      { question: 'Can I use this speed converter for scientific calculations?', answer: 'Yes, our speed converter is precise and can provide accurate results for scientific calculations involving speed.' },
+    ],
   },
   {
     id: 'time-converter',
@@ -790,6 +833,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online time converter. Convert between seconds, minutes, hours, days, weeks, months, and years.',
       keywords: ['time converter', 'hours to minutes', 'days to hours', 'time unit converter'],
     },
+    faq: [
+      { question: 'How many seconds are in an hour?', answer: 'There are 3,600 seconds in 1 hour (60 minutes × 60 seconds).' },
+      { question: 'How do I convert days to hours?', answer: 'Multiply days by 24 to get hours. For example, 3 days × 24 = 72 hours.' },
+      { question: 'What is the significance of time conversion for businesses?', answer: 'Time conversion is critical for businesses to manage schedules, track project timelines, and optimize work hours efficiently.' },
+      { question: 'Can I convert weeks into days easily?', answer: 'Yes, simply multiply the number of weeks by 7 to get the equivalent number of days. For instance, 5 weeks × 7 = 35 days.' },
+    ],
   },
   {
     id: 'energy-converter',
@@ -806,6 +855,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online energy converter. Convert between joules, calories, kWh, BTU, and electronvolts instantly.',
       keywords: ['energy converter', 'joules to calories', 'kwh converter', 'btu converter'],
     },
+    faq: [
+      { question: 'How do I convert calories to joules?', answer: 'Multiply calories by 4.184 to get joules. For example, 100 cal × 4.184 = 418.4 J.' },
+      { question: 'What is the difference between a calorie and a kilocalorie?', answer: 'kilocalorie (kcal) is 1,000 calories. Food labels often use "Calories" (capital C) to mean kilocalories, which can be confusing.' },
+      { question: 'Why is energy conversion important?', answer: 'Energy conversion is critical in multiple fields, including engineering, nutrition, and environmental science, as it helps in optimizing energy use and sustainability.' },
+      { question: 'Can I convert between unconventional energy units?', answer: 'Yes, our converter supports various units, including unconventional ones, making it versatile for different applications.' },
+    ],
   },
   {
     id: 'pressure-converter',
@@ -822,6 +877,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online pressure converter. Convert between pascals, bars, PSI, atmospheres, and mmHg.',
       keywords: ['pressure converter', 'psi to bar', 'pascal converter', 'pressure unit converter'],
     },
+    faq: [
+      { question: 'How do I convert PSI to bars?', answer: 'Multiply PSI by 0.0689476 to get bars. For example, 30 PSI × 0.0689476 = 2.068 bars. Always double-check your calculations for accuracy.' },
+      { question: 'What is standard atmospheric pressure?', answer: 'Standard atmospheric pressure at sea level is 101,325 pascals, 1 atmosphere, or approximately 1.01325 bars. Understanding this value is crucial for various scientific calculations.' },
+      { question: 'Why is pressure conversion important?', answer: 'Pressure conversion is essential for ensuring accurate measurements while working in scientific, engineering, and medical fields. Errors in pressure readings can lead to severe consequences.' },
+      { question: 'Can I convert pressure measurements online?', answer: 'Yes, many online tools are available that can help you quickly convert pressure measurements across various units. Always use reputable websites for accurate results.' },
+    ],
   },
   {
     id: 'data-storage-converter',
@@ -838,6 +899,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online data storage converter. Convert between bytes, KB, MB, GB, TB, and PB instantly.',
       keywords: ['data converter', 'gb to mb', 'storage converter', 'file size converter'],
     },
+    faq: [
+      { question: 'How many megabytes are in a gigabyte?', answer: 'There are 1,024 megabytes in 1 gigabyte. This uses binary (base-2) conversion, not decimal.' },
+      { question: 'Why is 1 GB = 1,024 MB instead of 1,000 MB?', answer: 'Computers use binary (base-2) numbering, so storage units are powers of 2. 2^10 = 1,024, which is why we use 1,024 instead of 1,000.' },
+      { question: 'How can I convert data storage units accurately?', answer: 'Using a data storage converter tool is ideal, but understanding the unit factors helps ensure accurate conversion.' },
+    ],
   },
   // Finance Calculators
   {
@@ -904,6 +970,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Free online fuel economy converter. Convert between MPG, L/100km, and km/L instantly.',
       keywords: ['fuel economy converter', 'mpg to l/100km', 'l/100km to mpg', 'km/l converter'],
     },
+    faq: [
+      { question: 'How accurate is the fuel economy converter?', answer: 'Our converter provides accurate results based on standardized formulas used in the automotive industry.' },
+      { question: 'Why do fuel economy measurements matter?', answer: 'They directly influence fuel costs, overall vehicle efficiency, and environmental impact. Choosing a fuel-efficient vehicle can save money and reduce carbon emissions.' },
+      { question: 'Can I use the fuel economy converter for hybrid or electric vehicles?', answer: 'Yes, although traditional conversions may vary, our tool aids in understanding equivalent fuel economies for hybrid and electric variants.' },
+    ],
   },
   {
     id: 'power-converter',
@@ -968,6 +1039,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Easily convert between hertz, kilohertz, megahertz, and gigahertz with our Frequency Converter. Ideal for telecommunications, electronics, and physics.',
       keywords: ["frequency conversion","Hz to kHz","MHz to GHz","frequency calculator"],
     },
+    faq: [
+      { question: 'What are the most common frequency units?', answer: 'The most common frequency units are hertz (Hz), kilohertz (kHz), megahertz (MHz), and gigahertz (GHz). Each unit represents a different scale of frequency measurement.' },
+      { question: 'How do I know which frequency unit to use?', answer: 'The choice of frequency unit often depends on the context in which the frequency is being used. For instance, audio frequencies are typically measured in hertz (Hz) or kilohertz (kHz), whereas radio frequencies may be expressed in megahertz (MHz) or gigahertz (GHz).' },
+      { question: 'Can I convert frequency units manually?', answer: 'Yes, you can convert frequency units manually using the conversion factors mentioned earlier. Simply multiply or divide according to the relationship between the units.' },
+    ],
   },
   {
     id: 'electric-current-converter',
@@ -1032,6 +1108,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our Capacitance Converter to seamlessly convert between farads, microfarads, nanofarads, and picofarads. Ideal for electronics and electrical engineering.',
       keywords: ["capacitance conversion","farads","microfarads","nanofarads","picofarads","capacitance converter"],
     },
+    faq: [
+      { question: 'What is capacitance?', answer: 'Capacitance is the ability of a system to store an electric charge. It is measured in farads and is an essential aspect of how capacitors operate within electronic circuits.' },
+      { question: 'Why convert capacitance values?', answer: 'Converting capacitance values is necessary for accurate circuit design and integration. Different components and applications may require different units, so being able to convert ensures that all components work correctly together.' },
+      { question: 'How accurate are the conversions in your tool?', answer: 'The capacitance converter utilizes precise calculations based on standardized conversion factors to ensure accuracy. However, always double-check your results, especially in critical applications.' },
+    ],
   },
   {
     id: 'personal-loan-calculator',
@@ -1144,6 +1225,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our Body Fat Calculator to estimate your body fat percentage using the Navy method or BMI method. Understand your health better with accurate body fat analysis.',
       keywords: ["body fat calculator","body fat percentage","Navy method","BMI method","health","fitness"],
     },
+    faq: [
+      { question: 'What is a healthy body fat percentage?', answer: 'For men, a body fat percentage between 10-20% is typically considered healthy, while for women, the range is around 18-28%.' },
+      { question: 'Can I lose body fat without dieting?', answer: 'Yes, incorporating regular exercise and increasing daily activity levels can lead to fat loss, even without dietary changes.' },
+      { question: 'How often should I check my body fat percentage?', answer: 'It is recommended to measure your body fat percentage every 4-6 weeks to monitor progress accurately.' },
+    ],
   },
   {
     id: 'calorie-calculator',
@@ -1384,6 +1470,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our Debt Consolidation Calculator to find out how much you can save by consolidating your debts into one loan.',
       keywords: ["debt consolidation","savings calculator","finance","loans"],
     },
+    faq: [
+      { question: 'How does debt consolidation affect my credit score?', answer: 'The impact of debt consolidation on your credit score can vary. While consolidating can lower your credit utilization ratio, it may initially decrease your score due to hard inquiries. However, maintaining timely payments post-consolidation typically improves credit health over time.' },
+      { question: 'Is debt consolidation the best option for me?', answer: 'Debt consolidation may be suitable if you have multiple high-interest debts. However, it\'s crucial to assess your overall financial situation and consider alternatives, such as debt management plans or credit counseling, based on individual needs.' },
+      { question: 'Are there any risks associated with debt consolidation?', answer: 'Yes, risks may include incurring additional debt if you misuse credit after consolidation or not addressing the underlying financial issues. It\'s essential to create a sustainable repayment plan post-consolidation.' },
+    ],
   },
   {
     id: 'investment-return-calculator',
@@ -1464,6 +1555,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our 401(k) calculator to estimate your retirement savings and employer contributions.',
       keywords: ["401(k)","retirement calculator","savings","financial planning"],
     },
+    faq: [
+      { question: 'What is the contribution limit for a 401(k) plan?', answer: 'The IRS sets annual contribution limits for 401(k) accounts, which can vary each year based on inflation.' },
+      { question: 'How does employer matching work?', answer: 'Employer matching varies by company; some match dollar-for-dollar, while others offer a percentage of what you contribute.' },
+      { question: 'Can I withdraw from my 401(k) before retirement?', answer: 'While possible, early withdrawals typically incur penalties and taxes unless specific criteria are met.' },
+      { question: 'What happens to my 401(k) when I change jobs?', answer: 'You may leave it with your former employer, roll it into a new employer\'s plan, or convert it to an individual retirement account (IRA).' },
+      { question: 'How can I increase my 401(k) investment growth?', answer: 'Choosing a diversified portfolio and regularly contributing can enhance growth. Working with a financial advisor may also help.' },
+    ],
   },
   {
     id: 'ira-calculator',
@@ -1480,6 +1578,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our IRA calculator to estimate your retirement savings based on your contributions and expected returns.',
       keywords: ["IRA","retirement","savings","calculator","finance"],
     },
+    faq: [
+      { question: 'What are the contribution limits for IRAs?', answer: 'For 2023, you can contribute up to $6,500 per year to your IRA, with a catch-up contribution of an additional $1,000 if you are aged 50 or older.' },
+      { question: 'Can I have multiple IRAs?', answer: 'Yes, you can have multiple IRA accounts, but the total contributions across all accounts cannot exceed the annual limit.' },
+      { question: 'What happens if I take money out of my IRA before retirement?', answer: 'Withdrawals made before age 59½ are typically subject to a 10% early withdrawal penalty, in addition to taxes on any taxable withdrawals.' },
+    ],
   },
   {
     id: 'income-tax-calculator',
@@ -1800,6 +1903,10 @@ export const calculators: CalculatorConfig[] = [
       description: 'Easily solve proportions and find missing values with our online Proportion Calculator.',
       keywords: ["proportion","calculator","math","ratios","solve proportions"],
     },
+    faq: [
+      { question: 'How do I find the missing value in a proportion?', answer: 'ratio compares two quantities, while a proportion states that two ratios are equal.' },
+      { question: 'Can the proportion calculator handle negative values?', answer: 'Yes, the proportion calculator can handle negative values as well as positive ones.' },
+    ],
   },
   {
     id: 'cube-root-calculator',
@@ -1960,6 +2067,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our Circle Calculator to find the area and circumference of a circle based on its radius.',
       keywords: ["circle calculator","area","circumference","geometry"],
     },
+    faq: [
+      { question: 'Why is the circle circumference important?', answer: 'The circumference helps determine how much material is needed for enclosures, tracks, or circular designs.' },
+      { question: 'Can the area of a circle be negative?', answer: 'No, the area of a circle is always a positive value as it represents a measurable space.' },
+      { question: 'How does changing the radius affect the circle\'s area?', answer: 'Increasing the radius significantly increases the area because the area is proportional to the square of the radius.' },
+    ],
   },
   {
     id: 'triangle-calculator',
@@ -2088,6 +2200,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Easily calculate permutations with our online Permutation Calculator. Input total items and items to arrange.',
       keywords: ["permutation","calculator","nPr","statistics","probability"],
     },
+    faq: [
+      { question: 'What is the difference between permutations and combinations?', answer: 'While permutations consider the order of arrangement, combinations focus solely on the selection of items without regard to order.' },
+      { question: 'Can I use the permutation calculator for large numbers?', answer: 'Yes, our calculator can handle large values of n and r efficiently.' },
+      { question: 'How does factorial impact permutation calculations?', answer: 'Factorials grow rapidly, which affects the total number of permutations possible as n increases.' },
+    ],
   },
   {
     id: 'time-zone-converter',
@@ -2152,6 +2269,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our Force Calculator to compute force based on mass and acceleration using Newton\'s second law.',
       keywords: ["force calculator","physics","Newton's second law","calculate force"],
     },
+    faq: [
+      { question: 'What units are used to measure force?', answer: 'Force is measured in Newtons (N), where 1 Newton is defined as the force required to accelerate a mass of 1 kilogram at the rate of 1 meter per second squared.' },
+      { question: 'Can different units be used for mass and acceleration?', answer: 'Yes, but it\'s important to convert the units accordingly to maintain consistency in calculations. For instance, if mass is in grams, convert it to kilograms (1 kg = 1000 g) before using the formula.' },
+      { question: 'How can the force calculator help in education?', answer: 'The force calculator serves as an excellent educational tool for students to better understand the relationship between mass, acceleration, and force through practical examples and instant calculations.' },
+    ],
   },
   {
     id: 'acceleration-calculator',
@@ -2264,6 +2386,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute the mode of a numeric dataset. Enter comma-separated numbers to find the most frequently occurring value(s) and visualize the frequency distribution.',
       keywords: ["mode","mode calculator","statistics","descriptive statistics","frequency distribution","multimodal","data analysis"],
     },
+    faq: [
+      { question: 'What if there are multiple modes?', answer: 'If two or more values share the highest frequency, the dataset is multimodal and all such values are reported as modes.' },
+      { question: 'What if values are non-numeric?', answer: 'This calculator ignores non-numeric entries. If you need to compute the mode for categorical data (strings), use a similar approach but ensure that inputs are provided as categories without commas inside category names.' },
+      { question: 'How are decimals handled?', answer: 'Decimals are parsed as numeric values. For example, 2.0 and 2 are considered the same numeric value after parsing.' },
+      { question: 'Can the mode be used with categorical data?', answer: 'Yes, the mode is ideal for analyzing categorical data, as it provides insight into the most frequently occurring category in your dataset.' },
+    ],
   },
   {
     id: 'distance-converter',
@@ -2280,6 +2408,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert distances between kilometers, miles, nautical miles, and meters. Includes charts and PDF export.',
       keywords: ["distance converter","kilometers to miles","nautical miles","convert km to mi","distance conversion","meters to miles"],
     },
+    faq: [
+      { question: 'Does the converter support negative distances?', answer: 'By default, this tool expects non-negative distances. If you need to handle directional distances or vectors, apply sign handling in your application logic.' },
+      { question: 'Are nautical miles different from regular miles?', answer: 'Yes. A nautical mile (nmi) is based on the Earth\'s circumference and equals exactly 1852 meters. A statute mile (mi) equals 1609.344 meters.' },
+      { question: 'How accurate are the conversions?', answer: 'Conversions use standardized factors, and results are rounded to six decimal places in the UI. For high-precision needs, adjust the rounding or perform calculations with high-precision libraries.' },
+    ],
   },
   {
     id: 'mile-to-kilometer-converter',
@@ -2312,6 +2445,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Fast and accurate converter to transform inches to centimeters and centimeters to inches. Includes charts and PDF export.',
       keywords: ["inch to centimeter","in to cm","length converter","unit conversion","conversion calculator"],
     },
+    faq: [
+      { question: 'Is this converter accurate?', answer: 'Yes. The converter uses exact conversion factors (1 in = 0.0254 m, 1 cm = 0.01 m) and displays results rounded to six decimal places. For most practical purposes this is more than sufficient.' },
+      { question: 'Can I convert negative values?', answer: 'Negative lengths are not typical in physical measurements. The calculator will accept negative numbers but be mindful of the context in which you use them.' },
+      { question: 'Can I download the result?', answer: 'Yes. Use the download button in the calculator to generate a PDF summary of your inputs and results.' },
+      { question: 'What features does this converter offer?', answer: 'side from basic conversions, this tool is designed for user convenience, with instant calculations, easy-to-read outputs, and a clear interface to assist users in achieving their desired measurements quickly.' },
+    ],
   },
   {
     id: 'foot-to-meter-converter',
@@ -2328,6 +2467,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Instantly convert between feet (ft) and meters (m). Accurate, fast, and includes charts and PDF export.',
       keywords: ["feet to meters","ft to m","meter to foot","length converter","unit conversion","ft m converter"],
     },
+    faq: [
+      { question: 'Is the conversion exact?', answer: 'The relationship 1 ft = 0.3048 m is exact by definition. When displaying results, the converter rounds to a reasonable number of decimal places for readability, ensuring accurate representation while remaining user-friendly.' },
+      { question: 'Why convert via a base unit?', answer: 'Converting via a base unit (meters) simplifies the logic and minimizes rounding errors, especially when supporting multiple units. This method also facilitates seamless expansion of the converter, enabling additional units to be integrated easily in the future.' },
+      { question: 'Can I download the results?', answer: 'Yes — use the PDF download button to generate a summary of your inputs and results for record keeping or sharing with colleagues or clients, ensuring thorough documentation and convenience.' },
+      { question: 'What is the easiest way to use this converter?', answer: 'Simply enter the value you want to convert, choose the unit from which you are converting (feet or meters), and the converter will automatically calculate the result in the desired unit. It\'s as straightforward as typing and reading! Perfect for decoding any length measurements quickly.' },
+    ],
   },
   {
     id: 'yard-to-meter-converter',
@@ -2344,6 +2489,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly convert between yards and meters. Auto-calculating length converter with charts and PDF export. Accurate conversions using 1 yd = 0.9144 m.',
       keywords: ["yard to meter","yards to meters","meter to yard","length converter","unit conversion","yd to m","m to yd"],
     },
+    faq: [
+      { question: 'Is the conversion exact?', answer: 'The conversion factor 1 yd = 0.9144 m is exact by definition, so converting between yards and meters using this factor yields accurate results. We round the displayed result for readability.' },
+      { question: 'Can I convert negative lengths?', answer: 'Negative lengths are uncommon for physical distances but the tool will accept negative numbers if needed. Use caution when interpreting negative values.' },
+      { question: 'How many decimal places are shown?', answer: 'Results are shown rounded to six decimal places by default, which is sufficient for most practical purposes. You can use the displayed value for further calculations or export it via PDF.' },
+      { question: 'What tools can I use for these conversions?', answer: 'In addition to this online converter, you can use calculators, smartphone apps, and measurement charts to convert between yards and meters, ensuring you always have the tools you need for precise measurements, regardless of the platform.' },
+    ],
   },
   {
     id: 'nautical-mile-converter',
@@ -2360,6 +2511,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert distances measured in nautical miles (nmi) to kilometers (km), miles (mi), or meters (m). Accurate, instant conversions with charts and PDF export.',
       keywords: ["nautical mile converter","nmi to km","nmi to miles","nautical miles to meters","distance conversion","length converter"],
     },
+    faq: [
+      { question: 'Is a nautical mile the same as a mile?', answer: 'No. A nautical mile (1,852 meters) is longer than a statute mile (1,609.34 meters). Use this converter to switch between them accurately to avoid miscalculations in navigation.' },
+      { question: 'Why convert via meters?', answer: 'Converting via a base unit like meters simplifies the math and reduces possible rounding errors. It also makes adding more units straightforward, ensuring that the conversions remain consistent and reliable across different systems.' },
+      { question: 'How accurate are the results?', answer: 'This converter uses the exact definition for the nautical mile (1852 m) and common conversion factors for kilometers and miles. Final results are rounded to six decimal places for display, providing highly accurate outputs essential for navigation purposes.' },
+      { question: 'What are some common use cases for nautical miles?', answer: 'Nautical miles are primarily used in marine navigation, air traffic management, and by various industries involved in shipping and aviation. They are essential for charting courses, estimating travel times, and ensuring compliance with international navigation laws.' },
+    ],
   },
   {
     id: 'pound-to-kilogram-converter',
@@ -2408,6 +2565,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly convert between stones (st) and kilograms (kg). Includes charts and PDF export for results.',
       keywords: ["stone to kilogram","stones to kg","kg to stones","weight converter","stone converter","kilogram converter"],
     },
+    faq: [
+      { question: 'Is the conversion exact?', answer: 'The converter uses the standard defined factor of 1 st = 6.35029318 kg. Results are shown rounded to a reasonable number of decimal places for readability, ensuring you get a practical output while maintaining precision.' },
+      { question: 'Why use kilograms as a base unit?', answer: 'Using a common base unit (kilograms) simplifies conversions between any supported weight units and reduces rounding errors. It also allows for clearer communication and understanding when discussing metrics across various contexts, including sports, medicine, and daily life.' },
+      { question: 'Can I copy or export the results?', answer: 'Yes — use the PDF download option to export the inputs and results as a PDF for record keeping or sharing. This feature is ideal for those who might want to track their weight changes over time or share results with healthcare professionals.' },
+    ],
   },
   {
     id: 'tonne-to-kilogram-converter',
@@ -2424,6 +2586,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly convert between tonnes (t) and kilograms (kg). Instant, accurate conversion with charting and PDF export.',
       keywords: ["tonne to kilogram","t to kg","kilogram to tonne","weight converter","unit conversion","tonnes kilograms converter"],
     },
+    faq: [
+      { question: 'Is a tonne the same as a metric ton?', answer: 'Yes. A tonne (abbreviated t) is the metric ton and equals 1,000 kilograms.' },
+      { question: 'Can I convert negative values?', answer: 'This converter accepts non-negative values. Negative weights are uncommon for physical mass; if you need to represent net loss or deficit, enter the appropriate numeric value but be aware of physical interpretation.' },
+      { question: 'How many decimal places are shown?', answer: 'Results are rounded to 6 decimal places for accuracy and readability. You can copy the result for use in spreadsheets or reports.' },
+      { question: 'Why is it important to know the tonne to kilogram conversion?', answer: 'Understanding this conversion is vital for precise measurements in various fields, ensuring compliance with safety regulations and optimizing logistics processes.' },
+    ],
   },
   {
     id: 'liter-to-gallon-converter',
@@ -2440,6 +2608,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly convert between liters and US gallons. Enter a volume, choose units, and get instant results with optional charts and PDF export.',
       keywords: ["liters","gallons","liters to gallons","gallon to liter","volume converter","unit conversion"],
     },
+    faq: [
+      { question: 'Which gallon does this converter use?', answer: 'This converter uses the US liquid gallon (1 gal = 3.78541 liters). It does not convert to the UK (imperial) gallon.' },
+      { question: 'Can I convert negative volumes?', answer: 'The converter expects non-negative values. Negative volumes are not meaningful for typical use cases and will not display a result.' },
+      { question: 'How accurate is the result?', answer: 'Conversions use the standard factor (1 US gal = 3.78541 L) and results are shown to six decimal places. For most practical purposes, this is sufficiently accurate.' },
+    ],
   },
   {
     id: 'cubic-meter-converter',
@@ -2456,6 +2629,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert cubic meters (m³) to liters, US gallons, and cubic feet quickly and accurately. Auto-calculating converter with charts and PDF export.',
       keywords: ["cubic meter","m3","volume converter","liters","gallons","cubic feet","unit conversion","volume"],
     },
+    faq: [
+      { question: 'Are the gallons US or Imperial?', answer: 'This converter uses the US gallon (≈ 3.78541 liters). If you need imperial gallons, convert using the appropriate factor (1 imperial gallon ≈ 4.54609 liters).' },
+      { question: 'Why convert via a base unit?', answer: 'Converting via a base unit (m³) reduces cumulative rounding errors and makes it easier to add more units in the future while keeping calculations consistent.' },
+      { question: 'Can I download or share the results?', answer: 'Yes — use the download PDF action to export the inputs and results. Charts are also available to visualize the conversion when enabled.' },
+      { question: 'What are the practical applications of cubic meter conversions?', answer: 'Cubic meter conversions are widely used in various fields, including construction for estimating concrete volumes, agriculture for measuring soil or fertilizer quantities, and environmental science for calculating water-related metrics.' },
+      { question: 'Is there a difference between metric and imperial units?', answer: 'Yes, metric units are based on powers of ten, while imperial units are based on traditional measurements. It\'s important to understand these differences when converting volumes between systems.' },
+    ],
   },
   {
     id: 'cup-to-milliliter-converter',
@@ -2488,6 +2668,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly convert US fluid ounces (fl oz) to milliliters (mL) and other common volume units. Includes charts and PDF export for results.',
       keywords: ["fluid ounce","fl oz","milliliters","mL","volume converter","unit conversion","convert fl oz to mL","cups","pints","quarts","gallons"],
     },
+    faq: [
+      { question: 'Does this use US or Imperial fluid ounces?', answer: 'This converter uses US fluid ounces (fl oz). Imperial fluid ounces have a different value, so make sure you\'re converting the correct type for your use case.' },
+      { question: 'Is the conversion exact?', answer: 'Conversion factors are based on widely accepted definitions (for example, 1 US fl oz = 29.5735 mL). Results are rounded for display but computed using the defined factors for consistency.' },
+      { question: 'Can I convert large volumes?', answer: 'Yes. The converter supports a variety of units including liters and gallons for large volumes. Ensure your input is within a reasonable numeric range for your application.' },
+      { question: 'How do I use the Fluid Ounce Converter?', answer: 'Simply enter the quantity in fluid ounces that you want to convert, select your target unit, and the converter will provide the result. It’s designed for convenience and accuracy.' },
+    ],
   },
   {
     id: 'celsius-to-fahrenheit-converter',
@@ -2504,6 +2690,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert Celsius (°C) to Fahrenheit (°F) and vice versa. Instant, accurate conversions with charts and PDF export.',
       keywords: ["celsius to fahrenheit","fahrenheit to celsius","temperature converter","°C to °F","°F to °C","temperature conversion"],
     },
+    faq: [
+      { question: 'Can I convert negative temperatures?', answer: 'Yes. The formulas work for negative values as well — temperatures below zero are common and handled correctly. This feature is particularly useful in regions that experience extreme cold.' },
+      { question: 'Is there rounding in the results?', answer: 'Results are rounded to two decimal places for readability, but the underlying calculations use full precision internally. This ensures accuracy while keeping the result user-friendly.' },
+      { question: 'How accurate is the conversion?', answer: 'These conversions use the exact mathematical formulas, so they are fully accurate subject to the displayed rounding. You can trust our Celsius ↔ Fahrenheit Converter for reliable results.' },
+      { question: 'Why are Celsius and Fahrenheit different?', answer: 'Celsius and Fahrenheit are two different scales for measuring temperature. The Celsius scale is based on the metric system, where water freezes at 0°C and boils at 100°C, while the Fahrenheit scale, used primarily in the United States, places the freezing point at 32°F and boiling point at 212°F.' },
+    ],
   },
   {
     id: 'square-foot-to-square-meter-converter',
@@ -2520,6 +2712,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert areas between square feet (ft²) and square meters (m²) instantly. Auto-calculates on input and includes charts and PDF export.',
       keywords: ["square feet to square meters","ft2 to m2","area conversion","unit converter","square feet converter","square meters converter"],
     },
+    faq: [
+      { question: 'Is the conversion exact?', answer: 'The conversion factor from square feet to square meters (0.09290304) is a defined constant. Results are rounded for display, but the calculator uses that constant for accurate conversions. This ensures that even small differences in measurement are accounted for, leading to reliable outcomes.' },
+      { question: 'Can I convert between other area units?', answer: 'This tool specifically converts between square feet and square meters. For other area units (acres, hectares, square inches), use a dedicated converter that includes those units or extend the conversion factors accordingly. It is important to choose the right tool to ensure conversion accuracy.' },
+      { question: 'How should I handle very large or very small values?', answer: 'The calculator supports large and small numerical inputs. If you require scientific notation or higher precision, consider rounding policies for your application domain. Additionally, it’s advisable to consult relevant documentation for specific guidelines depending on your field.' },
+    ],
   },
   {
     id: 'acre-to-hectare-converter',
@@ -2552,6 +2749,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Instantly convert between square kilometers and square miles. Accurate area conversions using square meters as a base unit. Includes charts and PDF export.',
       keywords: ["square kilometer to square mile","km2 to mi2","area conversion","square miles to square kilometers","area converter","land area conversion"],
     },
+    faq: [
+      { question: 'Why convert via square meters?', answer: 'Converting through a common base unit (m²) ensures consistency and reduces cumulative rounding errors when converting between units that use different base magnitudes.' },
+      { question: 'What is the exact conversion factor?', answer: '1 square kilometer = 1,000,000 m². 1 square mile = 2,589,988.110336 m² (international mile).' },
+      { question: 'Can I convert very large or very small areas?', answer: 'Yes. The calculator supports decimal values and displays results with sensible rounding. For extremely large or small numbers, consider scientific notation in external tools if necessary.' },
+    ],
   },
   {
     id: 'loan-comparison-calculator',
@@ -2568,6 +2770,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compare two loan offers by entering amounts, APRs, and terms. See monthly payments, total payments, and total interest side-by-side. Download results as PDF and view comparison charts.',
       keywords: ["loan comparison","loan calculator","mortgage comparison","monthly payment calculator","loan interest comparison","finance tools"],
     },
+    faq: [
+      { question: 'Does this calculator include fees or taxes?', answer: 'No. This calculator performs pure amortization calculations based on principal, APR, and term. It does not include closing costs, origination fees, taxes, insurance, or other lender-specific charges.' },
+      { question: 'What if the interest rate is 0%?', answer: 'If the APR is 0%, the monthly payment is simply the principal divided by the number of payments (years × 12). The calculator handles that case and will show zero total interest, making it an essential tool in various scenarios.' },
+      { question: 'Can I compare more than two loans?', answer: 'This specific comparison tool supports two loans side-by-side for simplicity. For more complex comparisons, consider running multiple comparisons or using a spreadsheet to aggregate several offers.' },
+    ],
   },
   {
     id: 'amortization-schedule-generator',
@@ -2584,6 +2791,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Generate a full amortization schedule, calculate periodic payments, total interest, and visualize the remaining balance over time for mortgages and loans.',
       keywords: ["amortization","loan calculator","mortgage schedule","payment schedule","loan amortization","total interest"],
     },
+    faq: [
+      { question: 'What is amortization?', answer: 'mortization is the process of paying off a debt over time through regular payments. Each payment covers interest and reduces the principal.' },
+      { question: 'Does making extra payments help?', answer: 'Yes. Extra payments applied to principal reduce the outstanding balance, which reduces interest accrual and can shorten the loan term.' },
+      { question: 'Why might my actual loan differ from this schedule?', answer: 'Lenders may have different day-count conventions, fees, escrow payments, or rounding rules. This calculator assumes a standard fixed-rate loan without additional fees.' },
+      { question: 'Can I use this tool for any type of loan?', answer: 'Yes, while it\'s designed primarily for fixed-rate loans like mortgages, you can adapt it for auto loans and personal loans as long as the interest rate structure is fixed.' },
+      { question: 'How do I interpret the amortization schedule results?', answer: 'The schedule will show each payment\'s allocation between interest and principal, as well as the decreasing balance after each payment. This gives insight into how quickly you\'re paying down your debt.' },
+    ],
   },
   {
     id: 'stock-return-calculator',
@@ -2600,6 +2814,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use this Stock Return Calculator to compute capital gains, total dividends, absolute return, and percentage return on your stock investment. Fast, automatic calculations and downloadable PDF results.',
       keywords: ["stock return calculator","capital gains calculator","dividend calculator","investment return","portfolio returns","stock returns"],
     },
+    faq: [
+      { question: 'Does this calculator account for taxes?', answer: 'No. This calculator shows pre-tax returns. Taxes on dividends and capital gains can significantly affect net returns, so consult a tax professional for post-tax calculations.' },
+      { question: 'What about fees or commissions?', answer: 'This tool does not account for trading fees, commissions, or other transaction costs. Subtract those costs from the total return if you want a more accurate net return.' },
+      { question: 'Can I calculate annualized returns?', answer: 'This calculator provides absolute and percentage returns. For annualized returns (CAGR), you need the holding period. Consider using a CAGR calculator if you know the investment duration.' },
+    ],
   },
   {
     id: 'dividend-calculator',
@@ -2648,6 +2867,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate annual property taxes by entering the assessed property value and the local tax rate. Quick, accurate, and easy to use.',
       keywords: ["property tax calculator","annual property tax","assessed value","tax rate","real estate taxes","property tax estimate"],
     },
+    faq: [
+      { question: 'Does this calculator include exemptions or deductions?', answer: 'No. This calculator computes the basic annual tax from assessed value and tax rate. It does not apply exemptions (such as homestead exemptions), tax caps, or other local adjustments. Subtract those separately as applicable.' },
+      { question: 'What if my tax rate is expressed per $100 of assessed value?', answer: 'If your rate is expressed per $100 (for example, $1.20 per $100), convert it to a percentage by dividing by 100: $1.20 per $100 = 1.2%.' },
+      { question: 'Can I use a different currency?', answer: 'Yes. The calculator displays numeric results. For presentation, the UI formats values in USD by default; however, the numeric calculation is currency-agnostic — you can interpret the result in your local currency.' },
+      { question: 'How often do property taxes change?', answer: 'Property tax rates can change annually or biannually depending on local regulations. Always check with your local tax assessor’s office for the most current information.' },
+    ],
   },
   {
     id: 'vat-calculator',
@@ -2696,6 +2921,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Tax Bracket Calculator to estimate your federal tax owed, marginal tax rate, and effective tax rate based on annual income and filing status. Auto-calculates as you type.',
       keywords: ["tax bracket","tax calculator","marginal tax rate","effective tax rate","income tax","federal tax calculator","filing status"],
     },
+    faq: [
+      { question: 'Is this my exact tax bill?', answer: 'No. This calculator provides an estimate based on progressive federal tax brackets and does not account for deductions, credits, state/local taxes, additional taxes (e.g., self-employment tax), or other adjustments. For exact liability consult a tax professional or your tax software.' },
+      { question: 'What\'s the difference between marginal and effective tax rate?', answer: 'Your marginal tax rate is the rate applied to the last dollar you earn. Your effective tax rate is the average rate you pay across your entire taxable income (total tax divided by total income).' },
+      { question: 'Can I use this for state taxes?', answer: 'No. This calculator only estimates federal tax based on a simplified bracket model. State tax systems vary widely and may require separate calculations.' },
+    ],
   },
   {
     id: 'expense-tracker-calculator',
@@ -2712,6 +2942,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate your total monthly expenses and see a category breakdown with percentages and charts. Ideal for budgeting and financial planning.',
       keywords: ["expense tracker","budgeting","monthly expenses","budget calculator","personal finance","expense breakdown"],
     },
+    faq: [
+      { question: 'Do I need to enter all categories?', answer: 'No. You can leave categories blank or set them to 0. The calculator will treat blank inputs as 0 and compute totals accordingly. This flexibility allows users to customize their experience based on their unique financial situation.' },
+      { question: 'Can I use this for yearly budgeting?', answer: 'Yes. Multiply the monthly totals by 12 to get an annual estimate. You can also adjust the values to reflect irregular annual expenses split into monthly equivalents. This feature enhances the accuracy of financial projections over longer periods.' },
+      { question: 'How accurate are the percentages?', answer: 'Percentages are calculated as (category amount ÷ total) × 100 and are rounded to two decimal places for readability. Having precise calculations can aid in making quicker financial decisions based on your spending patterns.' },
+      { question: 'What if I want to change my spending habits?', answer: 'The Expense Tracker allows you to set financial goals and create a budget based on your calculated expenses. Regularly tracking your spending can highlight areas where you may want to cut back to achieve those goals.' },
+    ],
   },
   {
     id: 'cost-of-living-calculator',
@@ -2728,6 +2964,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate the equivalent salary you would need in a target city to maintain your current standard of living. Compare city cost-of-living indices and download results as a PDF.',
       keywords: ["cost of living","salary comparison","city comparison","relocation calculator","budgeting","cost-of-living calculator"],
     },
+    faq: [
+      { question: 'Are these definitive salary recommendations?', answer: 'No. These are estimates based on cost-of-living indices and don\'t account for taxes, benefits, housing quality, personal spending habits, or neighborhood differences. Use this as a directional guide when planning moves or salary negotiations.' },
+      { question: 'What if my city isn\'t listed?', answer: 'The calculator includes common U.S. cities and falls back to a neutral index if a city isn\'t recognized. For precise planning, use local cost data or specialized cost-of-living services.' },
+      { question: 'Can I download the results?', answer: 'Yes. Use the PDF download option in the calculator to save your inputs and results for reference.' },
+    ],
   },
   {
     id: 'retirement-calculator',
@@ -2744,6 +2985,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate how much your current retirement savings and monthly contributions will grow by your target retirement age. Uses monthly compounding with an expected annual return.',
       keywords: ["retirement calculator","retirement savings","future value","compound interest","investment projection","retirement planning"],
     },
+    faq: [
+      { question: 'Does this calculator account for inflation?', answer: 'No. The projection is nominal and does not adjust for inflation. To estimate real purchasing power, reduce the expected return by your assumed inflation rate. Factor in inflation in your overall budgeting for retirement.' },
+      { question: 'What if my expected return is 0%?', answer: 'If you set the expected return to 0%, the calculator sums your current savings and the total contributions (no growth). This can serve as a conservative baseline for planning and showcases the importance of earning a return on investments.' },
+      { question: 'Should I trust a single number?', answer: 'Treat this projection as an estimate. Market returns vary yearly. Use multiple scenarios (conservative, moderate, aggressive) to plan for uncertainty and develop a flexible retirement strategy.' },
+    ],
   },
   {
     id: 'social-security-calculator',
@@ -2760,6 +3006,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use our Social Security Calculator to quickly estimate monthly and annual Social Security benefits based on your current age, planned retirement age, and average annual income.',
       keywords: ["social security calculator","retirement benefits","estimate social security","retirement planning","social security estimate"],
     },
+    faq: [
+      { question: 'Is this an official Social Security estimate?', answer: 'No. This is a simplified estimator for planning purposes. For an official estimate, check your Social Security statement at the SSA website or contact a qualified advisor.' },
+      { question: 'Why does the calculator use a 40% base rate?', answer: 'The 40% replacement rate is a simplified proxy to provide quick estimates across a wide range of incomes. Actual replacement rates vary based on lifetime earnings, bend points, and indexing rules used by Social Security.' },
+      { question: 'How should I use this estimate?', answer: 'Use this tool for high-level planning and to compare scenarios (e.g., retiring earlier vs. later). Combine these results with other retirement income sources and savings goals to build a complete retirement plan.' },
+      { question: 'What factors could affect my Social Security benefits?', answer: 'Factors such as changes in income, working additional years, and legislative updates can influence the benefits you may receive. Staying informed about these changes is crucial to ensure accurate planning.' },
+    ],
   },
   {
     id: 'pension-calculator',
@@ -2776,6 +3028,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your annual pension benefit and replacement rate using years of service, final average salary, and pension multiplier. Instant results with charts and PDF export.',
       keywords: ["pension calculator","retirement calculator","annual pension","replacement rate","pension multiplier","years of service","final average salary"],
     },
+    faq: [
+      { question: 'Is this an exact benefit calculation?', answer: 'This calculator provides an estimate based on a simple accrual formula. Actual benefit calculations may consider additional factors such as benefit caps, early retirement reductions, cost-of-living adjustments, final average salary definitions, and plan-specific rules. Always consult your plan administrator for precise details.' },
+      { question: 'What is a pension multiplier?', answer: 'The pension multiplier (accrual rate) is the percentage of your final average salary that you earn for each year of service. For example, a 2% multiplier yields 2% of final salary per year of service. Understanding this is key in planning your retirement strategy.' },
+      { question: 'How can I improve my replacement rate?', answer: 'Increasing years of service, improving the final average salary (through promotions or salary increases), and plan design (higher multipliers) can increase your replacement rate. Consider supplemental savings like 401(k) or IRAs to boost retirement income. Diversifying your retirement savings strategy can significantly enhance your financial stability in your golden years.' },
+    ],
   },
   {
     id: 'retirement-savings-goal-calculator',
@@ -2808,6 +3065,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly estimate the life insurance coverage you should consider. Calculate income replacement, add debts, subtract savings, and get a recommended coverage amount.',
       keywords: ["life insurance calculator","insurance coverage calculator","how much life insurance do i need","life insurance estimate","coverage calculator"],
     },
+    faq: [
+      { question: 'Is this calculator personalized?', answer: 'This tool provides a general estimate. For personalized advice, consider your full financial picture and speak with an expert.' },
+      { question: 'Should I include my spouse\'s income?', answer: 'If your spouse contributes financially to your household, you may include their income in your planning or run the calculator for the household\'s combined income to decide appropriate coverage levels.' },
+      { question: 'How often should I review my coverage?', answer: 'Review your coverage when major life events occur such as marriage, the birth of a child, home purchase, career changes, or significant changes in debt and savings.' },
+      { question: 'What factor should I prioritize when calculating?', answer: 'While all factors matter, prioritizing annual income and debts is crucial, as they significantly affect how much your family may need in your absence.' },
+    ],
   },
   {
     id: 'health-insurance-calculator',
@@ -2824,6 +3087,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate annual costs with a health insurance plan vs. without. Enter premium, deductible, out-of-pocket max, and expected medical costs to compare total costs and savings.',
       keywords: ["health insurance calculator","insurance cost calculator","premium calculator","deductible calculator","out-of-pocket maximum","healthcare cost comparison"],
     },
+    faq: [
+      { question: 'Is this a guarantee of coverage?', answer: 'No. This calculator provides an estimate based on the inputs. Actual payments depend on plan details, co-insurance, network, covered services, and billing practices.' },
+      { question: 'What about co-insurance or copayments?', answer: 'This simplified model assumes the patient pays up to the deductible and then up to the out-of-pocket maximum. If you have co-insurance or copays, the effective patient share after deductible may differ. Adjust the expected medical costs to approximate those effects.' },
+      { question: 'How should I use the results from the calculator?', answer: 'Use the calculator to compare different plan scenarios by changing premiums, deductibles, and out-of-pocket maximums. Consider also non-financial factors like provider networks, prescription coverage, and customer service.' },
+      { question: 'How can I optimize my health plan choices?', answer: 'Consider your family\'s health history and projected medical expenses when selecting a plan. Engage with health professionals or financial advisors to understand the benefits thoroughly.' },
+    ],
   },
   {
     id: 'car-insurance-calculator',
@@ -2840,6 +3109,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Car Insurance Calculator to estimate annual insurance premiums based on vehicle value, driver age, driving record, and coverage level. Get instant, transparent results and a premium breakdown.',
       keywords: ["car insurance calculator","auto insurance estimate","insurance premium calculator","vehicle insurance cost","insurance quote estimate"],
     },
+    faq: [
+      { question: 'Is this an official insurance quote?', answer: 'No. This calculator provides an estimate only. For a binding quote, contact licensed insurance providers who will consider additional factors such as location, annual mileage, vehicle safety features, and more.' },
+      { question: 'Why does age affect my premium?', answer: 'Insurance companies use statistical data that shows different age groups have different risk profiles. Younger and older drivers often face higher rates due to higher observed risk.' },
+      { question: 'Can I use this for commercial vehicles?', answer: 'This tool is designed for personal passenger vehicles. Commercial or specialty vehicle insurance involves different rating factors and coverages.' },
+      { question: 'What factors can raise my premium besides age?', answer: 'Factors such as credit score, claim history, the type of vehicle, and even the location where the vehicle is parked overnight can impact your premium significantly.' },
+      { question: 'How often should I review my insurance policy?', answer: 'It\'s advisable to review your insurance policy at least once a year or when significant life changes occur, such as moving, buying a new car, or after a major life event.' },
+    ],
   },
   {
     id: 'exchange-rate-calculator',
@@ -2856,6 +3132,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert currencies between USD, EUR, and GBP. Use default market rates or provide a custom exchange rate to calculate converted amounts and implied fees.',
       keywords: ["exchange rate","currency converter","USD to EUR","EUR to GBP","currency conversion","conversion fee","forex calculator"],
     },
+    faq: [
+      { question: 'Can I use my own exchange rate?', answer: 'Yes. Enter a custom rate in the Exchange Rate field to override the default rate. The calculator will show the converted amount and the implied fee relative to the default market rate.' },
+      { question: 'What currencies are supported?', answer: 'This tool supports USD, EUR, and GBP. The design follows a base-unit approach (USD) to compute default rates between any pair.' },
+      { question: 'Does this include transfer fees?', answer: 'No. This calculator shows the conversion result and an implied fee if your provided rate differs from the default rate. It does not include additional bank or transfer fees. To include fees, adjust the exchange rate accordingly or calculate fees separately and subtract them from the converted amount.' },
+    ],
   },
   {
     id: 'body-type-calculator',
@@ -2888,6 +3169,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly estimate your VO2 max (ml/kg/min and L/min) using resting heart rate, maximum heart rate, age, and weight. Includes age-normative comparison and PDF export.',
       keywords: ["VO2 max","VO2 calculator","aerobic fitness","heart rate","fitness calculator","ml/kg/min","L/min"],
     },
+    faq: [
+      { question: 'Is this VO2 max test accurate?', answer: 'This formula provides a rough estimate based on heart rate. Individual variability, measurement error, medications, and fitness level can affect accuracy. For precise measurement, seek lab testing.' },
+      { question: 'What should I use for maximum heart rate?', answer: 'If you have an actual measured maximal heart rate from a supervised test, use that value. If not, commonly used estimates (e.g., 220 minus age) are less accurate and will affect the VO2 estimate.' },
+      { question: 'Can I use this calculator for training zones?', answer: 'This estimate serves as a good starting point for general fitness planning, but training zones should ideally be based on more specific testing (e.g., lactate threshold or ventilatory thresholds) for athletes or targeted programs.' },
+      { question: 'How can I improve my VO2 max?', answer: 'Improving your VO2 max may involve engaging in high-intensity interval training (HIIT), continuous aerobic exercises, strength training, and ensuring proper recovery strategies.' },
+    ],
   },
   {
     id: 'training-zone-calculator',
@@ -2904,6 +3191,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute personalized heart rate training zones (fat burn, cardio, peak) with the Karvonen method. Enter age and resting heart rate to get target bpm ranges and charts.',
       keywords: ["training zone","heart rate zones","Karvonen","fat burn","cardio zone","peak zone","HRR","fitness calculator"],
     },
+    faq: [
+      { question: 'Is the 220 − age formula accurate?', answer: 'The 220 − age formula is a general estimate for maximum heart rate. Individual max HR can vary. For clinical or precise training plans consider a supervised exercise test to ensure safety and accuracy.' },
+      { question: 'Why use the Karvonen method?', answer: 'The Karvonen method accounts for resting heart rate, which provides a more individualized intensity target than percentages of max heart rate alone. This is essential for effective training results.' },
+      { question: 'Should I use perceived exertion instead?', answer: 'Both objective (HR) and subjective (Rate of Perceived Exertion) methods are useful. If you lack a reliable heart rate monitor, perceived exertion is a practical alternative to gauge exertion levels.' },
+    ],
   },
   {
     id: 'one-rep-max-calculator',
@@ -2920,6 +3212,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your one-rep maximum (1RM) using common formulas (Epley, Brzycki, Lombardi). Ideal for strength training programming and tracking progress.',
       keywords: ["one rep max","1RM","Epley","Brzycki","Lombardi","strength calculator","fitness","training"],
     },
+    faq: [
+      { question: 'Is the estimated 1RM exact?', answer: 'No. These formulas provide estimates that are useful for programming. Individual differences mean the true 1RM may vary.' },
+      { question: 'Which formula should I trust?', answer: 'Epley and Brzycki are commonly used and generally reliable for moderate rep ranges (1–10). Lombardi can perform well across a broader range. Use the estimates as guidelines rather than absolute values.' },
+      { question: 'Can I use this for any exercise?', answer: 'These estimates work best for compound strength movements (squat, bench press, deadlift, etc.). For isolation movements or very technical lifts, accuracy may vary.' },
+      { question: 'How often should I recalculate my 1RM?', answer: 'It\'s a good idea to reassess your estimated 1RM every few weeks, especially after completing a training cycle, or when you notice significant changes in strength levels. Tracking progress regularly helps in making informed adjustments to your workout program.' },
+    ],
   },
   {
     id: 'carb-calculator',
@@ -2936,6 +3234,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your daily carbohydrate needs based on weight, activity level, and goals (lose, maintain, gain). Provides grams per kilogram and total grams per day.',
       keywords: ["carbohydrate calculator","carb needs","nutrition calculator","daily carbs","carb per kg","weight management","sports nutrition"],
     },
+    faq: [
+      { question: 'Are these values suitable for everyone?', answer: 'These recommendations are general estimates. Individual needs vary with metabolic health, age, training load, and medical conditions. Consult a registered dietitian or healthcare professional for personalized guidance based on your unique situation.' },
+      { question: 'How do I adjust for very high training loads?', answer: 'thletes with extremely high training volumes may require higher carbohydrate intakes (up to 8-12 g/kg in some endurance scenarios). Use the \'Active\' level as a baseline and consult a sports nutritionist for precise plans tailored to your training intensity and goals.' },
+      { question: 'Can I use pounds (lbs)?', answer: 'This calculator accepts weight in kilograms. To convert pounds to kilograms, divide by 2.20462 (kg = lbs ÷ 2.20462). Using the metric system can help achieve more accurate recommendations based on global nutrition standards.' },
+      { question: 'What types of carbs should I focus on?', answer: 'Prioritize complex carbohydrates such as whole grains, legumes, fruits, and vegetables as they provide sustained energy and fiber. Simple carbohydrates, such as sugars, should be consumed in moderation and primarily around intense training sessions to aid quick recovery.' },
+    ],
   },
   {
     id: 'fat-calculator',
@@ -2952,6 +3256,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate your daily fat needs based on total calorie intake and the percentage of calories from fat. Results shown in grams and kcal with charts and PDF export.',
       keywords: ["fat calculator","daily fat intake","fat grams","fat calories","macronutrients","nutrition","calorie percentage"],
     },
+    faq: [
+      { question: 'Is fat the only macronutrient that has 9 kcal/g?', answer: 'Yes. Fat provides 9 kcal per gram. Protein and carbohydrates each provide 4 kcal per gram.' },
+      { question: 'What percentage of calories should come from fat?', answer: 'Dietary recommendations vary by individual goals, health conditions, and dietary patterns. Many guidelines suggest 20-35% of total calories from fat for general health, but athletes, people on specialized diets, or those with medical conditions may have different targets. Consult a registered dietitian for personalized recommendations.' },
+      { question: 'Does this calculator account for fat quality (saturated vs unsaturated)?', answer: 'No. This calculator estimates total fat intake in grams or calories. It does not differentiate between types of fat. For health, focus on unsaturated fats and limit saturated and trans fats.' },
+    ],
   },
   {
     id: 'fiber-calculator',
@@ -3016,6 +3325,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Enter systolic and diastolic blood pressure readings to determine the category (Normal, Elevated, Hypertension Stage 1/2, Hypertensive Crisis) and calculate pulse pressure. Includes charting and PDF export.',
       keywords: ["blood pressure","blood pressure calculator","systolic","diastolic","hypertension","pulse pressure","mmHg","health calculator"],
     },
+    faq: [
+      { question: 'When should I seek medical attention?', answer: 'If your systolic is >180 mmHg or diastolic is >120 mmHg, this may be a hypertensive crisis — seek emergency care immediately, especially if you have chest pain, shortness of breath, or neurological symptoms.' },
+      { question: 'What is pulse pressure and why does it matter?', answer: 'Pulse pressure is the difference between systolic and diastolic pressure. Very high or very low pulse pressures can be associated with cardiovascular issues. Discuss abnormal values with your clinician.' },
+      { question: 'How often should I measure my blood pressure?', answer: 'Follow your healthcare provider\'s guidance. For monitoring, many clinicians recommend taking 2-3 readings in the morning and evening for a week to establish a baseline.' },
+      { question: 'What lifestyle changes can help manage blood pressure?', answer: 'Incorporating healthy habits such as a balanced diet, regular exercise, reducing alcohol, and quitting smoking can significantly impact blood pressure levels positively. Consulting with a dietitian can further personalize these changes.' },
+    ],
   },
   {
     id: 'sleep-calculator',
@@ -3032,6 +3347,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Find the best bedtime by specifying your wake time and desired number of 90-minute sleep cycles. Helps you plan sleep to wake up feeling refreshed.',
       keywords: ["sleep calculator","sleep cycles","bedtime calculator","optimal sleep","sleep health"],
     },
+    faq: [
+      { question: 'Are sleep cycles exactly 90 minutes?', answer: 'Sleep cycles vary between individuals and with age, typically ranging from 80–110 minutes. This calculator uses 90 minutes as a widely accepted average.' },
+      { question: 'Should I always aim for an exact number of cycles?', answer: 'iming for full cycles can help you wake up feeling refreshed. However, total sleep needs vary. Use this calculator as a guideline and listen to your body.' },
+      { question: 'Can this replace medical advice?', answer: 'No. This tool provides general guidance. If you have ongoing sleep issues or suspect a sleep disorder, consult a medical professional.' },
+      { question: 'How can I improve my sleep quality?', answer: 'Good sleep hygiene practices like maintaining a regular sleep schedule, creating a restful environment, and managing stress can significantly improve your sleep quality.' },
+      { question: 'Why is sleep important?', answer: 'Sleep is essential for physical health, mental well-being, and overall quality of life. During sleep, your body repairs itself, consolidates memories, and rejuvenates for the day ahead.' },
+    ],
   },
   {
     id: 'vitamin-calculator',
@@ -3064,6 +3386,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate medication dose and administration volume using patient weight (kg), dose per kg (mg/kg), and medication concentration (mg/mL). Includes medical disclaimer and visualization.',
       keywords: ["drug dosage calculator","dose per kg","medication concentration","mg to mL","weight based dosing","medical calculator"],
     },
+    faq: [
+      { question: 'Can this calculator be used for pediatric patients?', answer: 'Yes, but extra caution is required. Pediatric dosing often uses weight-based calculations and may require age-specific adjustments. Consult pediatric dosing guidelines and a pediatrician or pharmacist.' },
+      { question: 'What should I do if concentration units differ?', answer: 'Ensure concentration is in mg/mL. If concentration is given in different units (e.g., mg/100mL or percentage), convert to mg/mL before using the calculator.' },
+      { question: 'Does the calculator account for loading doses or infusion rates?', answer: 'No. This tool only calculates a simple dose based on weight and concentration. For loading doses, infusion rates, or complex regimens, consult clinical protocols and specialists.' },
+    ],
   },
   {
     id: 'ovulation-calculator',
@@ -3096,6 +3423,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate your current pregnancy week and trimester using the first day of your last period (LMP). Get gestational age in weeks and days, trimester, and estimated due date.',
       keywords: ["pregnancy week calculator","gestational age","trimester calculator","due date estimator","pregnancy calculator","LMP calculator"],
     },
+    faq: [
+      { question: 'What is a gestational week?', answer: 'Gestational weeks count the age of the pregnancy from the first day of the last menstrual period. Week 1 begins on the first day of the LMP.' },
+      { question: 'How accurate is the estimated due date?', answer: 'n LMP-based due date is a good estimate for many pregnancies but may be less accurate if your menstrual cycles are irregular. Early ultrasound is the most reliable method to date a pregnancy.' },
+      { question: 'Can I use this tool if I don\'t remember my LMP?', answer: 'If you don\'t remember your LMP, consult your healthcare provider. They may use ultrasound measurements to estimate gestational age.' },
+    ],
   },
   {
     id: 'baby-growth-calculator',
@@ -3128,6 +3460,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your pregnancy weight gain based on pre-pregnancy BMI, current weight, and weeks pregnant. See recommended ranges and track progress.',
       keywords: ["pregnancy weight gain","pregnancy calculator","gestational weight","pre-pregnancy BMI","weight gain recommendations","IOM pregnancy weight"],
     },
+    faq: [
+      { question: 'Is this a medical diagnosis?', answer: 'No. This calculator provides estimates based on public guidelines and should not replace individualized medical advice. Always discuss weight concerns and nutrition with your healthcare provider.' },
+      { question: 'Why use BMI for recommendations?', answer: 'BMI before pregnancy helps determine appropriate total weight gain recommendations, as body composition influences maternal and fetal outcomes. The Institute of Medicine recommendations are stratified by BMI categories.' },
+      { question: 'What if my gain is outside the range?', answer: 'Being below or above the recommended range doesn\'t automatically mean a problem, but it is a prompt to consult your provider. They may review diet, activity, fetal growth, and other health factors to provide guidance.' },
+      { question: 'How can I maintain a healthy pregnancy weight?', answer: 'Maintaining a healthy pregnancy weight involves balanced nutrition, regular physical activity (if approved by your doctor), and monitoring weight gain over time. It\'s essential to focus on nutrient-rich foods and stay hydrated.' },
+      { question: 'What resources are available for weight management during pregnancy?', answer: 'Several resources are available, including consultations with a registered dietitian specialized in prenatal nutrition, pregnancy-specific fitness classes, and apps designed to monitor nutrition and activity levels. Your healthcare provider can also offer personalized recommendations.' },
+    ],
   },
   {
     id: 'breastfeeding-calculator',
@@ -3144,6 +3483,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Breastfeeding Calculator to estimate your baby\'s daily breast milk intake and average volume per feeding based on age, weight, and feedings per day. Helpful for planning and monitoring feeding patterns.',
       keywords: ["breastfeeding calculator","milk intake","feeding schedule","baby feeding calculator","infant intake","breast milk estimate"],
     },
+    faq: [
+      { question: 'Is this breastfeeding calculator a substitute for clinical advice?', answer: 'No. This calculator provides evidence-informed estimates but does not replace personalized medical assessment. Always consult your healthcare provider for tailored guidance.' },
+      { question: 'Why does the intake per kg change with age?', answer: 's infants grow, the ml/kg/day requirement often decreases slowly because metabolic needs per kilogram decline while absolute intake grows with weight.' },
+      { question: 'My baby seems hungrier than the estimate. What should I do?', answer: 'Growth spurts are common and can temporarily increase appetite. Monitor weight gain and diaper output, and consult a pediatrician or lactation consultant if you\\\'re concerned.' },
+      { question: 'What additional factors should I consider for breast milk intake?', answer: 'Consider factors such as the baby\'s activity level, health status, and any specific dietary recommendations based on their unique needs.' },
+    ],
   },
   {
     id: 'prime-number-calculator',
@@ -3176,6 +3521,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Scientific Calculator to evaluate trigonometric, logarithmic, exponential expressions and plot functions using x. Supports degrees and radians.',
       keywords: ["scientific calculator","trigonometry","logarithm","sin","cos","tan","plot","math","calculator"],
     },
+    faq: [
+      { question: 'What does log() mean?', answer: 'In this calculator, log(x) denotes base-10 logarithm. Use ln(x) for natural logarithm.' },
+      { question: 'How do I plot a function?', answer: 'Include x in your expression (e.g. sin(x)*x). Toggle the chart view to see the function plotted. Select Degrees or Radians depending on your input.' },
+      { question: 'Is the input sanitized?', answer: 'The calculator performs basic sanitization and only supports a set of functions and characters. Avoid entering arbitrary JavaScript code. If an expression cannot be evaluated, an error message will be shown.' },
+      { question: 'What are common use cases for the scientific calculator?', answer: 'The scientific calculator is widely used in fields such as physics, engineering, architecture, and statistics. It assists in plotting graphs, solving equations, and implementing technical calculations quickly and efficiently.' },
+      { question: 'Can I save my calculations?', answer: 'Yes, you can save your calculations. The Scientific Calculator features a PDF download option that allows you to store your inputs and results for future reference.' },
+    ],
   },
   {
     id: 'number-base-converter',
@@ -3192,6 +3544,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Convert integer numbers between binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Supports negative integers and shows digit-length comparison charts.',
       keywords: ["number base converter","binary to decimal","hex to decimal","decimal to hex","octal converter","base conversion","binary converter","hex converter","convert bases"],
     },
+    faq: [
+      { question: 'Can I enter prefixes like 0x or 0b?', answer: 'This converter expects raw digits corresponding to the selected base (e.g., FF for hex). Prefixes like 0x or 0b are not required and may cause validation to fail. Remove any prefixes before converting.' },
+      { question: 'What happens with invalid characters?', answer: 'The tool validates input for the chosen source base and will display an error message if invalid characters are present (for example, letters outside A-F in hexadecimal or digits beyond 7 in octal).' },
+      { question: 'Are large numbers supported?', answer: 'This converter uses JavaScript\'s Number.parseInt for parsing, which is suitable for typical use cases. Extremely large integers may lose precision; for arbitrary precision conversions, consider a BigInt-based or big-number library implementation.' },
+    ],
   },
   {
     id: 'system-of-equations-solver',
@@ -3208,6 +3565,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Solve 2x2 systems of linear equations using Cramer\'s Rule. Enter coefficients for a1, b1, c1 and a2, b2, c2 to compute x and y. Includes charting and PDF export.',
       keywords: ["system of equations","linear equations","Cramer's Rule","2x2 solver","algebra calculator","solve equations"],
     },
+    faq: [
+      { question: 'Can I solve more than two equations?', answer: 'This tool is built for 2x2 systems. For larger systems, consider using Gaussian elimination or matrix-based solvers. We may add a multi-variable solver in a future update.' },
+      { question: 'Why does the calculator show "No unique solution"?', answer: 'This indicates that the determinant is zero. It is essential to check if the equations are multiples of each other (yielding infinite solutions) or if they are inconsistent (yielding no solution).' },
+      { question: 'How accurate are the results?', answer: 'The results are computed with JavaScript\'s floating-point arithmetic and are rounded to 6 decimal places for display. For critical applications, verification with higher-precision tools is recommended.' },
+    ],
   },
   {
     id: 'polynomial-calculator',
@@ -3224,6 +3586,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute real and complex roots of polynomials. Enter the degree and coefficients (highest degree first) to get roots, magnitudes, charts, and a downloadable PDF report.',
       keywords: ["polynomial calculator","find roots","complex roots","algebra","polynomial roots","math tools"],
     },
+    faq: [
+      { question: 'What format should coefficients use?', answer: 'Provide a comma-separated list in descending order of powers. Example for 2x² + 3x + 1: "2, 3, 1".' },
+      { question: 'Can I get complex roots with this calculator?', answer: 'Yes, the calculator returns complex roots in a + bi format and shows their magnitudes on the chart, providing full insights into the behavior of the polynomial function.' },
+      { question: 'How accurate are the roots displayed?', answer: 'The method iterates until a tight tolerance. For very high-degree polynomials or ill-conditioned coefficients, numerical accuracy may degrade; consider rescaling or using higher precision tools for such cases.' },
+      { question: 'Is this calculator suitable for educational purposes?', answer: 'Absolutely! This calculator is a valuable resource for students learning about polynomial factorization, roots, and equations, providing instant feedback and detailed results to enhance understanding.' },
+    ],
   },
   {
     id: 'matrix-calculator',
@@ -3256,6 +3624,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Online Determinant Calculator: enter a square matrix (rows separated by \';\' and values by \',\') to compute its determinant. Auto-calculates and supports PDF export and charts.',
       keywords: ["determinant","matrix determinant","square matrix","linear algebra","math calculator","matrix calculator","determinant calculator"],
     },
+    faq: [
+      { question: 'What if my matrix isn\'t square?', answer: 'The determinant is only defined for square matrices. The calculator will display an error if the number of rows and columns do not match, as only square matrices can be evaluated for their determinants.' },
+      { question: 'How should I format the input for the determinant calculator?', answer: 'Separate rows with a semicolon (;) and values within a row with commas. For example, the input for a 4x4 matrix should be formatted as follows: 1,0,0,0;0,1,0,0;0,0,1,0;0,0,0,1.' },
+      { question: 'Why does the calculator return 0 for some matrices?', answer: 'zero determinant means the matrix is singular, indicating that its rows or columns are linearly dependent. Such matrices cannot be inverted and are often significant in linear algebra discussions.' },
+      { question: 'Can I use large matrices with the determinant calculator?', answer: 'Yes, but keep in mind that very large matrices or matrices with extremely large/small values may encounter floating point precision limits. Use the precision selector to control displayed rounding and minimize errors.' },
+      { question: 'Are there any practical applications of determinants?', answer: 'Determinants have numerous applications in various fields such as engineering for stability analysis, computer graphics for transformations, and systems of equations in economics for modeling. Understanding determinants expands your mathematical toolkit significantly.' },
+    ],
   },
   {
     id: 'inverse-matrix-calculator',
@@ -3272,6 +3647,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the inverse of square matrices instantly. Supports input like \'1,2;3,4\'. Shows determinant, inverse matrix, and an entry magnitude chart. Exports results to PDF.',
       keywords: ["matrix inverse","invert matrix","linear algebra","determinant","matrix calculator","Gauss-Jordan"],
     },
+    faq: [
+      { question: 'What format should I use for input?', answer: 'Use semicolons to separate rows and commas to separate values within a row, e.g. 1,2;3,4.' },
+      { question: 'Why does it say the matrix is singular?', answer: 'matrix is singular when its determinant is zero (or extremely close to zero). Singular matrices do not have inverses, which means they cannot be used in calculations requiring matrix inversion.' },
+      { question: 'Is there a size limit for matrices?', answer: 'This calculator performs numerical elimination in the browser. While small to medium matrices (2×2, 3×3, 4×4, etc.) work fine, very large matrices may be slow or numerically unstable.' },
+      { question: 'How is this calculator different from others?', answer: 'Our Inverse Matrix Calculator is designed to provide clear and accurate results using the Gauss-Jordan elimination method, making it easy to visualize and understand the inverse operations.' },
+    ],
   },
   {
     id: 'slope-calculator',
@@ -3288,6 +3669,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the slope (m) of a line given two points (x1, y1) and (x2, y2). Handles vertical lines and provides a chart visualization.',
       keywords: ["slope calculator","calculate slope","slope from two points","algebra calculator","math tools"],
     },
+    faq: [
+      { question: 'What does it mean if the slope is negative?', answer: 'negative slope indicates that the line falls from left to right. As x increases, y decreases, which can be useful in various applications like economics where it may represent decreasing profit as costs rise.' },
+      { question: 'What if Δx is zero?', answer: 'If Δx is zero (x1 === x2), the line is vertical, and the slope is undefined. The calculator will indicate this so you can understand that vertical lines represent situations where there is no change in the x-direction.' },
+      { question: 'How precise is the result?', answer: 'Results are computed using JavaScript number precision and rounded to 6 decimal places for readability. For very large or very small numbers, consider the limits of floating point arithmetic.' },
+      { question: 'Can slope be zero?', answer: 'Yes, a slope of zero indicates a horizontal line where y remains constant regardless of x. This situation is common in various fields, such as constant rates of interest in finance.' },
+    ],
   },
   {
     id: 'midpoint-calculator',
@@ -3304,6 +3691,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Find the midpoint between two 2D points quickly. Enter coordinates for Point 1 and Point 2 to get the midpoint and visual chart. Includes PDF export.',
       keywords: ["midpoint","midpoint calculator","geometry","algebra","coordinate geometry","2D midpoint","point midpoint"],
     },
+    faq: [
+      { question: 'What if I enter non-numeric values?', answer: 'The calculator validates inputs and will not display a result until the coordinates are valid numbers. This ensures users receive accurate midpoint calculations without confusion.' },
+      { question: 'Can this work for 3D points?', answer: 'This version computes 2D midpoints. For 3D, extend the formula to include the z-coordinate: ((x1+x2)/2, (y1+y2)/2, (z1+z2)/2). Such calculations can be crucial for applications in 3D modeling and computer simulations.' },
+      { question: 'How precise is the result?', answer: 'Results are calculated in floating point and rounded to six decimal places in the calculator for clarity. For more precision, adjust the UI or export the raw values. This ensures comprehensive data handling for users needing meticulous measurements.' },
+      { question: 'Can I use this calculator for programming tasks?', answer: 'bsolutely! The midpoint calculation can be integrated into algorithms for various programming tasks, such as graphics rendering or data visualization, making it an essential calculation for developers.' },
+    ],
   },
   {
     id: 'area-calculator',
@@ -3320,6 +3713,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the area of circles, rectangles, and triangles. Live calculations, visual charts, and PDF export. Enter dimensions and get instant results in square units.',
       keywords: ["area calculator","circle area","rectangle area","triangle area","geometry calculator","math tools"],
     },
+    faq: [
+      { question: 'What units are used?', answer: 'The calculator returns area in abstract square units based on the units you enter (for example, if you enter meters, the result is in square meters). This flexibility makes it suitable for a wide range of applications, whether in the classroom or the professional field.' },
+      { question: 'Can I calculate other shapes?', answer: 'This tool currently supports circle, rectangle, and triangle. For other shapes, you can decompose them into these primitives or use a dedicated calculator. Understanding these basic shapes is fundamental in geometry, and mastering their areas paves the way for more complex calculations.' },
+      { question: 'Why are negative inputs treated as zero?', answer: 'Negative physical dimensions are invalid for area calculation. To ensure the calculator returns meaningful results, negative values are treated as zero. This feature helps maintain accuracy and provides a consistent user experience, preventing confusion with invalid inputs.' },
+    ],
   },
   {
     id: 'volume-calculator',
@@ -3336,6 +3734,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute volumes for spheres, cylinders, and cones. Enter radius and height to get results instantly. Includes comparison charts and PDF export.',
       keywords: ["volume calculator","sphere volume","cylinder volume","cone volume","geometry calculator","3D shapes"],
     },
+    faq: [
+      { question: 'What units should I use?', answer: 'Use consistent units for radius and height. The resulting volume will be in cubic units (for example, if you enter meters, the result is in m³).' },
+      { question: 'Can I use decimals?', answer: 'Yes. The calculator accepts decimal values. Results are shown with up to six decimal places for precision.' },
+      { question: 'Why does the cylinder/cone require height?', answer: 'The cylinder and cone volume formulas include height (h). Without a valid height, the calculator cannot compute their volume and will prompt you to enter one.' },
+      { question: 'What if I forget the formulas?', answer: 'No worries! The calculator provides formulas for the shapes. You can refer to them anytime while performing calculations.' },
+      { question: 'Is the volume calculator easy to use?', answer: 'bsolutely! The volume calculator is designed to be user-friendly, allowing beginners and experts alike to perform calculations effortlessly.' },
+    ],
   },
   {
     id: 'perimeter-calculator',
@@ -3352,6 +3757,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Instantly calculate the perimeter of rectangles, squares, and triangles. Includes charts and PDF export for results.',
       keywords: ["perimeter calculator","rectangle perimeter","square perimeter","triangle perimeter","geometry calculator","math tools"],
     },
+    faq: [
+      { question: 'Can I use different units for different sides?', answer: 'No. Enter all dimensions using the same unit to get a meaningful perimeter. Convert units before calculating if needed.' },
+      { question: 'What if I only know the diagonal of a rectangle?', answer: 'The perimeter cannot be determined from the diagonal alone. You need both side lengths or enough information to derive them (e.g., diagonal and one side, using Pythagoras).' },
+      { question: 'Do you support circles or other shapes?', answer: 'This calculator focuses on polygons: rectangles, squares, and triangles. For circles, you would use circumference = 2 × π × radius — consider using or creating a circumference calculator for that purpose.' },
+    ],
   },
   {
     id: 'circumference-calculator',
@@ -3384,6 +3794,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute the area, perimeter, and diagonal of a rectangle. Enter length and width to get automatic results and visual comparisons.',
       keywords: ["rectangle calculator","area calculator","perimeter calculator","diagonal calculator","geometry calculator","math","rectangle"],
     },
+    faq: [
+      { question: 'Do length and width need to use the same units?', answer: 'Yes. Ensure both values are in the same units (for example, both in meters) so that area and diagonal calculations are correct.' },
+      { question: 'What units are the results shown in?', answer: 'rea is shown in square units (units²). Perimeter and diagonal are shown in linear units (units). If you enter meters, the area will be in square meters (m²) and others in meters (m).' },
+      { question: 'Can I use decimals?', answer: 'Yes. You can enter decimal values (for example 2.5). The calculator supports fractional dimensions and will display results with up to 6 decimal places.' },
+    ],
   },
   {
     id: 'cylinder-calculator',
@@ -3496,6 +3911,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the linear regression line (slope & intercept), Pearson correlation coefficient, and R² for paired data. Enter comma-separated X and Y values to get instant results and charts.',
       keywords: ["linear regression","slope","intercept","correlation","Pearson r","R squared","statistics","regression"],
     },
+    faq: [
+      { question: 'What if X and Y lengths differ?', answer: 'The calculator requires X and Y to have the same number of observations. If lengths differ, an error will be shown.' },
+      { question: 'How many data points do I need?', answer: 't least two paired observations are required to compute a slope. More points give more reliable estimates.' },
+      { question: 'Can this detect non-linear relationships?', answer: 'Linear regression models linear relationships only. For non-linear patterns consider polynomial regression or other models.' },
+      { question: 'What are the assumptions of linear regression?', answer: 'Key assumptions include linearly independent variables, homoscedasticity, normally distributed residuals, and no multicollinearity.' },
+      { question: 'Is it necessary to standardize data?', answer: 'Standardizing data is not necessary for linear regression, but it can improve the interpretability of coefficients.' },
+    ],
   },
   {
     id: 'correlation-calculator',
@@ -3512,6 +3934,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the Pearson correlation coefficient (r) and r² between two variables. Enter comma-separated X and Y values of equal length to get instant results and a scatter plot visualization.',
       keywords: ["correlation","pearson r","correlation coefficient","r squared","statistics","regression","scatter plot","data analysis"],
     },
+    faq: [
+      { question: 'How many values do I need?', answer: 'At least two pairs are required to compute a correlation. More data generally produces a more reliable estimate and enhances the statistical significance of the result.' },
+      { question: 'What if my lists are different lengths?', answer: 'The calculator requires X and Y to have the same number of entries. If they differ, you\'ll see an error prompting you to correct the inputs, ensuring the integrity of the analysis.' },
+      { question: 'Does this test for causation?', answer: 'No. Correlation measures association, not causation. Further analysis and experimental design are needed to establish causality. It\'s essential to recognize that other intervening variables might influence the observed correlation.' },
+    ],
   },
   {
     id: 'r-squared-calculator',
@@ -3544,6 +3971,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Online T-Test Calculator to compare means of two independent samples using Welch\'s t-test. Computes t statistic, degrees of freedom, and two-tailed p-value with charts and PDF export.',
       keywords: ["t-test","Welch t-test","compare means","statistics","p-value","t statistic","hypothesis testing"],
     },
+    faq: [
+      { question: 'Can I use this for paired data?', answer: 'No — this calculator performs an independent two-sample t-test (Welch\'s). For paired samples, calculate the differences and perform a one-sample t-test on the differences.' },
+      { question: 'What if my samples have different sizes?', answer: 'Welch\'s t-test accounts for unequal variances and sample sizes; it is appropriate for samples with different n.' },
+      { question: 'Why might the calculator return no result?', answer: 'Ensure each sample has at least two numeric values. Values must be comma-separated numbers (e.g., "1, 2, 3"). If the inputs are valid and you still encounter issues, refresh the page and try again.' },
+      { question: 'Can I use this calculator for one-sample tests?', answer: 'This calculator is designed for independent two-sample t-tests. For one-sample tests, consider the specifics of your data and statistical needs.' },
+    ],
   },
   {
     id: 'chi-square-calculator',
@@ -3560,6 +3993,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate chi-square statistic, degrees of freedom, and p-value for contingency tables. Enter observed frequencies and optional expected frequencies.',
       keywords: ["chi-square","chi square","chi-square test","contingency table","statistics","independence test","p-value","degrees of freedom"],
     },
+    faq: [
+      { question: 'What if expected frequency is zero?', answer: 'If an expected frequency is zero while the observed count is positive, the chi-square calculation is not valid. The calculator will flag this as an error. Consider combining categories to avoid zero expected counts.' },
+      { question: 'How are expected frequencies computed?', answer: 'When computed, each expected cell E_ij is calculated as (row_total_i * column_total_j) / grand_total. This is the standard method for the test of independence.' },
+      { question: 'Can I use non-integer frequencies?', answer: 'Observed frequencies should represent counts (integers). Expected frequencies may be fractional when computed from margins. This tool accepts numeric values but be cautious when using non-integer observed counts.' },
+      { question: 'Where can I apply the Chi-Square Test for Independence?', answer: 'The Chi-Square Test is used in various fields such as market research, medical studies, and social sciences to evaluate relationships between categorical variables. It\'s beneficial in surveys, clinical trials, and analyzing customer preferences, among other scenarios.' },
+      { question: 'What assumptions does the Chi-Square Test have?', answer: 'The primary assumptions include that the samples must be independent, the data should be in frequency form, and expected frequencies should be at least 5 for valid results. If these assumptions are violated, results may not be reliable.' },
+    ],
   },
   {
     id: 'anova-calculator',
@@ -3576,6 +4016,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute one-way ANOVA (SSB, SSW, MSB, MSW, F statistic and p-value). Enter comma-separated observations for each group and get instant results.',
       keywords: ["ANOVA","Analysis of Variance","F-test","statistical test","one-way ANOVA","statistics calculator","anova calculator"],
     },
+    faq: [
+      { question: 'Can I input different numbers of observations per group?', answer: 'Yes. One-way ANOVA supports unequal sample sizes. The calculator automatically accounts for the different group sizes when computing degrees of freedom and mean squares.' },
+      { question: 'What if a group has non-numeric entries or blanks?', answer: 'Non-numeric tokens and empty entries are ignored. Make sure each observation is a valid number. If a group becomes empty after filtering invalid entries, it will be excluded from the analysis.' },
+      { question: 'How do I decide significance?', answer: 'Compare the p-value to your alpha (commonly 0.05). If p < alpha, you reject the null hypothesis that all group means are equal. Remember to check assumptions and consider post-hoc tests to identify which groups differ.' },
+    ],
   },
   {
     id: 'sample-size-calculator',
@@ -3624,6 +4069,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly determine the day of the week (Sunday, Monday, etc.) for any date. Instant results, charts, and PDF export.',
       keywords: ["day of week","weekday calculator","date to weekday","calendar","date calculator","day lookup"],
     },
+    faq: [
+      { question: 'Can I check dates far in the past or future?', answer: 'Yes — the calculator uses JavaScript Date objects, which support a wide range of years. For very ancient dates (before 100 AD), be mindful of calendar system differences (Julian vs. Gregorian).' },
+      { question: 'Does the calculator consider time zones?', answer: 'This tool determines the weekday based solely on the calendar date (year, month, day) and constructs a local Date object. It avoids time-of-day and timezone conversions to provide consistent weekday results for the given date.' },
+      { question: 'Can I export the result?', answer: 'Yes — use the download button in the calculator to generate a PDF containing the input date and the resulting weekday.' },
+      { question: 'What if I want to calculate multiple dates?', answer: 'You can use the calculator to input multiple dates in sequence. For larger projects, consider leveraging the API endpoint designed for bulk date calculations.' },
+    ],
   },
   {
     id: 'leap-year-calculator',
@@ -3640,6 +4091,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Enter any year to determine whether it is a leap year using the Gregorian calendar rules. Includes visual chart and PDF export.',
       keywords: ["leap year","leap-year","calendar","year calculator","date","date-time","Gregorian calendar"],
     },
+    faq: [
+      { question: 'Does this calculator work for negative years or BCE?', answer: 'The calculator applies the Gregorian arithmetic rules to any integer year. For historical years (BCE) or calendars before the Gregorian reform, astronomical and historical conventions may differ.' },
+      { question: 'Why are some century years not leap years?', answer: 'Century years (divisible by 100) are only leap years if they are also divisible by 400. This correction reduces the small drift caused by treating every 4th year as a leap year.' },
+      { question: 'Can I trust the calculator for future planning?', answer: 'Yes. The calculator follows the Gregorian calendar rules, which are the standard for civil calendars worldwide today. It is reliable for planning events and understanding time mechanics, ensuring accuracy regardless of how far into the future you look.' },
+      { question: 'What happens in a leap year?', answer: 'In a leap year, February has an extra day, making it 29 days long, which can affect planning for events, payroll calculations, and other date-sensitive timing.' },
+    ],
   },
   {
     id: 'countdown-timer-calculator',
@@ -3672,6 +4129,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Instantly scale recipe ingredient quantities based on original and desired servings. Supports cups, tablespoons, and teaspoons with precise conversions.',
       keywords: ["recipe scaling","scale recipe","ingredient scaling","cooking calculator","cups to tbsp","tablespoons to teaspoons"],
     },
+    faq: [
+      { question: 'Can I change units while scaling?', answer: 'Yes. This tool converts your input to a base unit (teaspoons) internally, scales the amount, and converts it back to the unit you\'ve chosen to display.' },
+      { question: 'Is the calculator precise for baking?', answer: 'For baking, weight-based measurements (grams/ounces) are more reliable. This calculator is great for quick volume-based scaling; for best results in baking, convert to weight when possible.' },
+      { question: 'What if my original servings is zero?', answer: 'Original servings must be greater than zero for scaling. The calculator validates inputs and will not show results for invalid values.' },
+      { question: 'Can I use the scaling calculator for any type of recipe?', answer: 'Yes! The scaling calculator can be applied to a wide variety of recipes, from baked goods to savory meals. Just input your ingredient amounts and let the calculator do the work.' },
+      { question: 'How can I ensure consistency when scaling?', answer: 'To ensure consistency, always measure ingredients accurately and keep a record of any changes made to the original recipe. This will help replicate the results in future batches.' },
+    ],
   },
   {
     id: 'cooking-time-calculator',
@@ -3720,6 +4184,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly find common ingredient substitutions and conversion ratios. Convert between cups, tablespoons, and teaspoons and download results as a PDF.',
       keywords: ["ingredient substitution","cooking","recipe swaps","butter substitute","egg substitute","flour substitute","cup to tbsp","tablespoon to teaspoon","kitchen conversions"],
     },
+    faq: [
+      { question: 'Are these substitutions exact?', answer: 'No — these are guidelines. Texture, flavor, and chemistry change depending on the recipe. Start with the suggested amounts and adjust as needed based on your results.' },
+      { question: 'Can I trust volume-based swaps for all recipes?', answer: 'Volume swaps are convenient, but weight-based measurements are more accurate. For critical baking, prefer weight measurements when possible to ensure success.' },
+      { question: 'Why only cup, tbsp, and tsp?', answer: 'These units cover most home-cooking scenarios and are easy to convert. If you need weight-based conversions, consider using a scale or a different tool focused on grams and ounces.' },
+    ],
   },
   {
     id: 'unit-price-calculator',
@@ -3752,6 +4221,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute the final price after a percentage discount. Enter the original price and discount percentage to see final cost and savings instantly. Includes charting and PDF export.',
       keywords: ["percentage off calculator","discount calculator","final price calculator","savings calculator","shopping discount"],
     },
+    faq: [
+      { question: 'Can I use discounts greater than 100%?', answer: 'No. Discounts greater than 100% would imply the seller pays the buyer. Enter realistic values between 0 and 100 for meaningful results.' },
+      { question: 'Does the calculator round the result?', answer: 'Yes. The final price and savings are rounded to two decimal places to match standard currency formatting.' },
+      { question: 'Can I download the calculation?', answer: 'Yes. Use the "Download PDF" option to save the inputs and results as a PDF for record-keeping or sharing.' },
+      { question: 'What if the original price is zero?', answer: 'If the original price is zero, the final price will also be zero, regardless of the discount percentage entered.' },
+      { question: 'Is this calculator available for mobile devices?', answer: 'Yes! Our percentage off calculator is fully responsive and works seamlessly on all mobile devices.' },
+    ],
   },
   {
     id: 'split-bill-calculator',
@@ -3768,6 +4244,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly split a bill evenly among multiple people, include tip percentage, and see per-person costs. Auto-calculates and provides downloadable PDF and charts.',
       keywords: ["split bill","bill splitter","tip calculator","split bill calculator","per person cost","restaurant tip","shared expenses"],
     },
+    faq: [
+      { question: 'Do I have to include a tip?', answer: 'No. Set the tip percentage to 0% to split only the base bill.' },
+      { question: 'What if the number of people isn\'t a whole number?', answer: 'The calculator expects the number of people to be a whole number (1 or more). For fractional cases (e.g., someone pays half), adjust the inputs manually or compute their share separately.' },
+      { question: 'Can I use this for currency other than USD?', answer: 'Yes. The calculator shows numerical results. Prepend/append your local currency symbol mentally or when sharing results. When downloading the PDF, you can interpret the values in any currency.' },
+    ],
   },
   {
     id: 'mileage-calculator',
@@ -3784,6 +4265,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate miles per gallon (MPG), total fuel cost, and cost per mile. Ideal for trip planning and budgeting fuel expenses.',
       keywords: ["mileage calculator","mpg calculator","cost per mile","fuel cost calculator","trip fuel estimator","miles per gallon"],
     },
+    faq: [
+      { question: 'Can I use this for electric vehicles?', answer: 'This calculator is designed for liquid fuel (gallons) and miles per gallon. For electric vehicles, use range and energy consumption metrics (kWh per mile) and adapt the inputs accordingly. It’s essential to approach costs from a mileage standpoint for any vehicle type.' },
+      { question: 'What if I only know fuel price and miles?', answer: 'You need fuel used (gallons) to compute mpg and cost per mile. If you know only price and miles, estimate gallons by dividing total fuel cost by price per gallon. This makes it critical to keep track of your expenses.' },
+      { question: 'Why is cost per mile useful?', answer: 'Cost per mile helps compare overall running costs between vehicles and informs budgeting decisions for trips or fleet management. Understanding your expenses can help you make wiser financial decisions regarding travel and vehicle maintenance.' },
+    ],
   },
   {
     id: 'travel-time-calculator',
@@ -3816,6 +4302,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly estimate the amount of concrete required for slabs, foundations, patios and more. Enter length, width and depth in meters to get volume in cubic meters and liters.',
       keywords: ["concrete calculator","concrete volume","m3 to liters","slab calculator","construction calculator","home garden"],
     },
+    faq: [
+      { question: 'Can I use this for footings and walls?', answer: 'Yes. For simple rectangular footings or wall sections, you can use the same volume formula. For complex or reinforced structures, consult a structural engineer.' },
+      { question: 'How much extra should I order?', answer: 'typical allowance is 5–10% for waste, spillage, and over-excavation. Use the higher end for large or difficult pours.' },
+      { question: 'Can I convert the result to bags of cement?', answer: 'This calculator provides volume only. Bag counts depend on mix design and bag sizes; consult supplier specs or use a dedicated bag calculator for accurate counts.' },
+      { question: 'What if my project has irregular shapes?', answer: 'For irregular shapes, divide the area into manageable sections and apply the formula for each section, then sum the results for the total volume required.' },
+    ],
   },
   {
     id: 'carpet-calculator',
@@ -3832,6 +4324,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate how much carpet you need for a room. Enter length and width (meters or feet) and include a waste percentage to account for cuts and seams. Results show total square meters required and an easy comparison chart.',
       keywords: ["carpet calculator","carpet estimator","how much carpet","carpet waste","room area calculator","flooring calculator","home improvement"],
     },
+    faq: [
+      { question: 'Can I enter measurements in feet?', answer: 'Yes. Select feet (ft) from the unit dropdown. The calculator converts your input to meters internally and shows results in square meters (m²).' },
+      { question: 'What waste percentage should I use for carpet?', answer: 'For simple rectangular rooms, 5–10% is usually enough. For rooms with alcoves, obstructions, or patterned carpet, consider 10–15% or ask your installer for a recommendation.' },
+      { question: 'Does the calculator account for seams or roll width?', answer: 'This tool provides a general estimate including waste. For precise ordering (considering roll widths, seam placement, and pattern repeats), consult a professional installer or supplier.' },
+    ],
   },
   {
     id: 'fence-calculator',
@@ -3848,6 +4345,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate how many fence panels and posts you need based on perimeter, panel width, and posts per panel. Includes PDF export and charts.',
       keywords: ["fence calculator","fence panels","posts","fencing estimator","materials estimate","home garden","perimeter"],
     },
+    faq: [
+      { question: 'Do I need to round up panels?', answer: 'Yes. Panels are installed as whole units. The calculator rounds up to ensure you have enough panels to cover the full perimeter.' },
+      { question: 'How do posts per panel work?', answer: 'Most panels share a post with adjacent panels. If you specify 2 posts per panel, that assumes each panel has a post on each end. Adjust this number based on your specific panel and post layout (some systems use fewer posts).' },
+      { question: 'Should I include gates in the perimeter?', answer: 'Yes — include gates in the total perimeter measurement. Remember that gates often require extra posts for hinging and latching, so you may need additional posts beyond the calculator\'s basic estimate.' },
+      { question: 'What kind of materials should I consider for my fence?', answer: 'Consider the climate, purpose, and aesthetics. Common materials include wood, vinyl, metal, and chain link. Each has its durability, maintenance, and appearance characteristics.' },
+      { question: 'How can I ensure my fence remains durable?', answer: 'Regular maintenance, such as treating wood and checking for damage, ensures a longer lifespan. Choosing quality materials that withstand local weather conditions also contributes to durability.' },
+    ],
   },
   {
     id: 'lawn-area-calculator',
@@ -3880,6 +4384,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Easily calculate regular pay, overtime pay, and total gross pay. Enter regular hours, overtime hours, hourly rate, and overtime multiplier. Results update automatically.',
       keywords: ["overtime calculator","overtime pay","hourly pay calculator","work hours calculator","time management","paycheck calculator"],
     },
+    faq: [
+      { question: 'Does this calculator account for taxes?', answer: 'No — this tool calculates gross pay before taxes and deductions. For net pay, apply tax rates and any withholdings applicable to your situation.' },
+      { question: 'What if my overtime rate changes week to week?', answer: 'If rates vary, calculate each pay period separately and sum the results. This calculator is designed for a single pay period with uniform rates.' },
+      { question: 'Is overtime always paid after 40 hours?', answer: 'Not always. While 40 hours is a common threshold in many jurisdictions and companies, local labor laws or contracts may define different thresholds. Check your local regulations or employment agreement.' },
+      { question: 'How can I ensure I receive my overtime pay?', answer: 'lways keep a record of your hours worked. Report any discrepancies to your HR department promptly and know your rights as an employee based on local laws.' },
+      { question: 'Can salaried employees receive overtime pay?', answer: 'Yes, in some cases. It depends on the employee classification and local labor laws. Some salaried positions are exempt from overtime, while others are entitled to it.' },
+    ],
   },
   {
     id: 'time-card-calculator',
@@ -3912,6 +4423,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Productivity Calculator to compute tasks-per-hour, completion rate, and a productivity index. Ideal for personal time management and team performance tracking.',
       keywords: ["productivity calculator","tasks per hour","completion rate","efficiency","time management","productivity index"],
     },
+    faq: [
+      { question: 'What if I enter zero hours?', answer: 'The calculator needs a positive time value to compute tasks-per-hour. If time is zero or empty, tasks-per-hour will not be calculated, which could lead to inaccurate productivity metrics.' },
+      { question: 'Can I use this Productivity Calculator for teams?', answer: 'Yes. Aggregate tasks and total hours across the team to compute team-level productivity metrics. This will also allow you to address team inefficiencies more effectively.' },
+      { question: 'How should I interpret the Productivity Index?', answer: 'Higher values indicate better performance relative to your target and pace. Use it to compare days or shifts — it normalizes rate with goal attainment, making it easier to gauge productivity levels among different periods or individuals.' },
+      { question: 'How often should I use the Productivity Calculator?', answer: 'For best results, use the calculator daily or weekly. This way, you can notice trends in your productivity and make timely adjustments to your workflow as needed.' },
+    ],
   },
   {
     id: 'age-difference-calculator',
@@ -3928,6 +4445,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate the age difference between two people by entering their birth dates. Get ages in years, months, days and the absolute difference in years and days. Includes charts and PDF export.',
       keywords: ["age difference","age calculator","birth date difference","age gap","age comparison","relationships"],
     },
+    faq: [
+      { question: 'Can I compare future birth dates?', answer: 'This tool is designed for real birth dates up to today. If a birth date in the future is entered, the calculator will not return a valid age for that person, helping you avoid inaccuracies in your planning.' },
+      { question: 'How precise is the age difference?', answer: 'Ages are shown in years, months, and days for clarity. The age difference is provided as an exact day count and as a decimal year approximation using the average year length (365.2425 days). This precision helps in understanding relationships effectively.' },
+      { question: 'Can I export the results?', answer: 'Yes — use the PDF download button to generate a simple report containing the input dates and computed results, making it easy to share and keep for future reference.' },
+    ],
   },
   {
     id: 'relationship-duration-calculator',
@@ -3944,6 +4466,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Instantly calculate the duration of a relationship in years, months, and days. Handles leap years and varying month lengths. Download results as PDF.',
       keywords: ["relationship duration","relationship calculator","anniversary calculator","date difference","years months days","how long relationship lasted"],
     },
+    faq: [
+      { question: 'What if the start date is after the current date?', answer: 'The tool will indicate that the start date is after the current date. If you\'d like a positive duration, swap the dates or enter the true start and end dates.' },
+      { question: 'Does the calculator account for leap years?', answer: 'Yes. The total-day calculation uses actual JavaScript date differences (milliseconds between dates) which handles leap years. The years/months/days breakdown also accounts for varying month lengths.' },
+      { question: 'Can I save or print the result?', answer: 'Yes. Use the "Download PDF" function in the calculator to generate a printable summary of the inputs and results.' },
+      { question: 'What are some common uses for this calculator?', answer: 'Common uses include planning anniversary celebrations, reflecting on personal growth within the relationship, determining legal timelines, and maintaining personal records.' },
+    ],
   },
   {
     id: 'pet-age-calculator',
@@ -3960,6 +4488,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate the equivalent human age of a dog or cat. Use our Pet Age Calculator to convert pet years into human years with common veterinary approximations.',
       keywords: ["pet age","dog age","cat age","human years","pet calculator","age converter"],
     },
+    faq: [
+      { question: 'Is this conversion exact?', answer: 'No — it is an approximation intended to help compare pet ages with human aging. Breed, genetics, diet, and healthcare affect the actual aging process.' },
+      { question: 'Why does the first year count so much?', answer: 'Pets mature much faster in their first years compared to humans. The first and second years capture major developmental stages, so they are weighted more heavily.' },
+      { question: 'Can this be used for other pets?', answer: 'This tool is designed for dogs and cats only. Other species require different conversion rules.' },
+      { question: 'What factors can affect my pet\'s aging?', answer: 'Several factors can influence the aging process of pets, including genetics, living conditions, diet, exercise, and healthcare. Regular vet visits can help monitor your pet\'s health and aging.' },
+    ],
   },
   {
     id: 'pet-food-calculator',
@@ -3992,6 +4526,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute velocity (m/s) by entering distance in meters and time in seconds. Auto-calculates on input and offers charts and PDF export.',
       keywords: ["velocity calculator","velocity","speed","distance time calculator","physics calculator","m/s"],
     },
+    faq: [
+      { question: 'Can I use different units (e.g., kilometers and hours)?', answer: 'Yes — but convert all inputs to meters and seconds before using this calculator. For example, convert kilometers to meters (1 km = 1000 m) and hours to seconds (1 h = 3600 s).' },
+      { question: 'What happens if time is zero?', answer: 'Division by zero is undefined. Ensure time > 0. This calculator will not show a result for time equal to zero, as that doesn’t physically represent a valid scenario.' },
+      { question: 'Is direction considered in velocity?', answer: 'This tool calculates the scalar magnitude (speed). To include direction, provide vector components and use vector arithmetic to represent velocity accurately.' },
+      { question: 'How can I apply velocity in practical scenarios?', answer: 'Velocity Calculator — compute velocity quickly and accurately by entering distance in meters and time in seconds. Ideal for physics students, engineers, and hobbyists performing kinematics calculations. With the help of this calculator, users can effectively determine how quickly they or objects in their environments are moving, aiding in better planning and execution of various tasks.' },
+    ],
   },
   {
     id: 'momentum-calculator',
@@ -4008,6 +4548,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate linear momentum (p = mv) given mass (kg) and velocity (m/s). Instant results, chart visualization, and PDF export.',
       keywords: ["momentum","physics","mechanics","momentum calculator","p=mv","mass","velocity"],
     },
+    faq: [
+      { question: 'Can mass be zero or negative?', answer: 'Physically, mass is always non-negative. In the calculator mass should be entered as a non-negative value in kilograms.' },
+      { question: 'Can velocity be negative?', answer: 'Yes. A negative velocity indicates motion in the opposite direction. Momentum will also be negative in that case, indicating direction.' },
+      { question: 'Does the calculator handle units other than SI?', answer: 'This calculator expects SI units: mass in kilograms and velocity in meters per second. To use other units, convert them to SI first (for example, grams to kilograms or km/h to m/s).' },
+      { question: 'How is momentum utilized in real-life scenarios?', answer: 'Momentum is applied in various fields including sports, vehicle safety design, and even in analyzing the trajectory of projectiles. Understanding momentum allows for better predictions in these scenarios, ensuring improved safety and efficiency.' },
+    ],
   },
   {
     id: 'work-calculator',
@@ -4024,6 +4570,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute mechanical work using W = F × d × cos(θ). Supports degrees and radians. Quick and accurate calculations for physics problems.',
       keywords: ["work calculator","mechanical work","physics calculator","W = Fd","force distance angle","joules"],
     },
+    faq: [
+      { question: 'What are the units of work?', answer: 'Work is measured in joules (J). One joule is equal to one newton-meter (1 J = 1 N·m).' },
+      { question: 'What if the angle is 90°?', answer: 'If θ = 90°, cos(90°) = 0, so the work done is zero because the force is perpendicular to the displacement and does not move the object in the force\'s direction.' },
+      { question: 'Can work be negative?', answer: 'Yes. If the component of the force along the displacement is opposite to the displacement (cos(θ) is negative), the work is negative, indicating that the force removes energy from the system.' },
+      { question: 'How is work different from energy?', answer: 'Work is a transfer of energy. While work measures the energy transfer resulting from movement, energy itself is a property of a system that can exist in various forms, such as kinetic, potential, and thermal energy.' },
+    ],
   },
   {
     id: 'friction-calculator',
@@ -4072,6 +4624,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate projectile range, maximum height, and time of flight using initial velocity, launch angle, and initial height. Includes charts and PDF export.',
       keywords: ["projectile motion","range calculator","maximum height","time of flight","physics calculator","mechanics"],
     },
+    faq: [
+      { question: 'Does this consider air resistance?', answer: 'No. This calculator assumes a vacuum (no air resistance). Real projectiles will be affected by drag which reduces range and alters trajectory.' },
+      { question: 'Can I use other units?', answer: 'Inputs are expected in SI units: meters, seconds, and meters per second. Convert other units to SI before using the calculator.' },
+      { question: 'What if the initial height is negative?', answer: 'Negative initial height is allowed, but ensure it is physically meaningful for your scenario. If solutions are not real (e.g., discriminant negative), the calculator will not show results.' },
+      { question: 'What other factors can I consider?', answer: 'You may also consider factors like air density, wind speed, and object\'s shape which can impact the motion in real-world scenarios beyond this simple calculator\'s assumptions.' },
+    ],
   },
   {
     id: 'centripetal-force-calculator',
@@ -4088,6 +4646,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the centripetal force for an object moving in a circular path. Use mass (kg), velocity (m/s), and radius (m) to get the force in Newtons (N).',
       keywords: ["centripetal force","centripetal acceleration","physics calculator","mechanics","F = m v^2 / r"],
     },
+    faq: [
+      { question: 'Does the direction of velocity matter?', answer: 'Centripetal force depends on the speed (magnitude of velocity), not its direction. However, the force always points toward the center of the circular path, perpendicular to the instantaneous velocity, helping maintain the circular motion of the object.' },
+      { question: 'What happens if the radius is zero?', answer: 'radius of zero is non-physical for circular motion and would mathematically produce an infinite force. Ensure that the radius is a positive number when using the calculator to prevent undefined or erroneous calculations.' },
+      { question: 'Can this be used for rotation about an axis?', answer: 'Yes. For objects moving in a circular path around an axis, use the tangential speed at the radius of interest for v. If you have angular speed ω (rad/s), convert it using the formula v = ω × r, thus applying centripetal force concepts in rotational dynamics.' },
+      { question: 'How does centripetal force relate to gravitational force?', answer: 'In many cases, such as satellites orbiting planets, gravitational force acts as the centripetal force. The mutual attraction between the celestial bodies provides the necessary centripetal force to keep the satellites in stable orbits, demonstrating the interconnectedness of these fundamental forces in physics.' },
+    ],
   },
   {
     id: 'angular-velocity-calculator',
@@ -4136,6 +4700,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Ideal Gas Law calculator to compute pressure, volume, number of moles, or temperature (PV = nRT). Provide three properties to calculate the fourth or check consistency between all four.',
       keywords: ["ideal gas law","PV = nRT","pressure calculator","volume calculator","moles calculator","temperature calculator","thermodynamics","physics calculator"],
     },
+    faq: [
+      { question: 'Is the Ideal Gas Law always accurate?', answer: 'The Ideal Gas Law is an approximation that works well for many gases at moderate temperatures and low pressures. Real gases can deviate from ideal behavior at high pressures and low temperatures due to intermolecular forces and the finite volume of molecules.' },
+      { question: 'What units should I use?', answer: 'Use SI units: pressure in pascals (Pa), volume in cubic meters (m³), temperature in kelvin (K), and amount in moles (mol). The calculator assumes these units for correct results.' },
+      { question: 'Why does the calculator sometimes show a difference between provided and calculated pressure?', answer: 'When all four properties are provided, the calculator computes the pressure from n, R, T, and V and compares it against the provided pressure. Small differences can arise from rounding or measurement error. Large disagreements indicate inconsistent inputs or non-ideal gas behavior.' },
+      { question: 'Can the Ideal Gas Law be applied to real gases?', answer: 'While the Ideal Gas Law offers great easy calculations for many scenarios, it does not perfectly describe real gases. When accuracy is critical, especially under high pressure or low temperature, use more complex equations of state.' },
+    ],
   },
   {
     id: 'density-calculator',
@@ -4264,6 +4834,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly estimate the number of boards, total linear meters, and approximate board area needed for construction projects. Enter project dimensions and select a board size to get instant results.',
       keywords: ["lumber calculator","boards needed","material estimator","construction calculator","lumber estimate","board quantity"],
     },
+    faq: [
+      { question: 'Does this calculator account for joins and overlaps?', answer: 'No. This tool assumes boards are placed side-by-side without gaps or overlaps. For decking, siding, or other installations that require spacing or overlap, manually adjust the effective board width or add a waste percentage.' },
+      { question: 'Why are board sizes given in inches?', answer: 'Lumber is commonly specified by nominal inches (e.g., 2x4). The calculator converts these nominal inch values to meters for metric calculations using a conversion factor (1 in = 0.0254 m).' },
+      { question: 'Should I add extra boards?', answer: 'Yes. Always add extra material to account for cutting waste, mistakes, and defective boards. Typical allowances range from 5% to 15% depending on the complexity of the job.' },
+      { question: 'What types of lumber are best for various projects?', answer: 'The best type of lumber depends on the specifics of your project. Softwoods are usually suitable for framing and indoor projects, while hardwoods are favored for furniture and high-traffic areas. Consider factors like weather durability and aesthetics.' },
+    ],
   },
   {
     id: 'drywall-calculator',
@@ -4280,6 +4856,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate how many drywall sheets you need to cover the walls of a room. Input length, width, and height in meters and get an immediate result with downloadable PDF and charts.',
       keywords: ["drywall calculator","drywall sheets","sheetrock estimate","construction materials","room drywall","drywall area calculator"],
     },
+    faq: [
+      { question: 'Does this include the ceiling?', answer: 'No. This calculator estimates drywall for the walls only. To include the ceiling, add the ceiling area (length × width) to the total before dividing by sheet area.' },
+      { question: 'How much extra should I buy?', answer: 'common recommendation is to purchase an additional 5–10% to cover waste and mistakes. For complex rooms with many openings or angles, consider 10–15% extra.' },
+      { question: 'Can I change the sheet size?', answer: 'Yes. Use the sheet size selector in the calculator to pick a different sheet dimension. The calculator will immediately recalculate using the selected sheet area.' },
+    ],
   },
   {
     id: 'insulation-calculator',
@@ -4312,6 +4893,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate the amount of flooring material you need. Enter room length and width (m) and include a waste percentage to get total area to purchase.',
       keywords: ["flooring calculator","flooring estimate","tile calculator","plank calculator","waste percentage","material estimate","square meters"],
     },
+    faq: [
+      { question: 'Can I use this for tiles or planks?', answer: 'Yes. This tool provides the area in square meters. To convert area into number of tiles or boxes, divide the total area by the coverage area of one tile/box (account for grout gaps when necessary).' },
+      { question: 'What waste percentage should I use?', answer: 'For straight-lay plank flooring, 5–8% is common. For diagonal installs, complex cuts, or patterned tiles, use 10–15% or more. When in doubt, consult your installer or supplier.' },
+      { question: 'Does the calculator consider doorways and closets?', answer: 'No. This calculator computes gross area. Subtract areas for large permanent fixtures if you need a net material estimate, but many installers recommend ordering a bit extra rather than risking a shortage.' },
+      { question: 'What if my room has an irregular shape?', answer: 'For irregularly shaped rooms, divide the room into smaller sections, calculate each section\'s area, and then sum the areas to get the total. This will give you a more accurate estimate for flooring needs.' },
+    ],
   },
   {
     id: 'roofing-calculator',
@@ -4328,6 +4915,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate roof area accounting for pitch and calculate required roofing sheets with waste allowance. Ideal for builders, contractors, and DIY projects.',
       keywords: ["roof calculator","roof area","roofing materials","roof pitch","roofing sheets","construction calculator"],
     },
+    faq: [
+      { question: 'Can I use this for hip or multi-faceted roofs?', answer: 'This calculator assumes a simple gable roof with two identical slopes. For hips, valleys, dormers, or multiple roof planes, break the roof into sections, calculate each section separately, and sum the results. Increase the waste factor to cover additional cuts and complexity.' },
+      { question: 'What pitch should I enter?', answer: 'Enter the roof pitch as an angle in degrees (0–89). Avoid values of 90° which are vertical walls. If you only know rise/run, convert to degrees using arctan(rise/run) × (180/π).' },
+      { question: 'Does the calculator include underlayment or fixings?', answer: 'No. This tool estimates roof covering area and sheet counts. Underlayment, nails, screws, flashing, ridge caps, and other accessories should be estimated separately based on product specifications and linear measurements.' },
+    ],
   },
   {
     id: 'foundation-calculator',
@@ -4360,6 +4952,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly estimate bending moment and required section modulus for a simply supported beam with a central point load. Useful for preliminary structural checks.',
       keywords: ["beam calculator","bending moment","section modulus","structural","beam span","load","steel beam","wood beam","concrete beam"],
     },
+    faq: [
+      { question: 'Can I use this for continuous spans or distributed loads?', answer: 'No — this calculator assumes a simply supported beam with a central point load. For distributed loads or continuous spans, use a different analysis or consult a structural engineer.' },
+      { question: 'Does it check shear or deflection?', answer: 'No — it provides bending moment and required section modulus only. Check shear capacity and deflection limits separately using appropriate formulas and standards.' },
+      { question: 'Are the material values exact?', answer: 'Material values are representative. For design, use certified material properties and local code values. Values vary by grade, treatment, and factors of safety, which is essential for accurate and safe design calculations.' },
+      { question: 'Is this calculator suitable for every type of beam?', answer: 'This calculator is specifically designed for simply supported beams with central point loads. For other beam types such as cantilever or fixed beams, consult appropriate resources or engineers for specific analyses.' },
+    ],
   },
   {
     id: 'column-calculator',
@@ -4424,6 +5022,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly estimate deck area, number of joists, total joist length, required decking boards, and fastener quantities for a rectangular deck. Ideal for early planning and material budgeting.',
       keywords: ["deck calculator","deck materials","joist spacing","deck boards","deck area","construction calculator","structural estimator"],
     },
+    faq: [
+      { question: 'Do I need more joists at the edges?', answer: 'The calculator adds an extra joist to account for an end joist on each side in a simplified way. For engineered designs, consider ledger attachments, rim joists, and local code requirements.' },
+      { question: 'What board width should I use?', answer: 'This tool assumes 140 mm (14 cm) board width by default. If you use narrower or wider boards, update the calculator assumptions in your planning stage or manually adjust counts.' },
+      { question: 'Are screw estimates accurate?', answer: 'Screw estimates are approximate. Different manufacturers recommend different fastener spacing, and hidden fasteners change requirements. Use the screw estimate as a starting point and consult product guidance for final quantities.' },
+      { question: 'How can I improve my deck design?', answer: 'Consider factors such as sun exposure, drainage, and deck height. Consulting a professional deck designer can provide tailored solutions and innovative ideas to enhance your deck\'s usability and aesthetic appeal.' },
+    ],
   },
   {
     id: 'electrical-load-calculator',
@@ -4472,6 +5076,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate voltage drop in electrical circuits by entering current, conductor resistance per meter, and distance. Includes charts and PDF export.',
       keywords: ["voltage drop","electrical","voltage loss","conductor resistance","circuit design","voltage drop calculator"],
     },
+    faq: [
+      { question: 'Does this calculator consider cable temperature or material?', answer: 'No. This calculator uses a simple resistance per meter value you provide. For temperature and material effects, use manufacturer cable tables or more advanced engineering tools.' },
+      { question: 'Should I include the return conductor?', answer: 'Yes. The calculator multiplies distance by 2 to account for the round-trip (supply and return) conductor path for single-phase circuits.' },
+      { question: 'What is an acceptable percentage voltage drop?', answer: 'Industry guidance often recommends keeping voltage drop to within 3% for feeders and 3% for branch circuits (total 6%). Refer to local electrical codes and standards for exact requirements.' },
+      { question: 'How do I interpret the results from the voltage drop calculator?', answer: 'The output of the calculator will help you determine if your current setup is viable. If the voltage drop exceeds 5% of the nominal supply, it typically indicates a need for reevaluation of wiring or component selection.' },
+    ],
   },
   {
     id: 'circuit-breaker-calculator',
@@ -4488,6 +5098,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use this Circuit Breaker Calculator to estimate the correct breaker size based on total load (W), voltage (V), and a safety factor. Includes recommended breaker and charts.',
       keywords: ["circuit breaker","breaker size","electrical calculator","ampere calculation","load current","electrical safety","construction tools"],
     },
+    faq: [
+      { question: 'Can I use this calculator for three-phase systems?', answer: 'This calculator assumes a simple single-phase calculation (I = P ÷ V). For three-phase systems, the formula changes to I = P ÷ (√3 × V × powerFactor) for line-to-line voltages. Adjust your inputs accordingly or consult an electrical engineer.' },
+      { question: 'Why is a safety factor important in circuit breaker sizing?', answer: 'Safety factors account for startup currents, inrush, future load growth, and other uncertainties that can affect current draw. Typical values range from 115% to 125%, but specific applications may require adjusting the margins.' },
+      { question: 'Does the recommended breaker size equal the conductor size?', answer: 'Not necessarily. Conductor sizing depends on ampacity tables, installation method, and any derating factors that may apply. This tool recommends a breaker size; always select conductor sizes based on code tables and actual installation conditions.' },
+      { question: 'Can a circuit breaker wear out, and how often should I check it?', answer: 'Yes, circuit breakers can wear out over time due to mechanical stress and electrical loads. It\'s important to inspect them regularly, especially in older systems, and consider replacement if frequent tripping occurs.' },
+    ],
   },
   {
     id: 'pipe-size-calculator',
@@ -4504,6 +5120,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the required internal pipe diameter for a given water flow rate (L/min) and target velocity (m/s). Useful for plumbing and hydraulic planning.',
       keywords: ["pipe size calculator","pipe diameter","flow rate","water velocity","plumbing calculator","hydraulic design"],
     },
+    faq: [
+      { question: 'Can I use this Pipe Size Calculator for other fluids?', answer: 'This calculator assumes incompressible flow and uses velocity as the design parameter. For viscous or compressible fluids, or if temperature significantly changes density, use fluid-specific hydraulic calculations.' },
+      { question: 'Why is velocity important in pipe design?', answer: 'Velocity impacts pressure drop and noise. Designing for an appropriate velocity balances pipe cost and energy losses in pumping. Too high a velocity can lead to cavitation, while too low can result in sedimentation.' },
+      { question: 'How to choose a standard pipe size effectively?', answer: 'fter calculating the theoretical diameter, consult pipe standard nominal sizes (e.g., DN series, NPS/IPS). Select a nominal size that provides equal or larger internal diameter than computed. A higher nominal size can enhance flow rates further.' },
+      { question: 'What are the common applications for this calculator?', answer: 'The Pipe Size Calculator is widely used in construction, plumbing, and water management sectors. It is essential for designing efficient irrigation systems, sewage systems, and even heating and cooling applications in buildings.' },
+      { question: 'What impact does temperature have on pipe size?', answer: 'Temperature changes can affect fluid density and therefore flow. Always consider temperature variations during design to ensure optimal performance and compliance with safety regulations.' },
+    ],
   },
   {
     id: 'water-flow-calculator',
@@ -4520,6 +5143,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate water flow rate through pipes given diameter (cm) and velocity (m/s). Outputs m³/s, L/s, and m³/h for quick plumbing and construction estimates.',
       keywords: ["water flow","flow rate","pipe flow","plumbing calculator","construction tools","m3/s","L/s","m3/h"],
     },
+    faq: [
+      { question: 'Do I need to convert units first?', answer: 'No. Enter the diameter in centimeters and velocity in m/s — the calculator converts the diameter to meters internally.' },
+      { question: 'What assumptions does this calculator make?', answer: 'It assumes steady uniform flow with the velocity you provide representing the average cross-sectional velocity. It does not account for frictional losses, turbulence, or changes in elevation.' },
+      { question: 'Why provide results in multiple units?', answer: 'Different industries and reports use different flow units. Showing m³/s, L/s, and m³/h makes it easier to use results directly in calculations or specifications.' },
+      { question: 'What factors can affect water flow rates?', answer: 'The flow rate can be influenced by various factors including pipe diameter, length, material, elevation changes, and the presence of fittings or bends that can create resistance.' },
+      { question: 'How can I apply this calculator in real scenarios?', answer: 'You can use this calculator for tasks like designing a sprinkler system, determining the capacity of a water supply system, or optimizing the sizing of pipes in a building\'s plumbing network.' },
+    ],
   },
   {
     id: 'punnett-square-calculator',
@@ -4536,6 +5166,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Generate Punnett squares for single-gene genetic crosses. Predict offspring genotype and phenotype probabilities (e.g., AA, Aa, aa).',
       keywords: ["punnett square","genetics","genotype","phenotype","Aa","monohybrid cross","biology","genetics calculator"],
     },
+    faq: [
+      { question: 'Can I use this for dihybrid crosses?', answer: 'This calculator is designed for single-gene (monohybrid) crosses. For dihybrid or more complex crosses, each parent produces more gamete combinations and a larger Punnett square is required. Consider using a dihybrid-specific tool or manually expand the gametes for multiple loci.' },
+      { question: 'What notation should I use for genotypes?', answer: 'Use two-letter genotypes per parent for the same locus (e.g., AA, Aa, or aa). Uppercase letters denote the dominant allele; lowercase denotes the recessive allele.' },
+      { question: 'Why does the tool show 75% dominant for Aa × Aa?', answer: 'In an Aa × Aa cross, the possible offspring genotypes are AA, Aa, and aa. AA and Aa both display the dominant phenotype, giving 3 out of 4 (75%) dominant and 1 out of 4 (25%) recessive.' },
+      { question: 'How accurate is the Punnett Square?', answer: 'The Punnett square provides probabilities based on Mendelian genetics. While it offers insights into genetic inheritance under ideal conditions, real-life breeding may be influenced by additional factors, including environmental influences and genetic linkage.' },
+    ],
   },
   {
     id: 'hardy-weinberg-calculator',
@@ -4584,6 +5220,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute the complement or reverse complement of DNA sequences, view nucleotide counts, sequence length, and GC content. Ideal for genetics and molecular biology tasks.',
       keywords: ["DNA calculator","reverse complement","complement DNA","GC content","nucleotide counts","genetics","bioinformatics"],
     },
+    faq: [
+      { question: 'What characters are allowed?', answer: 'Only the letters A, T, C, and G (case-insensitive) are allowed. Spaces are ignored, and invalid characters will prevent calculation.' },
+      { question: 'Can I analyze RNA sequences?', answer: 'This tool is specifically designed for DNA sequences. For RNA, replace T with U and consider utilizing an RNA-specific calculator.' },
+      { question: 'How is GC content calculated?', answer: 'GC content is computed as (G + C) / total_length × 100 and is presented to two decimal places.' },
+    ],
   },
   {
     id: 'allele-frequency-calculator',
@@ -4600,6 +5241,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute allele frequencies p and q from genotype counts (AA, Aa, aa). Useful for population genetics, Hardy-Weinberg checks, and reporting.',
       keywords: ["allele frequency","population genetics","Hardy-Weinberg","genetics calculator","allele p","allele q","genotype counts"],
     },
+    faq: [
+      { question: 'Can this calculator handle zero counts?', answer: 'Yes. If the total number of individuals is zero, the calculator will not produce allele frequencies. For any positive total, frequencies are computed normally.' },
+      { question: 'Does this assume Hardy-Weinberg equilibrium?', answer: 'No — the calculator simply computes observed allele frequencies from genotype counts. Hardy-Weinberg equilibrium is an additional assumption about genotype frequencies given allele frequencies; you can compare observed genotype proportions to expected HWE proportions using p and q = 1 − p if desired.' },
+      { question: 'Why are allele frequencies useful?', answer: 'llele frequencies summarize genetic variation in populations and are used in studies of evolution, conservation genetics, disease gene mapping, and population structure analyses. They provide insights into how genetics influence traits and health, making them a cornerstone of biological research.' },
+    ],
   },
   {
     id: 'population-growth-calculator',
@@ -4632,6 +5278,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate continuous and compound population growth rates (r and CAGR). Enter initial and final populations and the time period to get instant results and charts.',
       keywords: ["growth rate","population growth","CAGR","continuous growth rate","ecology calculator","population dynamics"],
     },
+    faq: [
+      { question: 'What if initial population is zero?', answer: 'The formulas require positive initial and final population values. If N0 is zero, the continuous rate and CAGR are undefined. Use alternative modeling approaches or add a small positive offset if appropriate for your study.' },
+      { question: 'Can time be fractional?', answer: 'Yes. Time can be any positive real number (e.g., years, months, days) as long as units are consistent across the inputs.' },
+      { question: 'How do I interpret negative growth?', answer: 'If the final population is smaller than the initial population, both r and CAGR will be negative, indicating a declining population over the time period.' },
+    ],
   },
   {
     id: 'carrying-capacity-calculator',
@@ -4664,6 +5315,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute Shannon\'s and Simpson\'s biodiversity indices from comma-separated species counts. View species richness, total individuals and abundance chart.',
       keywords: ["biodiversity","Shannon index","Simpson index","species richness","ecology","diversity","conservation"],
     },
+    faq: [
+      { question: 'What if I have zeros or empty entries?', answer: 'Zeros are allowed and will reduce contributions to indices. Empty entries will be ignored when parsing; ensure values are separated by commas for accurate calculations.' },
+      { question: 'Which index should I use?', answer: 'Shannon\'s index is sensitive to rare species, capturing both richness and evenness, making it valuable in ecological studies. Simpson\'s index emphasizes the dominance of common species, so use the index that best fits your ecological question.' },
+      { question: 'Can I compare samples?', answer: 'Yes — compute indices for multiple samples separately and compare values. Be mindful of sample size effects, and consider rarefaction or standardized sampling if sample sizes differ greatly.' },
+      { question: 'How accurate are the indices provided?', answer: 'The indices provided by the calculator are estimates based on input data. For more rigorous statistical analyses, it is recommended to use specialized ecological statistics software.' },
+    ],
   },
   {
     id: 'cell-count-calculator',
@@ -4680,6 +5337,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use this Cell Count Calculator to determine cell concentrations from dilution series. Enter cells counted, dilution factor, and volume (mL) to get cells/mL and cells/L instantly.',
       keywords: ["cell concentration","cells per mL","cells per L","dilution factor","hemocytometer","microbiology","cell count calculator"],
     },
+    faq: [
+      { question: 'What if my volume is in µL?', answer: 'Convert µL to mL before using the calculator (1 µL = 0.001 mL). For example, 100 µL = 0.1 mL.' },
+      { question: 'Can I use this for colony counts on plates?', answer: 'Yes. For plate counts, use the number of colonies counted, the dilution factor, and the plated volume (in mL) to compute CFU/mL using the same formula.' },
+      { question: 'Why is my calculated concentration extremely high?', answer: 'Check that the dilution factor and volume are correct and that the units are mL. Large dilution factors or small volumes produce large concentrations; ensure your sample preparation and counting are accurate.' },
+      { question: 'How accurate is the cell count calculator?', answer: 'The accuracy of the calculator depends on the accuracy of the inputs you provide, including the cell count, dilution factor, and volume. Regular calibration and validation of your counting technique will help improve accuracy.' },
+      { question: 'Can this calculator help in determining viable cell counts?', answer: 'While the calculator provides total cell counts, viable cell counts require additional assessments such as trypan blue exclusion or other viability assays to determine the proportion of living cells in your sample.' },
+    ],
   },
   {
     id: 'dilution-calculator',
@@ -4696,6 +5360,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute required stock volume, diluent volume, and dilution factor using the C1V1 = C2V2 formula. Ideal for microbiology and lab workflows.',
       keywords: ["dilution","C1V1","C2V2","dilution calculator","concentration","microbiology","laboratory"],
     },
+    faq: [
+      { question: 'Can I increase concentration using this calculator?', answer: 'No — this calculator assumes you are diluting (reducing concentration). If the desired final concentration (C2) is greater than the initial stock concentration (C1), the computed stock volume (V1) will exceed the final volume (V2), indicating that concentrating is required.' },
+      { question: 'Does the calculator handle unit conversions?', answer: 'No — ensure that concentration units and volume units are consistent before entering values (e.g., mL for volume and the same concentration units for C1 and C2). The result is provided in the same volume units you enter (mL by default).' },
+      { question: 'How precise are the results?', answer: 'Results are rounded to six decimal places for display. For experimental work, round or adjust based on the precision of your measuring equipment and lab protocols.' },
+    ],
   },
   {
     id: 'ph-calculator',
@@ -4728,6 +5397,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute osmolarity (Osm/L) from molarity and the number of particles per molecule. Useful for lab preparations, media formulation, and microbiology experiments.',
       keywords: ["osmolarity","molarity","osmoles","osmotic","microbiology","biology","calculator"],
     },
+    faq: [
+      { question: 'What value should I use for "number of particles"?', answer: 'Use the number of particles produced when one formula unit dissolves. For non-electrolytes (e.g., glucose), this is 1. For NaCl it\'s 2, for CaCl2 it\'s 3, etc. When in doubt, use the van \'t Hoff factor for the solute.' },
+      { question: 'What\'s the difference between osmolarity and osmolality?', answer: 'Osmolarity is osmoles per liter of solution (Osm/L), while osmolality is osmoles per kilogram of solvent (Osm/kg). This calculator computes osmolarity. For most dilute aqueous solutions the difference is small, but for precise work use osmolality when mass-based concentration is required.' },
+      { question: 'Can I use this for ionic solutions?', answer: 'Yes — include the number of ions produced per formula unit as the particles value. Note that incomplete dissociation or ionic pairing in concentrated solutions may alter the effective number of particles; for concentrated electrolytes, empirical measurements or activity corrections may be necessary.' },
+    ],
   },
   {
     id: 'enzyme-kinetics-calculator',
@@ -4744,6 +5418,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate the Michaelis constant (Km) using substrate concentration, observed reaction rate, and Vmax. Visualize the Michaelis-Menten curve and download results as PDF.',
       keywords: ["enzyme kinetics","Km calculator","Michaelis-Menten","Vmax","substrate concentration","microbiology","biochemistry","enzyme kinetics calculator"],
     },
+    faq: [
+      { question: 'What is Km?', answer: 'Km (Michaelis constant) is the substrate concentration at which the reaction rate is half of Vmax for a simple Michaelis-Menten enzyme system. It provides insight into the affinity of the enzyme for the substrate: a lower Km indicates higher affinity.' },
+      { question: 'Can I calculate Vmax from a single measurement?', answer: 'No — Vmax is best determined by analyzing multiple measurements across a range of substrate concentrations and fitting the data to the Michaelis-Menten model. This tool assumes you provide an estimated Vmax.' },
+      { question: 'Why does the calculator require v &lt; Vmax?', answer: 'Mathematically, solving for Km from the rearranged Michaelis-Menten equation requires v to be greater than 0 and less than Vmax to produce a positive, finite Km. If v ≥ Vmax, the formula would produce zero or negative Km values which are biologically implausible for normal Michaelis-Menten kinetics.' },
+    ],
   },
   {
     id: 'half-life-calculator',
@@ -4760,6 +5439,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the half-life for biological exponential decay processes. Enter initial amount, final amount, and time to get the half-life (same units as time).',
       keywords: ["half-life","half life calculator","exponential decay","microbiology","biological kinetics","pharmacokinetics","decay rate"],
     },
+    faq: [
+      { question: 'What if the final amount is greater than or equal to the initial amount?', answer: 'The formula assumes decay (final < initial). If final >= initial, the half-life for decay is not defined; you may be observing growth or measurement error.' },
+      { question: 'Can I use different units (seconds, minutes, hours)?', answer: 'Yes. The calculator returns the half-life in the same units as the Time Period you enter. Ensure consistency when interpreting results.' },
+      { question: 'Is this valid for all biological processes?', answer: 'This tool is valid for processes that follow first-order kinetics (exponential decay). Some biological systems follow more complex dynamics; use appropriate models in those cases.' },
+    ],
   },
   {
     id: 'respiration-rate-calculator',
@@ -4792,6 +5476,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute the number of moles from a given mass (g) and molar mass (g/mol). Useful for stoichiometry, solution preparation, and lab calculations.',
       keywords: ["mole calculator","moles","molar mass","stoichiometry","chemistry calculator","mass to moles"],
     },
+    faq: [
+      { question: 'What if my molar mass is not known?', answer: 'You can calculate molar mass by summing the atomic masses of all atoms in the molecular formula. Use a periodic table or database to find atomic masses (in g/mol).' },
+      { question: 'Can mass be negative?', answer: 'No. Mass should be a non-negative value. The calculator validates inputs and will not produce a result if the mass is negative or the molar mass is zero or not provided.' },
+      { question: 'Why are chart bars different units?', answer: 'The chart displays both input values (grams and grams per mole) and the computed moles. These values have different units; the chart is intended to give a quick visual overview rather than a strict unit-comparable plot.' },
+    ],
   },
   {
     id: 'molarity-calculator',
@@ -4824,6 +5513,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly calculate molality (moles of solute per kilogram of solvent). Enter the moles of solute and solvent mass in kg to get instant results and downloadable PDF summaries.',
       keywords: ["molality","molality calculator","chemistry","stoichiometry","moles per kilogram","solution concentration"],
     },
+    faq: [
+      { question: 'How is molality different from molarity?', answer: 'Molarity (M) is moles of solute per liter of solution and depends on temperature-sensitive volume. Molality (m) is moles of solute per kilogram of solvent and is independent of temperature.' },
+      { question: 'Can molality be used for very dilute solutions?', answer: 'Yes. Molality is valid for dilute and concentrated solutions. For very dilute aqueous solutions, molality and molarity values can be similar but are not identical.' },
+      { question: 'What units should I use?', answer: 'Use moles (mol) for the solute amount and kilograms (kg) for the solvent mass. Convert grams to kilograms by dividing by 1000 if needed.' },
+    ],
   },
   {
     id: 'stoichiometry-calculator',
@@ -4856,6 +5550,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute percent composition by mass for elements in chemical formulas. Supports nested parentheses and common element symbols. Instant calculations and PDF export.',
       keywords: ["percent composition","molar mass","chemical formula","stoichiometry","chemistry calculator","element percent","percent composition calculator"],
     },
+    faq: [
+      { question: 'What if my formula includes an element not listed?', answer: 'The calculator relies on an internal table of atomic weights. If an element is not recognized, you\'ll see an error listing the unknown symbol(s). You can request to add that element\'s atomic weight to the dataset.' },
+      { question: 'Can I use fractional subscripts or hydrates (e.g., CuSO4·5H2O)?', answer: 'The current parser handles integer counts and nested parentheses. For hydrates using a middle dot (·), replace the dot with a plus sign or expand the hydrate explicitly (e.g., CuSO4 + 5H2O) or enter CuSO4(H2O)5.' },
+      { question: 'Are results rounded?', answer: 'Results displayed by the calculator are rounded to a sensible number of decimal places, but the PDF download includes values with greater precision where applicable.' },
+    ],
   },
   {
     id: 'empirical-formula-calculator',
@@ -4872,6 +5571,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the empirical formula of a compound using percent composition. Enter element symbols and their percent by mass to get the simplest whole-number formula and a mole breakdown.',
       keywords: ["empirical formula","percent composition","stoichiometry","chemistry calculator","mole ratios","empirical formula calculator"],
     },
+    faq: [
+      { question: 'Why assume a 100 g sample?', answer: 'Percent compositions are relative. Assuming 100 g makes conversion to grams direct and simplifies the mole calculations.' },
+      { question: 'What if the ratios are not exact integers?', answer: 'The calculator attempts small integer multipliers (1–12) to find the simplest whole-number ratio. This mirrors typical lab rounding procedures for empirical formula determination.' },
+      { question: 'Can this give the molecular formula?', answer: 'The empirical formula shows the simplest whole-number ratio of atoms. To get the molecular formula, you also need the compound\'s molar mass and then determine the multiple between the empirical formula mass and the molecular mass.' },
+    ],
   },
   {
     id: 'molecular-formula-calculator',
@@ -4920,6 +5624,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use this dilution calculator to determine the volume of concentrated stock required to make a diluted solution. Enter initial concentration (C1), desired final concentration (C2), and final volume (V2).',
       keywords: ["dilution calculator","chemistry calculator","C1V1 C2V2","solution dilution","prepare solutions","laboratory calculations"],
     },
+    faq: [
+      { question: 'What does C1V1 = C2V2 mean?', answer: 'It expresses conservation of solute amount. The moles of solute in the aliquot of stock (C1 × V1) equals the moles in the final diluted solution (C2 × V2).' },
+      { question: 'Can I use different units?', answer: 'Yes, but keep them consistent. If you use mL for volume, ensure both V1 and V2 are in mL. The calculator uses liters internally and also displays milliliters for convenience.' },
+      { question: 'What if C1 &lt; C2?', answer: 'If the stock concentration (C1) is lower than the desired final concentration (C2), you cannot obtain the desired concentration by dilution — you would need a more concentrated stock or to perform a concentration step.' },
+    ],
   },
   {
     id: 'ph-calculator-chemistry',
@@ -4936,6 +5645,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the pH and pOH of aqueous solutions quickly by entering the hydrogen ion concentration [H+]. Includes automatic calculation, charts, and PDF export.',
       keywords: ["pH calculator","pOH calculator","hydrogen ion concentration","Kw","chemistry","solutions","pH pOH converter"],
     },
+    faq: [
+      { question: 'What if I enter 0 or a negative concentration?', answer: 'Hydrogen ion concentration must be greater than 0. The calculator will not produce a valid pH for zero or negative values.' },
+      { question: 'Does the calculator account for temperature?', answer: 'This calculator uses Kw = 1e-14, which is valid at 25°C. For solutions at different temperatures, Kw changes and pH + pOH will not necessarily equal 14.' },
+      { question: 'Can I convert pH to hydrogen ion concentration?', answer: 'Yes — [H+] = 10^(-pH). Use the inverse relationship if you need to compute concentration from pH.' },
+      { question: 'Why is pH important in chemistry?', answer: 'pH is crucial because it affects chemical reactions, biological processes, and the solubility of compounds. Many enzymes, for example, only function within a certain pH range.' },
+      { question: 'Are there any tools to measure pH in real-time?', answer: 'Yes, there are various pH meters and strips that provide instant readings for solutions, which is useful in laboratory and field settings.' },
+    ],
   },
   {
     id: 'buffer-calculator',
@@ -4984,6 +5700,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute the molar enthalpy change (ΔH) from total heat and moles. Supports J/mol and kJ/mol with instant calculation and downloadable PDF report.',
       keywords: ["enthalpy","ΔH","enthalpy calculator","thermodynamics","chemistry calculator","J/mol","kJ/mol"],
     },
+    faq: [
+      { question: 'Can I enter negative heat values?', answer: 'Yes. Negative heat indicates an exothermic process where heat is released. The result will be negative, reflecting the direction of heat flow.' },
+      { question: 'What unit should heat be in for the calculator?', answer: 'Heat should be entered in joules (J). If your data is in kilojoules (kJ), convert to joules first by multiplying by 1000.' },
+      { question: 'How is the result converted to kJ/mol?', answer: 'The calculator computes ΔH in the base unit (J/mol) and then converts to kJ/mol by dividing by 1000, ensuring consistent and accurate conversions.' },
+      { question: 'Why is understanding ΔH important?', answer: 'Knowing the enthalpy change helps predict whether a reaction is favorable and assists in energy management during chemical processes, which is especially useful in industrial applications.' },
+    ],
   },
   {
     id: 'entropy-calculator',
@@ -5000,6 +5722,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute entropy change (ΔS) for reversible processes using heat (J) and temperature (K). Ideal for students and engineers doing quick thermodynamics checks.',
       keywords: ["entropy calculator","ΔS","thermodynamics","entropy change","heat","temperature","J/K"],
     },
+    faq: [
+      { question: 'Can I use this for irreversible processes?', answer: 'No. This calculator uses ΔS = Q_rev / T which applies for reversible heat transfer at constant temperature. Irreversible processes require different analysis (e.g., calculating entropy production).' },
+      { question: 'What if temperature is not constant during the process?', answer: 'If temperature varies, compute ΔS by integrating dQ_rev/T over the process: ΔS = ∫(dQ_rev / T). This tool assumes constant T for simplicity.' },
+      { question: 'Why must temperature be in kelvin?', answer: 'Entropy is defined using absolute temperature. Using Celsius or Fahrenheit will yield incorrect results unless converted to kelvin. This ensures the calculations align with the thermodynamic principles.' },
+      { question: 'What does a positive or negative ΔS indicate?', answer: 'positive ΔS signifies an increase in entropy or disorder, suggesting the process is spontaneous under the given conditions. Conversely, a negative ΔS indicates decreased disorder, commonly associated with non-spontaneous reactions.' },
+    ],
   },
   {
     id: 'gibbs-free-energy-calculator',
@@ -5032,6 +5760,9 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute average reaction rates (Δ[A]/Δt), pseudo first-order rate constants, and half-lives. Quick and accurate chemistry kinetics estimates.',
       keywords: ["reaction rate","rate constant","chemical kinetics","half-life","average rate","chemistry calculator"],
     },
+    faq: [
+      { question: 'Can I use negative Δ[A] values?', answer: 'Yes. A negative Δ[A] indicates consumption of a reactant and will produce a negative average rate. Interpret the sign accordingly.' },
+    ],
   },
   {
     id: 'equilibrium-constant-calculator',
@@ -5048,6 +5779,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Compute equilibrium constants (K) from product and reactant concentrations and stoichiometric coefficients. Supports comma-separated inputs and PDF export.',
       keywords: ["equilibrium constant","K","chemical equilibrium","Kc","concentration","stoichiometric coefficients","chemistry calculator","thermodynamics"],
     },
+    faq: [
+      { question: 'What if my coefficients order is different?', answer: 'Use the "Order" selector to indicate whether coefficients are listed as products then reactants or reactants then products. The default is products then reactants.' },
+      { question: 'Does the calculator handle activities?', answer: 'This tool uses concentrations (Kc). For activity-based calculations, you would substitute activity values for concentrations before using the calculator.' },
+      { question: 'How precise is the result?', answer: 'Results are displayed with up to six significant digits by default. Extremely large or small values may be shown in exponential form.' },
+      { question: 'Why is the equilibrium constant important?', answer: 'The equilibrium constant helps predict the behavior of a reaction under specified conditions, making it a pivotal concept in chemical thermodynamics and kinetics.' },
+      { question: 'Can this calculator be used for all reactions?', answer: 'Yes, as long as you have the appropriate concentrations and stoichiometric coefficients, this calculator can be used for various chemical reactions across different contexts.' },
+    ],
   },
   {
     id: 'bond-energy-calculator',
@@ -5064,6 +5802,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate reaction enthalpy by summing bond energies of bonds broken and bonds formed. Supports comma-separated bond energy lists and exports results to PDF.',
       keywords: ["bond energy","enthalpy","delta H","reaction enthalpy","chemistry calculator","organic chemistry","kJ/mol","bond energies"],
     },
+    faq: [
+      { question: 'Can I enter fractional or negative values?', answer: 'You can enter decimal values (e.g., 436.5). Negative bond energies are unusual for typical bond dissociation energies and will be treated as numeric inputs, but interpret negative values with caution.' },
+      { question: 'Should I include units when typing values?', answer: 'No. Enter plain numbers separated by commas. Select the correct unit (kJ/mol or J/mol) from the unit selector. If you enter values in J/mol, the calculator will convert them to kJ/mol for the summary.' },
+      { question: 'How accurate is this method?', answer: 'This approach gives a quick approximation and is useful for qualitative predictions (endothermic vs exothermic). For quantitative accuracy use experimental enthalpies or computational chemistry methods that account for molecular structure and environment.' },
+    ],
   },
   {
     id: 'marathon-time-calculator',
@@ -5080,6 +5823,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your marathon finish time from a shorter race (5K, 10K, half marathon) using Riegel\'s formula. Get predicted finish time and average pace.',
       keywords: ["marathon time calculator","race prediction","running calculator","Riegel formula","marathon pace","finish time estimate"],
     },
+    faq: [
+      { question: 'Is this prediction exact?', answer: 'No — it\'s an estimate. Individual physiology, training, and conditions make exact prediction impossible. Use it as a guideline to help shape your training and racing strategies.' },
+      { question: 'Can I use any race distance?', answer: 'Yes. The calculator accepts any race distance in kilometers and the finishing time in minutes. Performances from longer races (e.g., half marathon) are usually more predictive of marathon performance than short races (e.g., 5K). Explore different distance performances to enhance accuracy.' },
+      { question: 'How should I interpret the pace number?', answer: 'Pace is shown as minutes per kilometer. Use it as a framework to plan your marathon pacing strategy — remember that race-specific factors like hills and fueling will influence your sustainable pace. Consider practicing at this pace during training runs to get accustomed to it.' },
+      { question: 'How can I improve my marathon time?', answer: 'Improving your marathon time often involves a combination of speed work, long runs, and rest days. Paying attention to your nutrition, hydration strategies during runs, and pacing can also lead to better race performances. Experimenting with these elements in training will help you identify what works best for you.' },
+    ],
   },
   {
     id: '5k-time-calculator',
@@ -5096,6 +5845,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Predict your 5K race time using your current pace (min/km) and a recent training distance. Uses the Riegel formula for reliable race time extrapolation.',
       keywords: ["5k time","5k prediction","race time calculator","running","Riegel formula","pace calculator"],
     },
+    faq: [
+      { question: 'Is the prediction exact?', answer: 'No — it\'s an estimate. The Riegel formula provides a reasonable extrapolation based on endurance scaling, but actual race performance depends on fitness, pacing, terrain, weather, and race-day conditions.' },
+      { question: 'What distance should I use for training data?', answer: 'Use a recent, well-paced effort that reflects your current fitness. Time-trial efforts, tempo runs, or race results are good inputs. Very short or very irregular runs may give less reliable predictions.' },
+      { question: 'Can I use pace in min/mile?', answer: 'This calculator expects minutes per kilometer. Convert pace in minutes per mile to min/km before using the tool (1 mile ≈ 1.60934 km).' },
+    ],
   },
   {
     id: '10k-time-calculator',
@@ -5144,6 +5898,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your bicycle speed using cadence (rpm), gear ratio, and wheel circumference. Get results in km/h and m/s, view charts, and download a PDF report.',
       keywords: ["cycling speed calculator","cadence to speed","gear ratio speed","wheel circumference","bike speed estimator"],
     },
+    faq: [
+      { question: 'Do I need to know my exact wheel circumference?', answer: 'For rough estimates, typical wheel circumferences (e.g. 2.05–2.2 m) are fine. For precise speed calculations, measure your wheel circumference or consult tire size charts.' },
+      { question: 'How do I calculate gear ratio?', answer: 'Divide the number of teeth on the front chainring by the number of teeth on the rear cog. For example, 52/13 ≈ 4.0.' },
+      { question: 'Can this calculator account for rolling resistance or wind?', answer: 'No — this tool provides a purely kinematic estimate (distance traveled per pedal revolution). Real-world speed is affected by many factors like aerodynamics, rolling resistance, gradient, and rider power.' },
+      { question: 'What are some advanced tips for accurate measurements?', answer: 'To achieve accurate speed calculations, ensure your bike is properly maintained, tires are adequately inflated, and consider the environmental conditions during your rides.' },
+    ],
   },
   {
     id: 'bike-gear-calculator',
@@ -5176,6 +5936,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate how many calories you burn while cycling based on weight, duration, and average speed. Uses MET values to provide quick and practical estimates.',
       keywords: ["cycling calories","calorie burn calculator","cycling calorie calculator","MET cycling","bike calories"],
     },
+    faq: [
+      { question: 'Is this calculator 100% accurate?', answer: 'No. This calculator provides an estimate based on generalized MET values. Individual metabolic rates, body composition, and effort levels cause variation.' },
+      { question: 'Can I use miles per hour instead of km/h?', answer: 'This tool expects speed in km/h. If you have mph, multiply by 1.609 to convert to km/h before entering.' },
+      { question: 'How should I use this calculator for training?', answer: 'Use it to estimate energy expenditure per ride and track trends over time. For training load and adaptation, combine with intensity metrics like power or heart rate.' },
+      { question: 'Can this calculator help with weight loss?', answer: 'bsolutely! By tracking calories burned, you can adjust your diet and exercise to achieve your weight loss goals effectively.' },
+      { question: 'What should I do if I experience discrepancies in calorie estimates?', answer: 'If you find significant differences in estimated calorie burn, consider factors such as fitness level and metabolic differences. Consulting with a fitness professional can provide tailored advice.' },
+    ],
   },
   {
     id: 'volume-calculator-strength',
@@ -5192,6 +5959,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly calculate training volume (kg) for strength exercises by multiplying sets, reps, and weight. Export results to PDF and visualize volume.',
       keywords: ["strength training","training volume","sets reps weight","volume calculator","strength calculator","workload"],
     },
+    faq: [
+      { question: 'Is higher volume always better?', answer: 'Not necessarily. While increased volume can promote hypertrophy and skill acquisition, it must be balanced with recovery and intensity. Individual response, training age, and goals determine optimal volume, so listen to your body to prevent burnout.' },
+      { question: 'Should I use this for cardio or endurance?', answer: 'This calculator is tailored for external load-based strength work. For endurance or cardio, other metrics like distance, duration, and pace are more appropriate. If your primary goal is endurance, consider other tools designed specifically for that purpose.' },
+      { question: 'Can I export results?', answer: 'Yes. Use the PDF export to save inputs and results for logging or sharing with a coach. This feature makes it easy to keep track of your progress over time.' },
+    ],
   },
   {
     id: 'rest-period-calculator',
@@ -5208,6 +5980,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate recommended rest periods between sets for strength, hypertrophy, and endurance training. Adjust by intensity (% of 1RM) to personalize recovery time.',
       keywords: ["rest period","rest between sets","1RM","strength training","hypertrophy","endurance","workout recovery","training rest calculator"],
     },
+    faq: [
+      { question: 'Is the recommendation exact?', answer: 'No — it is an evidence-informed guideline. Individual responses vary based on fitness level, exercise selection, and recovery capacity. Use the recommended range and adjust based on performance and fatigue levels.' },
+      { question: 'Can I use this for circuit training?', answer: 'For circuit training and metabolic conditioning, shorter rests are typical. Choose "Endurance" and lower intensity values to reflect circuit-style work for optimal results.' },
+      { question: 'How should I progress rest periods over time?', answer: 's you get stronger, you may need slightly longer rests for maximal strength sets. For hypertrophy, rest periods can be manipulated to target more metabolic stress (<60s) or more mechanical tension (>90s) depending on your specific goals.' },
+      { question: 'Can I adjust the rest period within a workout?', answer: 'bsolutely! Feel free to modify rest periods in real-time based on how you feel during a workout. Listening to your body can often lead to improved outcomes.' },
+    ],
   },
   {
     id: 'progressive-overload-calculator',
@@ -5240,6 +6018,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly compute batting average (AVG), hits per 100 at-bats, and projected hits for a 600 at-bat season. Ideal for coaches and analysts.',
       keywords: ["baseball","batting average","AVG","baseball calculator","hits","at-bats","sports calculator","player projections"],
     },
+    faq: [
+      { question: 'Should I include walks or hit-by-pitch?', answer: 'No. Batting average only counts official at-bats. Walks, hit-by-pitch, and sacrifices do not count as at-bats and therefore are not used in AVG calculations. To measure overall offensive contribution including walks, consider metrics like On-Base Percentage (OBP) or OPS.' },
+      { question: 'What if at-bats is zero?', answer: 'If at-bats is zero, batting average is undefined. The calculator will display results only when valid, non-zero at-bats are provided.' },
+      { question: 'Why project to 600 at-bats?', answer: '600 at-bat season is a common baseline used for projecting full-season counting stats for regular players. It provides a straightforward way to compare seasonal production across players with different current at-bat totals.' },
+    ],
   },
   {
     id: 'basketball-stats-calculator',
@@ -5304,6 +6087,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly calculate tennis serve speed from distance (meters) and time (seconds). Shows base speed in m/s and converted speed in km/h, includes charts and PDF export.',
       keywords: ["tennis serve speed","serve speed calculator","m/s to km/h","sports calculator","tennis metrics"],
     },
+    faq: [
+      { question: 'Can I use different units for distance or time?', answer: 'This tool expects distance in meters and time in seconds. If you have different units, convert them to meters and seconds before entering. This ensures that calculations are consistent and accurate.' },
+      { question: 'Why is the base speed shown in m/s?', answer: 'Meters per second is the standard SI unit for speed and provides a precise base for conversions to other units like km/h. This allows athletes and coaches to have a clear understanding of performance metrics.' },
+      { question: 'How accurate is this calculation?', answer: 'The calculation is mathematically accurate given the distance and time inputs. Real-world accuracy, however, depends on how precisely distance and time were measured. Ensure consistent conditions for the best results.' },
+    ],
   },
   {
     id: 'swimming-pace-calculator',
@@ -5320,6 +6108,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Determine your swimming pace per 100m and view split times for 50m segments. Automatically updates as you change distance and time. Download results as a PDF.',
       keywords: ["swimming pace","pace per 100m","swim splits","swimming calculator","swim training","swim pace calculator"],
     },
+    faq: [
+      { question: 'What if I enter an invalid value?', answer: 'The calculator requires positive numeric values for distance and time. If inputs are invalid or zero, results and charts will not be shown, ensuring that users always receive meaningful feedback.' },
+      { question: 'Can I change split length?', answer: 'This tool uses 50m splits by default, which are common in pool training. For different split lengths, you can adapt the calculation logic or use the outputs to manually compute other split sizes. Customizing these settings can enhance training strategies.' },
+      { question: 'Why is pace shown per 100m?', answer: 'Swimming performance is commonly reported as time per 100 meters, which makes it easy to compare efforts across different distances and training sets. Understanding this standard helps in evaluating and identifying areas for improvement in swimming technique and speed.' },
+    ],
   },
   {
     id: 'food-cost-calculator',
@@ -5352,6 +6145,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Calculate calories, protein, carbs, fat per serving and view calorie breakdown from macronutrients. Ideal for recipe nutrition labeling and meal planning.',
       keywords: ["nutrition label","calories per serving","protein per serving","carbs per serving","fat per serving","nutrition calculator","recipe nutrition"],
     },
+    faq: [
+      { question: 'Can I use this for commercial labeling?', answer: 'This calculator helps estimate per-serving nutrition facts, but commercial labels often require specific rounding rules and compliance testing. Use these results as a guide and consult local regulations before publishing labels.' },
+      { question: 'What if my total calories don\'t match the sum of macros?', answer: 'Small differences can arise from rounding or from calories contributed by non-macronutrient components (e.g., sugar alcohols, fiber). The calculator uses the supplied total calories per serving as the base for percent calculations when available.' },
+      { question: 'How should I round values?', answer: 'Rounding rules vary by jurisdiction. Common practice is to round calories to the nearest whole number and grams to one decimal place for smaller values. Check local labeling guidelines for exact rules.' },
+      { question: 'Why is accurate nutrition labeling important?', answer: 'ccurate nutrition labels help consumers make informed choices about their food intake, support dietary restrictions, and promote overall health and wellness. As awareness of nutrition continues to grow, having reliable data is essential for maintaining trust.' },
+    ],
   },
   {
     id: 'recipe-converter',
@@ -5368,6 +6167,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Scale ingredient amounts between different serving sizes and view equivalents across cups, tablespoons, and teaspoons. Perfect for cooking and baking adjustments.',
       keywords: ["recipe converter","scale recipe","ingredient converter","cups to tbsp","tablespoons to teaspoons","serving size calculator","cooking conversion"],
     },
+    faq: [
+      { question: 'Can I convert between other units (like milliliters)?', answer: 'This converter focuses on common US kitchen volume units (cups, tbsp, tsp). For metric conversions (mL, L), consider using a dedicated volume converter where metric factors are provided. This ensures you\'re using the correct measurements for your recipes.' },
+      { question: 'Does this work for both dry and liquid ingredients?', answer: 'Yes — the scaling math is the same for any ingredient measured by volume. For best results with dry ingredients, weighing by grams is recommended. This can help avoid inconsistencies caused by volume measurements, especially with fluffy ingredients like flour.' },
+      { question: 'How should I round the results?', answer: 'The calculator shows multiple decimal places for precision, but when cooking, round to the nearest practical measurement (e.g., nearest 1/8 tsp or 1/4 tbsp) depending on the ingredient. Rounding helps keep the cooking process user-friendly without sacrificing accuracy.' },
+      { question: 'What if I have a recipe that uses weights instead of volume?', answer: 'If your recipe lists ingredients by weight, consider converting those weights into volume measurements where possible or use a reliable online conversion tool to help with the transition. Keep in mind that some ingredients may have different weights depending on how they\'re packed.' },
+    ],
   },
   {
     id: 'cooking-measurement-converter',
@@ -5384,6 +6189,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Quickly convert cooking measurements between cups, tablespoons, and teaspoons. Auto-calculating converter with charts and PDF export.',
       keywords: ["cooking","conversion","cup to tablespoon","tablespoon to teaspoon","cup to tsp","measurement converter","recipe conversions"],
     },
+    faq: [
+      { question: 'Are these cooking measurement conversion factors exact?', answer: 'The factors used (1 cup = 240 ml, 1 tbsp = 15 ml, 1 tsp = 5 ml) are standard kitchen approximations. For very precise scientific work, use product-specific density conversions or professional references.' },
+      { question: 'Does this handle ingredient density (e.g., converting cups of flour to grams)?', answer: 'No — this converter only handles volume units. Converting volumes to weights requires ingredient-specific density (grams per cup), which varies between ingredients like flour, sugar, and butter.' },
+      { question: 'Can I trust the chart and PDF outputs for cooking measurements?', answer: 'Yes. The chart visually compares the original and converted values. The PDF export captures your inputs and the calculated result for printing or sharing.' },
+      { question: 'Why is it essential to convert cooking measurements accurately?', answer: 'ccurate conversions are vital in cooking to ensure that the final dish has the correct flavors, textures, and overall quality. A small deviation can lead to unsatisfactory results.' },
+      { question: 'Where can I find more resources on cooking measurements?', answer: 'You can explore several culinary blogs and websites dedicated to recipe conversions and cooking tips. Many offer downloadable resources and detailed guides on various cooking methods.' },
+    ],
   },
   {
     id: 'calorie-density-calculator',
@@ -5416,6 +6228,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use this Food Waste Calculator to quickly estimate kilograms of wasted food, the monetary cost of that waste, and potential savings from reduction scenarios like 25%, 50%, or 100% reduction.',
       keywords: ["food waste calculator","food waste","food waste reduction","cost savings","kg wasted","sustainability","nutritionist"],
     },
+    faq: [
+      { question: 'Why is it important to calculate food waste?', answer: 'Quantifying food waste helps identify opportunities to reduce costs, improve inventory management, and mitigate environmental impact.' },
+      { question: 'What should I use for cost per kg?', answer: 'Use an average purchase cost per kilogram that reflects what you paid or the wholesale cost for the food items in question.' },
+      { question: 'Can this calculator model different reduction strategies?', answer: 'Yes — use the reduction scenario selector to model different levels of waste reduction (25%, 50%, 75%, 100%). The calculator will clearly show kg and cost savings for the selected scenario.' },
+      { question: 'How accurate are the results?', answer: 'Results depend on your inputs\' accuracy. For best accuracy, use measured weights and real cost data.' },
+    ],
   },
   {
     id: 'carbon-footprint-calculator',
@@ -5448,6 +6266,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your household\'s daily and annual water usage from showers, laundry, and dishwasher runs. Convert results between liters and gallons and download a PDF summary.',
       keywords: ["water usage","water calculator","daily water use","annual water use","water conservation","showers","laundry","dishwasher","liters","gallons"],
     },
+    faq: [
+      { question: 'Are the values exact?', answer: 'No. The calculator uses representative average rates for common appliances and fixtures. Replace the inputs with your own measured or manufacturer-specified values for more accuracy.' },
+      { question: 'Why show liters and gallons?', answer: 'Different regions use different units. We calculate in liters (a consistent base unit) and allow conversion to gallons for easier interpretation where needed.' },
+      { question: 'Can I download the results?', answer: 'Yes. Use the PDF download to save a summary of inputs and results for record-keeping or sharing.' },
+      { question: 'What should I do if my usage is higher than expected?', answer: 'Consider reviewing your water use habits, checking for leaks, and implementing some of the tips provided to reduce consumption.' },
+    ],
   },
   {
     id: 'energy-consumption-calculator',
@@ -5464,6 +6288,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate daily, monthly, and annual household energy usage (kWh) and costs using number of appliances, average wattage, hours of use, and electricity rate.',
       keywords: ["energy calculator","household energy","kWh calculator","electricity cost","energy consumption","eco","sustainability"],
     },
+    faq: [
+      { question: 'Are these estimates exact?', answer: 'No. These are estimates based on the values you provide. Real consumption can vary based on appliance efficiency, cycles, and standby usage.' },
+      { question: 'Why do we divide by 1000?', answer: 'Watt (W) is a unit of power. To convert watt-hours to kilowatt-hours (kWh), we divide watts by 1000 because 1 kW = 1000 W.' },
+      { question: 'How can I get more accurate results?', answer: 'Measure actual wattage with a power meter for each appliance and track real usage hours. Use your utility bill to verify your electricity rate and monthly totals.' },
+    ],
   },
   {
     id: 'recycling-calculator',
@@ -5480,6 +6309,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Use the Recycling Impact Calculator to estimate how much waste you divert from landfill based on weekly waste generation and recycling rate. See annual totals and an estimated CO2 savings.',
       keywords: ["recycling calculator","waste reduction","recycling impact","CO2 savings","ecology","sustainability","waste management"],
     },
+    faq: [
+      { question: 'What does recycling rate mean?', answer: 'Your recycling rate is the share of your total waste that is actually recycled. For example, a 40% recycling rate means 40% of your waste is diverted to recycling streams and 60% goes to landfill or incineration. A better understanding of your recycling rate helps in planning better waste management strategies.' },
+      { question: 'Are the CO2 savings precise?', answer: 'No — the CO2 savings are an estimate using an average factor. Different materials have different carbon savings when recycled. For material-specific assessments, use dedicated LCA (life-cycle assessment) data. This variability emphasizes the importance of considering material types when evaluating your recycling\'s environmental impact.' },
+      { question: 'Can I use this for a household or a business?', answer: 'Yes. Enter the average waste produced (kg/week) for the household or facility and an estimated recycling rate. For larger operations, consider tracking material streams separately for greater accuracy. This will provide a clearer picture of your waste management practices and help identify areas for improvement.' },
+    ],
   },
   {
     id: 'compost-calculator',
@@ -5512,6 +6346,11 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate how many solar panels you need based on monthly electricity usage, available roof area, and average sunlight hours. Get production estimates, required area, and savings.',
       keywords: ["solar calculator","solar panels","solar panel estimate","renewable energy","solar savings","roof area solar"],
     },
+    faq: [
+      { question: 'Can I rely on the calculator for final system design?', answer: 'This calculator provides an initial estimate. For a final system design, consult a qualified solar installer who will evaluate structural roof constraints, local solar irradiance data, electrical requirements, and local regulations.' },
+      { question: 'What if my roof area is too small?', answer: 'If your available roof area cannot support the number of panels required, consider partial coverage (offsetting part of your electricity), ground-mounted systems (if space permits), or community solar programs.' },
+      { question: 'How accurate are savings estimates?', answer: 'Savings are estimated using a sample cost per kWh and the projected production. Your actual savings will depend on your local electricity rates, time-of-use tariffs, net metering policies, and how much of the produced energy you consume on-site.' },
+    ],
   },
   {
     id: 'wind-energy-calculator',
@@ -5544,6 +6383,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate carbon sequestration from tree planting by number of trees, tree age, and species. Get results in kg CO₂ and tonnes CO₂ with charts and PDF export.',
       keywords: ["tree planting","carbon offset","CO2 sequestration","ecology calculator","carbon calculator","tree carbon"],
     },
+    faq: [
+      { question: 'Are these values exact?', answer: 'No. Values are simplified averages intended for estimation. Real-world sequestration varies by species, soil, climate, and management.' },
+      { question: 'Can I use this for carbon credits?', answer: 'This calculator provides rough estimates. Certified carbon credit programs require rigorous measurement, monitoring, and verification protocols. Use this tool for planning only.' },
+      { question: 'Why does tree age matter?', answer: 'Younger trees sequester less carbon compared to mature trees. Including tree age gives a better estimate of total accumulated sequestration over time.' },
+      { question: 'How can I maximize my carbon offset?', answer: 'Maximizing offset potential involves selecting appropriate species for your locale, ensuring proper planting techniques, and committing to ongoing care and support of the trees throughout their growth stages.' },
+    ],
   },
   {
     id: 'carbon-offset-calculator',
@@ -5560,6 +6405,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate the kilograms or tonnes of CO2 you need to offset for common activities like flights, driving, and electricity usage. Auto-calculates and provides charts and PDF export.',
       keywords: ["carbon offset","CO2 calculator","carbon emissions","offset calculator","flight emissions","driving emissions","electricity emissions"],
     },
+    faq: [
+      { question: 'Can I use this to purchase offsets directly?', answer: 'This tool estimates the amount of carbon to offset. To purchase offsets, look for reputable projects and registries (e.g., Verra, Gold Standard) and follow their purchasing processes.' },
+      { question: 'Why are emission factors approximate?', answer: 'Emission factors vary by aircraft type, vehicle efficiency, electricity grid mix, and other factors. This calculator uses common average factors for quick estimates; use detailed lifecycle analyses for precise calculations.' },
+      { question: 'How should I enter distances and emissions?', answer: 'Enter distances in kilometers (km). Enter emissions in kilograms of CO2 (kg CO2). If you have a verified emissions number, prefer that over distance estimates.' },
+      { question: 'Is carbon offsetting effective?', answer: 'Yes, carbon offsetting can be effective, especially when combined with efforts to reduce personal or organizational emissions. However, it\'s crucial to choose credible offset projects to ensure real environmental benefits.' },
+    ],
   },
   {
     id: 'ecological-footprint-calculator',
@@ -5592,6 +6443,12 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate your home\'s annual energy consumption (kWh) and approximate yearly cost based on square footage, heating type, and insulation quality. Compare options and download results.',
       keywords: ["home energy calculator","energy usage","kWh estimate","heating efficiency","home insulation","energy cost estimate"],
     },
+    faq: [
+      { question: 'Is this calculator an exact measurement?', answer: 'No. This calculator provides an estimate based on simplified assumptions. Real-world usage depends on local climate, behavior, appliance efficiency, and building specifics.' },
+      { question: 'Why are different heating types normalized to kWh?', answer: 'Normalization to kWh-equivalents allows an apples-to-apples comparison across fuel types. Actual billing units may differ (therms, gallons, etc.), and fuel prices vary by location.' },
+      { question: 'How can I achieve more accurate results?', answer: 'For more precise estimates, use actual historical energy bills, heating system efficiency ratings (AFUE/EER/COP), and local climate data. Consider a home energy audit for tailored recommendations to improve your home\'s energy profile.' },
+      { question: 'What are some common mistakes to avoid when calculating home energy costs?', answer: 'Common mistakes include not accounting for all square footage during calculations, neglecting local climate factors, or using outdated energy pricing. Be sure to gather recent data for the most accurate estimates.' },
+    ],
   },
   {
     id: 'transportation-carbon-calculator',
@@ -5624,6 +6481,13 @@ export const calculators: CalculatorConfig[] = [
       description: 'Estimate the greenhouse gas emissions (kg CO2e) of different foods. Compare beef, chicken, and vegetables by amount in kilograms.',
       keywords: ["food carbon calculator","food emissions","carbon footprint","kg CO2e","sustainable eating","ecology calculator"],
     },
+    faq: [
+      { question: 'How accurate are these numbers?', answer: 'Emission factors are averages and can vary by region, farming practice, feed, and supply chain. Use these results as estimates to compare choices, not precise lifecycle analyses.' },
+      { question: 'Can I use other units?', answer: 'This calculator uses kilograms as the base unit. If you have grams, convert to kilograms (1000 g = 1 kg) before entering the amount.' },
+      { question: 'Why does beef have a higher footprint?', answer: 'Ruminant animals like cattle produce methane during digestion and require more land, feed, and water, leading to higher greenhouse gas emissions per kilogram compared to poultry or plant-based foods.' },
+      { question: 'What impact does reducing meat consumption have?', answer: 'Switching to plant-based meals can significantly lower your weekly or monthly carbon footprint. Every small change contributes to a larger impact on the environment.' },
+      { question: 'How can I calculate my total weekly emissions?', answer: 'By using this calculator for each type of food you consume in a week, you can sum the emissions to get your total food-related carbon emissions.' },
+    ],
   },
   {
     id: 'waste-reduction-calculator',

@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import CategoryPageClient from '@/components/CategoryPageClient';
 import { subcategories, Category } from '@/types';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
 interface PageProps {
   params: Promise<{ category: string }>;
 }
@@ -44,6 +46,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${categoryName} Calculators - Free Online Tools`,
     description: `Browse our collection of ${categoryName.toLowerCase()} calculators organized by subcategory.`,
+    alternates: {
+      canonical: `${baseUrl}/category/${category}`,
+    },
+    openGraph: {
+      title: `${categoryName} Calculators - Free Online Tools`,
+      description: `Browse our collection of ${categoryName.toLowerCase()} calculators organized by subcategory.`,
+      url: `${baseUrl}/category/${category}`,
+      type: 'website',
+      siteName: 'Calculators',
+    },
   };
 }
 

@@ -4,8 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAuthorBySlug, authors } from '@/config/authors';
 import { getCalculatorsByAuthor } from '@/config/calculators';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card';
 import { ArrowRight, Linkedin, Twitter, Globe, Calculator } from 'lucide-react';
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -30,6 +33,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${author.name} - ${author.role}`,
     description: author.bio,
+    alternates: {
+      canonical: `${baseUrl}/authors/${author.slug}`,
+    },
+    openGraph: {
+      title: `${author.name} - ${author.role}`,
+      description: author.bio,
+      url: `${baseUrl}/authors/${author.slug}`,
+      type: 'profile',
+      siteName: 'Calculators',
+    },
   };
 }
 
@@ -51,10 +64,10 @@ export default async function AuthorPage({ params }: PageProps) {
     jobTitle: author.role,
     description: author.bio,
     image: author.avatar,
-    url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/authors/${author.slug}`,
+    url: `${baseUrl}/authors/${author.slug}`,
     worksFor: {
       '@type': 'Organization',
-      name: 'Omni-Style Calculators',
+      name: 'Calculators',
     },
   };
 
@@ -66,17 +79,11 @@ export default async function AuthorPage({ params }: PageProps) {
       />
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <nav className="mb-8 flex items-center text-sm text-gray-500">
-          <Link href="/" className="hover:text-gray-900 transition-colors">
-            Home
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="font-medium text-gray-700">Authors</span>
-          <span className="mx-2">/</span>
-          <span className="text-gray-900 font-medium">
-            {author.name}
-          </span>
-        </nav>
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Authors' },
+          { label: author.name },
+        ]} />
 
         <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg border border-gray-200 overflow-hidden relative">
            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-blue-50 to-indigo-50" />
